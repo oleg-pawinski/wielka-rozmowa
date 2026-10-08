@@ -1,0 +1,1799 @@
+<!doctype html>
+<html lang="pl" data-palette="grafit">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wielka Rozmowa</title>
+<meta name="description" content="Przewodnik po 2500 latach filozofii: idee, ludzie, cytaty i anegdoty – od Talesa i Buddy po współczesność.">
+<meta name="theme-color" content="#2F3061">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#550C93; --pink:#F0386B; --yolk:#FFC914;
+  --paper:#F7F7F9; --card:#FFFFFF; --ink:#1E1430; --ink-2:#5A5170; --ink-3:#877E98;
+  --line:#E6E1EE; --tint:#F1EAF9; --accent:#550C93; --btn:#550C93; --btn-ink:#FFFFFF;
+  --ok:#11774F; --ok-bg:#E3F4EB; --bad:#BE1A57; --bad-bg:#FDE6EE; --yolk-bg:#FFF6D8; --herb-h:#7A5A00;
+  --shadow:0 1px 0 rgba(85,12,147,.04),0 14px 34px -22px rgba(85,12,147,.5);
+  --r-l:24px; --r-m:16px; --r-s:12px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#130B1F; --card:#1D1330; --ink:#F4EEFB; --ink-2:#C0B5D2; --ink-3:#8F84A3;
+    --line:#33264A; --tint:#2A1B40; --accent:#CFAAF8; --btn:#7B36CC; --btn-ink:#FFFFFF;
+    --ok:#5ED39F; --ok-bg:#12302A; --bad:#FF89AA; --bad-bg:#3A1628; --yolk-bg:#342B0E; --herb-h:#FFC914;
+    --shadow:none; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#130B1F; --card:#1D1330; --ink:#F4EEFB; --ink-2:#C0B5D2; --ink-3:#8F84A3;
+  --line:#33264A; --tint:#2A1B40; --accent:#CFAAF8; --btn:#7B36CC; --btn-ink:#FFFFFF;
+  --ok:#5ED39F; --ok-bg:#12302A; --bad:#FF89AA; --bad-bg:#3A1628; --yolk-bg:#342B0E; --herb-h:#FFC914;
+  --shadow:none; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
+button{font-family:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+:focus-visible{outline:3px solid var(--yolk);outline-offset:2px}
+
+/* top bar */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+@supports (backdrop-filter:blur(8px)){header.top{background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.4) blur(10px)}}
+.topin{display:flex;align-items:center;justify-content:space-between;height:58px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.015em;font-size:17px;background:none;border:0;color:var(--ink);cursor:pointer;padding:0}
+.mark{position:relative;display:inline-grid;place-items:center;width:36px;height:28px;border-radius:9px;background:var(--btn);color:var(--yolk);font-size:12.5px;font-weight:900;letter-spacing:.03em}
+.mark::after{content:"";position:absolute;left:7px;bottom:-6px;width:11px;height:10px;background:var(--btn);clip-path:polygon(0 0,100% 0,0 100%)}
+.chips{display:flex;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 11px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:800;font-size:13.5px;color:var(--ink);cursor:pointer}
+.chip .lv{color:var(--accent)}
+
+main{padding:10px 0 calc(104px + env(safe-area-inset-bottom,0px))}
+main.insession{padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))}
+
+/* bottom tabs */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav.tabs[hidden]{display:none}
+.tabs .in{max-width:720px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px 9px;background:none;border:0;color:var(--ink-3);font-size:11.5px;font-weight:700;cursor:pointer}
+.tab .ti{display:grid;place-items:center;width:52px;height:30px;border-radius:999px;transition:background .15s}
+.tab svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.tab[aria-current="page"]{color:var(--accent)}
+.tab[aria-current="page"] .ti{background:var(--tint)}
+
+/* type */
+h1{font-size:30px;line-height:1.12;letter-spacing:-.028em;margin:6px 0 10px;font-weight:800}
+h2{font-size:21px;line-height:1.25;letter-spacing:-.018em;margin:30px 0 10px;font-weight:800}
+h3{font-size:17px;line-height:1.3;margin:0 0 6px;font-weight:700}
+p{margin:0 0 12px}
+.muted{color:var(--ink-2)}
+.small{font-size:14.5px}
+.micro{font-size:12.5px;font-weight:600;color:var(--ink-3);margin:0 0 6px}
+.lead{font-size:18px;line-height:1.5;color:var(--ink-2)}
+.center{text-align:center}
+.right{text-align:right}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:999px;border:0;background:var(--btn);color:var(--btn-ink);font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;transition:transform .12s ease,filter .12s ease}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn.block{width:100%}
+.btn.yolk{background:var(--yolk);color:#2B1A00}
+.btn.ghost{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 2px var(--line)}
+.btn.small{min-height:40px;padding:0 16px;font-size:14.5px}
+.btn[disabled]{opacity:.45;cursor:not-allowed;filter:none;transform:none}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.linkbtn{background:none;border:0;padding:0;color:var(--accent);font-size:inherit;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* home */
+.greet{margin-top:8px}
+.hero{position:relative;overflow:hidden;background:var(--plum);color:#fff;border-radius:var(--r-l);padding:22px 20px 20px;margin:14px 0 10px}
+.hero::after{content:"";position:absolute;right:-34px;top:-34px;width:112px;height:112px;border-radius:50%;background:var(--yolk)}
+.hero .kicker{position:relative;font-size:13px;font-weight:700;color:rgba(255,255,255,.72);margin:0 0 4px;max-width:calc(100% - 92px)}
+.hero h2{position:relative;color:#fff;margin:0 0 10px;font-size:23px;max-width:calc(100% - 70px)}
+.hero ul{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:5px;color:rgba(255,255,255,.92);font-size:15px}
+.hero li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yolk);margin:0 9px 2px 0;vertical-align:middle}
+.hero .alt{display:block;margin:14px auto 0;color:#fff;opacity:.9;font-weight:600;font-size:14.5px;background:none;border:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.welcome{border:1.5px dashed var(--line);border-radius:var(--r-l);padding:18px 18px 8px;margin:14px 0}
+.welcome ol{margin:6px 0 10px;padding-left:20px}
+.welcome li{margin-bottom:6px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:12px 0 8px}
+.day{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;font-weight:700;color:var(--ink-3)}
+.day .dot{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:2px solid var(--line);color:#2B1A00;font-weight:900;font-size:15px}
+.day.on .dot{background:var(--yolk);border-color:var(--yolk)}
+.day.today .dot{border-color:var(--accent)}
+.day.today .dl{color:var(--accent)}
+.lvl{display:flex;align-items:center;gap:14px;margin:6px 0 12px}
+.lvl-badge{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:var(--tint);color:var(--accent);font-weight:900;font-size:21px;letter-spacing:-.02em;flex:none}
+.lvl-name{font-weight:800;font-size:18px;letter-spacing:-.01em}
+.bar{height:10px;border-radius:999px;background:var(--line);overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--accent);border-radius:inherit;transition:width .6s ease}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:12px 12px 10px}
+.stat b{display:block;font-size:23px;letter-spacing:-.025em;font-weight:800;font-variant-numeric:tabular-nums}
+.stat span{font-size:12.5px;color:var(--ink-2);line-height:1.3;display:block}
+.fact{border-left:4px solid var(--yolk);padding:4px 0 4px 14px;margin:22px 0}
+.fact p{margin:0}
+.badgeline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:22px}
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:12px 0}
+.badge{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:12px}
+.badge .bi{font-size:26px;line-height:1.2}
+.badge b{display:block;font-size:14.5px;margin:4px 0 2px}
+.badge span{font-size:12.5px;color:var(--ink-2);line-height:1.35;display:block}
+.badge.locked{opacity:.5;filter:grayscale(1)}
+
+/* panels */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:18px;margin:16px 0}
+.panel h2{margin-top:0}
+.chips-wrap{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 14px}
+
+/* session */
+.shead{display:flex;align-items:center;gap:12px;padding:12px 0 4px}
+.xbtn{width:40px;height:40px;border-radius:50%;border:0;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink-2);font-size:17px;cursor:pointer;flex:none}
+.sprog{flex:1;height:8px;background:var(--line);border-radius:999px;overflow:hidden}
+.sprog i{display:block;height:100%;background:var(--accent);border-radius:inherit;transition:width .35s ease}
+.sxp{font-size:13px;font-weight:800;color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums}
+.sphase{font-size:13px;font-weight:700;color:var(--ink-2);margin:8px 0 14px}
+.exitbar{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:14px;margin:8px 0}
+.exitbar p{margin:0 0 4px;font-size:14.5px}
+
+.flash{position:relative;overflow:hidden;border-radius:var(--r-l);padding:34px 22px 30px;min-height:310px;display:flex;flex-direction:column;justify-content:center;background:var(--plum);color:#fff;margin-bottom:16px}
+.flash::before{content:"";position:absolute;width:124px;height:124px;border-radius:50%;background:var(--yolk);right:-50px;top:-50px}
+.ff-term{position:relative;font-size:clamp(52px,17vw,104px);font-weight:900;letter-spacing:-.05em;line-height:.95;overflow-wrap:anywhere;max-width:calc(100% - 36px)}
+.ff-term.l{font-size:clamp(38px,11vw,68px);letter-spacing:-.035em}
+.ff-term.m{font-size:clamp(30px,8.5vw,48px);letter-spacing:-.025em;line-height:1.05}
+.ff-hint{position:relative;margin:20px 0 0;color:rgba(255,255,255,.82);font-size:15.5px;max-width:28ch}
+.flash.back{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow);justify-content:flex-start;min-height:0;padding:24px 22px}
+.flash.back::before{display:none}
+.fb-term{font-size:30px;font-weight:900;letter-spacing:-.03em;color:var(--accent);line-height:1.05}
+.fb-en{font-weight:700;margin-top:6px}
+.fb-pl{color:var(--ink-2);font-size:15px;margin-bottom:14px}
+.fb-d{margin:0 0 10px}
+.fb-f{font-weight:600;background:var(--tint);border-radius:var(--r-s);padding:9px 12px;font-size:14.5px;margin:0 0 10px}
+.fb-b{font-size:14.5px;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:10px;margin:0}
+.flip-in{animation:flipin .38s cubic-bezier(.2,.7,.2,1) both}
+@keyframes flipin{from{transform:perspective(900px) rotateY(75deg);opacity:.2}to{transform:none;opacity:1}}
+.grades{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.grade{min-height:62px;border-radius:var(--r-m);border:2px solid var(--line);background:var(--card);color:var(--ink);font-weight:700;font-size:15px;cursor:pointer;padding:6px}
+.grade small{display:block;font-weight:500;color:var(--ink-3);font-size:12px;margin-top:2px}
+.grade.g0:hover{border-color:var(--bad)}
+.grade.g1:hover{border-color:var(--accent)}
+.grade.g2{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.grade.g2 small{color:rgba(255,255,255,.78)}
+
+.lcard{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:22px 20px 18px 26px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+.lcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--sc,var(--plum))}
+.sc-plum{--sc:var(--plum)} .sc-pink{--sc:var(--pink)} .sc-yolk{--sc:var(--yolk)}
+.lc-term{font-size:clamp(42px,12vw,66px);font-weight:900;letter-spacing:-.045em;line-height:1;color:var(--accent);overflow-wrap:anywhere}
+.lc-term.m{font-size:clamp(28px,7.6vw,40px);letter-spacing:-.025em;line-height:1.08}
+.lc-en{font-weight:700;font-size:17px;margin-top:10px}
+.lc-pl{color:var(--ink-2);margin-top:2px}
+.lsec{margin-top:16px}
+.lsec h4{margin:0 0 4px;font-size:13px;font-weight:700;color:var(--ink-3)}
+.lsec p{margin:0}
+.lsec.formula p{font-weight:600;background:var(--tint);border-radius:var(--r-s);padding:10px 12px;font-size:15px;font-variant-numeric:tabular-nums}
+.lsec.herb{background:var(--yolk-bg);border-radius:var(--r-m);padding:12px 14px}
+.lsec.herb h4{color:var(--herb-h)}
+.lsec.phrase .say{display:inline-block;background:var(--tint);color:var(--accent);font-weight:700;border-radius:16px 16px 16px 4px;padding:8px 13px;margin:2px 0 6px}
+.lsec.phrase .mean{color:var(--ink-2)}
+.lsec.trap{border-left:4px solid var(--pink);padding-left:12px}
+.lsec.fun{border-left:4px solid var(--yolk);padding-left:12px}
+.lc-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:14px;font-weight:700;cursor:pointer}
+.pill.on{background:var(--yolk);border-color:var(--yolk);color:#2B1A00}
+.ai-out:empty{display:none}
+.ai-out{margin-top:12px;font-size:15px}
+.box{background:var(--tint);border-radius:var(--r-m);padding:12px 14px}
+.box p{margin:0 0 8px}
+.box p:last-child{margin:0}
+.typing{color:var(--ink-3);font-style:italic}
+
+.qlabel{font-size:13px;font-weight:700;color:var(--ink-3);margin:0 0 6px}
+.qprompt{font-size:21px;line-height:1.32;font-weight:800;letter-spacing:-.015em;margin:0 0 16px}
+.qprompt.big{font-size:clamp(40px,12vw,76px);font-weight:900;letter-spacing:-.045em;line-height:1;color:var(--accent);margin:4px 0 20px;overflow-wrap:anywhere}
+.qquote{margin:0 0 16px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);font-size:16.5px;line-height:1.5}
+.opts{display:grid;gap:10px;margin-bottom:14px}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;padding:13px 15px;border-radius:var(--r-m);border:2px solid var(--line);background:var(--card);color:var(--ink);font-size:15.5px;line-height:1.42;cursor:pointer;transition:border-color .12s,background .12s}
+.opt:hover:not([disabled]){border-color:var(--accent)}
+.opt .k{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--tint);color:var(--accent);font-weight:800;font-size:13px;margin-top:-1px}
+.opt.correct{border-color:var(--ok);background:var(--ok-bg)}
+.opt.correct .k{background:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.wrong .k{background:var(--bad);color:#fff}
+.opt[disabled]{cursor:default}
+.fbk{border-radius:var(--r-m);padding:12px 14px;margin-bottom:14px;font-size:15px}
+.fbk.ok{background:var(--ok-bg)} .fbk.bad{background:var(--bad-bg)}
+.fbk strong{display:block;margin-bottom:2px}
+.fbk .fb-correct,.fbk .fb-card{display:block;margin-top:6px;font-weight:600}
+.timer{height:7px;background:var(--line);border-radius:999px;overflow:hidden;margin:0 0 4px}
+.timer i{display:block;height:100%;background:var(--yolk);border-radius:inherit;width:100%}
+
+.intro-stage{font-size:13.5px;font-weight:700;color:var(--ink-3);margin:8px 0 0}
+.chips-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 22px}
+.tchip{padding:6px 12px;border-radius:999px;background:var(--tint);color:var(--accent);font-weight:800;font-size:14px}
+.bizcard{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:22px 22px 20px;box-shadow:var(--shadow);margin:10px 0 18px}
+.bizcard::after{content:"";position:absolute;right:-28px;top:-28px;width:96px;height:96px;border-radius:50%;background:var(--sc,var(--pink))}
+.bizcard .fund{font-size:28px;font-weight:900;letter-spacing:-.03em;line-height:1.1;max-width:80%}
+.bizcard .who{color:var(--ink-2);font-weight:600;margin:4px 0 14px}
+.rules{font-size:14.5px;color:var(--ink-2);background:var(--tint);border-radius:var(--r-m);padding:12px 14px;margin:0 0 16px}
+.xpbig{font-size:68px;font-weight:900;letter-spacing:-.045em;color:var(--accent);line-height:1;margin:6px 0 4px;font-variant-numeric:tabular-nums}
+.sum-top{padding:26px 0 6px}
+.sum-badges{display:grid;gap:8px;margin:14px 0}
+.sum-badge{display:flex;gap:12px;align-items:center;background:var(--yolk-bg);border-radius:var(--r-m);padding:10px 14px}
+.sum-badge .bi{font-size:28px}
+.levelup{background:var(--btn);color:var(--btn-ink);border-radius:var(--r-m);padding:14px 16px;margin:14px 0;font-weight:700}
+
+/* map */
+.stage{margin:26px 0 6px}
+.stage-h{display:flex;gap:12px;align-items:flex-start;margin-bottom:6px}
+.stage-n{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:900;background:var(--sc);color:#fff}
+.sc-yolk .stage-n{color:#2B1A00}
+.stage-t{margin:1px 0 2px;font-size:19px}
+.sprg{font-size:13px;font-weight:700;color:var(--ink-3);margin-left:6px;font-variant-numeric:tabular-nums}
+.lrow{display:flex;align-items:center;gap:12px;width:100%;padding:12px 4px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--ink);font-size:15.5px;text-align:left;cursor:pointer}
+.lrow .st{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;border:2px solid var(--line);color:var(--ink-3)}
+.lrow .lt{font-weight:700;min-width:0}
+.lrow .lsub{display:block;font-weight:500;font-size:13px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lrow.done .st{background:var(--ok);border-color:var(--ok);color:#fff}
+.lrow.next .st{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 4px var(--tint)}
+.lrow.locked{color:var(--ink-3)}
+.lrow.locked .lt{font-weight:600}
+.lrow .meta{margin-left:auto;font-size:13px;color:var(--ink-3);font-weight:700;white-space:nowrap;padding-left:8px}
+.lrow.next .meta{color:var(--accent)}
+
+/* dictionary */
+.search{width:100%;height:50px;border-radius:var(--r-m);border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:0 16px;font-family:inherit;font-size:16px}
+.filters{display:flex;gap:6px;overflow-x:auto;padding:12px 0 8px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.fchip{flex:none;height:36px;padding:0 13px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);font-weight:700;font-size:13.5px;cursor:pointer}
+.fchip.on{background:var(--btn);border-color:var(--btn);color:var(--btn-ink)}
+.toggle{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink-2);margin:4px 0 10px;cursor:pointer}
+.toggle input{width:20px;height:20px;accent-color:var(--plum)}
+.drow{display:flex;align-items:center;gap:12px;width:100%;padding:12px 2px;background:none;border:0;border-bottom:1px solid var(--line);text-align:left;color:var(--ink);cursor:pointer}
+.drow .dt{font-weight:800;font-size:16px;min-width:0}
+.drow .de{display:block;font-size:13.5px;color:var(--ink-2);font-weight:500}
+.drow.locked .dt{color:var(--ink-3)}
+.boxes{margin-left:auto;display:flex;gap:3px;flex:none}
+.boxes i{width:6px;height:18px;border-radius:2px;background:var(--line)}
+.boxes i.f{background:var(--accent)}
+.lock{margin-left:auto;font-size:12.5px;color:var(--ink-3);font-weight:700;white-space:nowrap}
+.dexp{padding:10px 0 6px}
+.empty{color:var(--ink-3);padding:18px 0}
+
+/* notes */
+textarea{width:100%;min-height:112px;border-radius:var(--r-m);border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:12px 14px;font-family:inherit;font-size:15.5px;line-height:1.5;resize:vertical}
+.note{padding:16px 0;border-bottom:1px solid var(--line)}
+.note .nt{font-weight:800}
+.note .np{color:var(--ink-2);font-size:14.5px;margin:4px 0 8px}
+.starred{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.starred b{font-weight:800}
+.starred span{color:var(--ink-2);font-size:14px}
+.starred button{margin-left:auto}
+.saved{font-size:12.5px;color:var(--ok);font-weight:700;height:18px;margin-top:4px}
+
+/* settings */
+.seg{display:inline-flex;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{height:38px;padding:0 15px;border-radius:999px;border:0;background:none;color:var(--ink-2);font-weight:700;cursor:pointer}
+.seg button.on{background:var(--btn);color:var(--btn-ink)}
+.setrow{padding:16px 0;border-bottom:1px solid var(--line)}
+.setrow h3{margin-bottom:8px}
+.lvl-list{list-style:none;padding:0;margin:8px 0}
+.lvl-list li{display:flex;gap:12px;align-items:baseline;padding:7px 0;border-bottom:1px dashed var(--line)}
+.lvl-list b{min-width:34px;color:var(--accent)}
+.lvl-list span{color:var(--ink-3);margin-left:auto;font-size:13.5px;white-space:nowrap}
+
+/* sim */
+.chat{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.bub{max-width:90%;padding:12px 14px;border-radius:18px;font-size:15.5px;line-height:1.5}
+.bub p{margin:0 0 8px}
+.bub p:last-child{margin:0}
+.bub.vc{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:6px}
+.bub.me{align-self:flex-end;background:var(--btn);color:var(--btn-ink);border-bottom-right-radius:6px;white-space:pre-wrap}
+.bub .who{display:block;font-size:12.5px;font-weight:700;color:var(--ink-3);margin-bottom:4px}
+.bub.me .who{color:rgba(255,255,255,.75)}
+.simbox{position:sticky;bottom:calc(76px + env(safe-area-inset-bottom,0px));background:var(--paper);padding:8px 0 4px}
+.simbox textarea{min-height:88px}
+
+/* speed */
+.speed-top{display:flex;justify-content:space-between;align-items:center;margin:12px 0 10px;gap:12px}
+.speed-score{font-size:44px;font-weight:900;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1}
+.speed-time{font-size:16px;font-weight:800;color:var(--ink-2);font-variant-numeric:tabular-nums;min-width:48px;text-align:right}
+.center-block{text-align:center;padding:34px 0}
+.center-block .btnrow{justify-content:center}
+
+/* md from AI */
+.md h3{font-size:16px;margin:14px 0 4px}
+.md ul{margin:4px 0 10px;padding-left:20px}
+.md li{margin-bottom:4px}
+
+/* toast & confetti */
+.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:11px 18px;border-radius:999px;font-weight:600;font-size:14.5px;z-index:60;max-width:min(92vw,560px);text-align:center;box-shadow:0 10px 30px -10px rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:70}
+.confetti i{position:absolute;top:-16px;width:9px;height:15px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{0%{transform:translate3d(0,0,0) rotate(0)}100%{transform:translate3d(var(--dx,0px),108vh,0) rotate(620deg)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (min-width:760px){h1{font-size:34px}.hero{padding:26px 26px 22px}}
+@media (max-width:370px){.bname{display:none}}
+[data-palette="grafit"]{--plum:#2F3061;--pink:#E0607E;--yolk:#FFC857;--accent:#2F3061;--btn:#2F3061;--tint:#EAEAEF;--yolk-bg:#FFF5E1;--herb-h:#855900;--line:#E6E6EC;--paper:#F8F8F9;}
+@media (prefers-color-scheme:dark){[data-palette="grafit"]:not([data-theme="light"]){--plum:#464790;--pink:#E67F97;--yolk:#FFC857;--accent:#B0B1E8;--btn:#4B4C9B;--tint:#1B1531;--yolk-bg:#2F2226;--herb-h:#FFC857;--line:#19122C;--paper:#0F0B1A;--card:#18132C;}}
+[data-palette="grafit"][data-theme="dark"]{--plum:#464790;--pink:#E67F97;--yolk:#FFC857;--accent:#B0B1E8;--btn:#4B4C9B;--tint:#1B1531;--yolk-bg:#2F2226;--herb-h:#FFC857;--line:#19122C;--paper:#0F0B1A;--card:#18132C;}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap topin" id="top"></div></header>
+<main class="wrap" id="view"></main>
+<nav class="tabs" id="tabs" aria-label="Nawigacja"><div class="in">
+  <button class="tab" data-act="tab" data-tab="home"><span class="ti"><svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg></span>Dziś</button>
+  <button class="tab" data-act="tab" data-tab="map"><span class="ti"><svg viewBox="0 0 24 24"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg></span>Mapa</button>
+  <button class="tab" data-act="tab" data-tab="train"><span class="ti"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>Trening</button>
+  <button class="tab" data-act="tab" data-tab="dict"><span class="ti"><svg viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19M9 7.5h6M9 11h4"/></svg></span><span data-tl="dict">Słownik</span></button>
+  <button class="tab" data-act="tab" data-tab="notes"><span class="ti"><svg viewBox="0 0 24 24"><path d="M4 20h16M7 16v-5M12 16V7M17 16v-8"/></svg></span><span data-tl="notes">Notatnik</span></button>
+</div></nav>
+<div class="toast" id="toast" role="status"></div>
+<script>
+/* Wielka Rozmowa – kurs filozofii na telefon.
+   Plik 1: konfiguracja + etap 1 (presokratycy).
+   Kolejne etapy dopisują się w plikach kurs-2.js, kurs-3.js… przez window.COURSE.stages.push(…).
+   Budowanie: cat kurs-*.js > kurs.js && python3 build.py kurs.js dist/
+   Po zbudowaniu: w dist/manifest.webmanifest ustawić "short_name": "Rozmowa". */
+
+window.COURSE = {
+  config: {
+    id: "wielka-rozmowa",
+    title: "Wielka Rozmowa",
+    description: "Przewodnik po 2500 latach filozofii: idee, ludzie, cytaty i anegdoty – od Talesa i Buddy po współczesność.",
+    mark: "Φ",
+    palette: "grafit",
+    goal: 4,
+    version: 1,
+    okWords: ["Tak jest.", "Właśnie tak.", "Celnie.", "Dokładnie.", "Trafiona myśl."],
+    badWords: ["Jeszcze nie.", "Blisko, ale to nie to.", "Nie tym razem – i to też jest nauka.", "Pomyłka. Sokrates powiedziałby, że to dobry początek."],
+    labels: {
+      unit1: "hasło", unit2: "hasła", unit5: "haseł",
+      unitNew1: "nowe hasło", unitNew2: "nowe hasła", unitNew5: "nowych haseł",
+      secD: "O co chodzi", secF: "Cytat", secB: "Nić rozmowy", secEx: "Na przykład",
+      secTr: "Pułapka", secFun: "Anegdota",
+      quizPhase: "Pytania",
+      taskTitle: "Zadanie",
+      taskHelp: "Odpowiedź zapisze się w zakładce {notes}. Wrócisz do niej, kiedy zechcesz.",
+      taskPlaceholder: "Kilka zdań wystarczy.",
+      starOn: "Ważne dla mnie",
+      expLabel: "Co znaczy to słowo?",
+      revLabel: "Które słowo to…",
+      defLabel: "Które hasło pasuje do opisu?",
+      flipHintExp: "Przetłumacz na głos – dopiero potem odkryj kartę.",
+      flipHintDef: "Powiedz na głos, kto to był albo co to znaczy – dopiero potem odkryj kartę.",
+      dictTitle: "Słownik",
+      dictIntro: "Wszyscy rozmówcy i wszystkie pojęcia w jednym miejscu.",
+      dictSearch: "Szukaj: Tales, logos, dao…",
+      dictPeek: "Pokaż też hasła z dalszych lekcji",
+      notesTitle: "Notatnik",
+      notesStars: "Ważne dla mnie",
+      notesFile: "Wielka-Rozmowa-notatki",
+      notesIntro: "Tu zbiera się to, co zostaje na dłużej: hasła oznaczone gwiazdką i Twoje odpowiedzi na zadania.",
+      flashIntro: "60 sekund, ile zdążysz. Widzisz hasło – i od razu wiesz, kto to i o co chodzi.",
+      flashA: "Obce słowa",
+      flashB: "Dopasuj opisy",
+      newLine: "Zaczynasz rozmowę, która trwa od 2500 lat. Pierwsza lekcja to ok. 15 minut.",
+      masterTitle: "Utrzymaj rozmowę w formie",
+      levelsNote: "Poziomy rosną razem z liczbą zdobytych XP.",
+      about: "<strong>To pilotaż: 2 z 16 etapów.</strong> Kolejne dojdą w aktualizacjach. <strong>Każda anegdota ma metkę:</strong> <em>Źródło</em> – najstarszy tekst danej tradycji albo słowa samego autora; <em>Przekaz</em> – starożytny autor, który pisał dużo później; <em>Legenda</em> – piękna opowieść bez pewnego źródła. Cytaty podajemy we własnym przekładzie, z miejscem w tekście."
+    },
+    boss: {
+      name: "Rozmowa", icon: "🗣️", pass: 0.65, go: "Zaczynamy rozmowę",
+      winTitle: "Rozmowa zaliczona", loseTitle: "Wrócisz do tej rozmowy"
+    },
+    exam: {
+      name: "Uczta filozofów", icon: "🏛️", pass: 0.8, n: 20,
+      go: "Zajmuję miejsce przy stole", kicker: "Finał kursu",
+      scene: "Przy jednym stole siedzą wszyscy bohaterowie kursu, jak na platońskiej uczcie. Pytania padają ze wszystkich stron – na każde masz 25 sekund.",
+      winTitle: "Miejsce przy stole jest Twoje", loseTitle: "Jeszcze jedna kolejka pytań",
+      winLine: "Cała rozmowa jest w Twojej głowie."
+    },
+    levels: [
+      { min: 0,    code: "α", name: "Słuchacz",   note: "Siadasz z boku i słuchasz rozmowy, która trwa od 2500 lat." },
+      { min: 400,  code: "β", name: "Uczeń",      note: "Zaczynasz zadawać własne pytania – a to najważniejszy krok." },
+      { min: 1300, code: "γ", name: "Rozmówca",   note: "Wiesz już, kto komu odpowiada i dlaczego." },
+      { min: 3000, code: "δ", name: "Filozof",    note: "Kochasz mądrość – w pierwotnym, greckim sensie tego słowa." },
+      { min: 5500, code: "ε", name: "Nauczyciel", note: "Potrafisz opowiedzieć tę historię tak, że inni chcą słuchać." },
+      { min: 8500, code: "ζ", name: "Mędrzec",    note: "Wiesz, jak wiele jeszcze nie wiesz. Sokrates byłby zadowolony." }
+    ]
+  },
+  stages: []
+};
+
+/* Obejście błędu silnika: ekran startowy czyta część etykiet z obiektu poziomu
+   (zmienna L jest tam przesłonięta). Kopiujemy je do poziomów – nieszkodliwe także po poprawce silnika. */
+(function () {
+  var c = window.COURSE.config, l = c.labels;
+  c.levels.forEach(function (v) {
+    v.unit5 = l.unit5; v.unitNew2 = l.unitNew2; v.quizPhase = l.quizPhase; v.taskTitle = l.taskTitle; v.about = l.about;
+  });
+})();
+
+/* ===================== ETAP 1: OD MITU DO LOGOSU ===================== */
+window.COURSE.stages.push({
+  id: "s1", title: "Od mitu do logosu", color: "plum",
+  sub: "Grecja, VI–V w. p.n.e.: świat staje się zagadką, którą da się rozwiązać rozumem.",
+  badge: { icon: "🦉", name: "Przyjaciel mądrości", desc: "Zalicz rozmowę w Delfach na końcu etapu 1." },
+  boss: {
+    name: "W Delfach", who: "Pytia, wyrocznia delficka", short: "Pytii",
+    scene: "Świątynia Apollina, nad wejściem napis: „Poznaj samego siebie”. Zwykle to Pytia odpowiada na pytania przybyszów – dziś pyta ona.",
+    q: [
+      ["Pytia: „Tales mówi: woda. Anaksymenes: powietrze. Heraklit: ogień. O co oni się spierają?”",
+        "O arche – początek i tworzywo wszystkiego",
+        "O kosmos – ład, który rządzi całym niebem",
+        "O logos – rozum ukryty w ciągłych zmianach",
+        "O to, który z bogów ulepił cały świat",
+        "Każdy z nich szuka arche – jednego źródła, z którego wszystko się bierze. Różnią się tylko kandydatem."],
+      ["Pytia: „Heraklit mówi: wszystko płynie. Parmenides: zmiana to złudzenie. Kto pogodził obu?”",
+        "Atomiści: wieczne atomy, które ciągle się przestawiają",
+        "Pitagorejczycy: cały świat da się zapisać liczbami",
+        "Ksenofanes: każdy lud maluje bogów na swój obraz",
+        "Zenon: szybki Achilles nigdy nie dogoni żółwia",
+        "Atom jest wieczny i niezmienny jak byt Parmenidesa, a świat, który atomy składają, płynie jak u Heraklita."],
+      ["Pytia: „Co łączy Talesa, który przepowiada zaćmienie, z Anaksagorasem, dla którego Słońce jest rozżarzonym kamieniem?”",
+        "Szukają przyczyn w naturze, nie w bogach",
+        "Obaj uważali, że wszystko jest z wody",
+        "Obaj byli kapłanami w świątyni Apollina",
+        "Obaj wierzyli w wędrówkę dusz po śmierci",
+        "To sedno przejścia od mitu do logosu: niebo ma przyczyny, które rozum może odkryć i sprawdzić."]
+    ]
+  },
+  lessons: [
+    {
+      id: "s1l1", title: "Pytanie z Miletu",
+      hook: "Około 600 roku p.n.e. w kupieckim Milecie ktoś zapytał, z czego naprawdę jest zrobiony świat – i nie odpowiedział opowieścią o bogach. Od tego pytania zaczyna się rozmowa, która trwa do dziś.",
+      task: "Wybierz jedno zjawisko: burzę, tęczę, echo, czkawkę. Zapisz dwa wyjaśnienia – jedno w stylu mitu, z bogami i bohaterami, drugie w stylu Talesa: przez przyczynę, którą dałoby się sprawdzić.",
+      cards: [
+        { id: "filozofia", t: "filozofia", a: 1, exp: "umiłowanie mądrości",
+          sub: "rozumne szukanie odpowiedzi na najważniejsze pytania",
+          d: "Z greckiego philos – przyjaciel i sophia – mądrość. Nie chodzi o posiadanie mądrości, tylko o przyjaźń z nią: o pytania, czym jest świat, co możemy wiedzieć i jak dobrze żyć. Odpowiedź trzeba uzasadnić, a nie tylko powtórzyć za tradycją.",
+          b: "W Grecji pytania o świat zamieniły się w sztukę sporu: uczeń mógł podważyć zdanie mistrza, jeśli miał lepszy argument. Podobną przygodę w tych samych stuleciach przeżywały Indie i Chiny – poznasz je w etapie 2.",
+          ex: "Mit mówi: piorun to gniew Zeusa. Filozofia pyta: co naprawdę dzieje się w chmurze i skąd mamy to wiedzieć? Ten sam piorun – zupełnie inne pytanie.",
+          fun: "Według starożytnego przekazu słowo „filozof” ukuł Pitagoras. Zapytany, kim jest, porównał życie do igrzysk: jedni przychodzą walczyć o wieniec, inni handlować, a najlepsi – patrzeć i rozumieć. Tych ostatnich nazwał przyjaciółmi mądrości. (Przekaz: Cyceron, Rozmowy tuskulańskie V 8–9)",
+          q: ["Co w greckim słowie „filozofia” mówi o postawie filozofa?",
+            "Że kocha mądrość i jej szuka, a nie że już ją ma",
+            "Że jest mędrcem, który zna już wszystkie odpowiedzi",
+            "Że jest kapłanem, który tłumaczy ludziom wolę bogów",
+            "Że jest nauczycielem, który uczy innych za pieniądze",
+            "Philos to przyjaciel: filozof przyjaźni się z mądrością, czyli wciąż jej szuka – nie ogłasza, że ją posiadł."] },
+        { id: "tales", t: "Tales",
+          sub: "pierwszy grecki filozof, mędrzec z Miletu",
+          d: "Pierwszy, o którym wiemy, że tłumaczył świat przyczynami naturalnymi. Uznał, że wszystko bierze się z wody – bo woda żywi, płynie, paruje i zamarza, więc potrafi przybrać każdą postać. Ważniejsze od odpowiedzi okazało się samo pytanie: z czego wszystko jest zbudowane?",
+          f: "„Wszystko jest pełne bogów” – Tales według Arystotelesa, O duszy 411a",
+          b: "Milet, ok. 624–546 p.n.e.; jeden z legendarnych Siedmiu Mędrców. Jego uczniem był Anaksymander, a pytanie o pierwszą zasadę podejmą wszyscy po nim – aż po Demokryta z jego atomami.",
+          ex: "Tales twierdził, że magnes ma duszę, bo porusza żelazo. Brzmi naiwnie, ale to już nauka w zalążku: obserwacja, ogólna reguła i próba wyjaśnienia bez sięgania po mit.",
+          tr: "Słynie z tego, że zapatrzony w gwiazdy wpadł do studni (Platon, Teajtet 174a). Ale Arystoteles opowiada też, że przewidział urodzaj oliwek, zawczasu wynajął wszystkie tłocznie i zbił fortunę – by pokazać, że filozof umie się wzbogacić, tylko nie to go zajmuje (Polityka 1259a).",
+          fun: "Herodot pisze, że Tales zapowiedział rok zaćmienia Słońca, które przerwało bitwę Lidyjczyków z Medami. Gdy dzień zamienił się w noc, walczący przerazili się i zawarli pokój. Astronomowie wiążą tę bitwę z zaćmieniem z 28 maja 585 roku p.n.e. (Przekaz: Herodot, Dzieje I 74)",
+          q: ["Dlaczego Tales uchodzi za pierwszego filozofa, choć mylił się co do wody?",
+            "Bo pierwszy szukał przyczyn w naturze, nie w mitach",
+            "Bo pierwszy udowodnił, że Ziemia ma kształt kuli",
+            "Bo pierwszy spisał wielką księgę o naturze bogów",
+            "Bo pierwszy założył szkołę filozofii w Atenach",
+            "Liczy się nowa metoda: szukać przyczyn, które można rozumnie omawiać i sprawdzać – nawet jeśli pierwsza odpowiedź jest błędna."] },
+        { id: "arche", t: "arche", a: 1, exp: "początek, zasada",
+          sub: "pierwsza zasada – to, z czego wszystko powstaje i do czego wraca",
+          d: "Greckie słowo znaczy jednocześnie „początek” i „władza”. Pierwsi filozofowie szukali jednej rzeczy ukrytej pod całą różnorodnością świata: tworzywa, z którego wszystko jest zrobione, i siły, która tym rządzi.",
+          b: "Tales mówił: woda. Anaksymander: bezkres. Anaksymenes: powietrze. Heraklit: ogień. Fizycy, którzy dziś szukają jednej teorii wyjaśniającej wszystkie siły przyrody, wciąż w pewnym sensie zadają pytanie z Miletu.",
+          ex: "Anaksymenes uczył, że wszystko jest powietrzem, które się zagęszcza albo rozrzedza. Dowód? Dmuchnij na dłoń przez ściśnięte usta – poczujesz chłód. Teraz chuchnij szeroko otwartymi – poczujesz ciepło. (Plutarch, O pierwotnym zimnie 7)",
+          fun: "Ewangelia Jana zaczyna się po grecku od słów „En arche en ho logos” – „Na początku było Słowo”. W jednym zdaniu dwa wielkie terminy pierwszych filozofów: arche i logos. Z drugim spotkasz się w lekcji o Heraklicie. (Źródło: J 1,1)",
+          q: ["Czego szukali filozofowie, pytając o arche?",
+            "Jednego źródła i tworzywa wszystkich rzeczy",
+            "Najstarszego mitu o stworzeniu świata",
+            "Pierwszego władcy, który zjednoczył Grecję",
+            "Najważniejszego boga w greckim panteonie",
+            "Arche to początek i zasada: to, z czego wszystko się bierze i co tym rządzi."] },
+        { id: "anaksymander", t: "Anaksymander",
+          sub: "uczeń Talesa, odkrywca bezkresu i twórca pierwszej mapy świata",
+          d: "Uznał, że żaden konkretny żywioł nie może być początkiem, bo zdominowałby pozostałe. Początkiem jest apeiron – bezkres, coś nieokreślonego i nieskończonego, z czego wyłaniają się przeciwieństwa: ciepło i zimno, suche i mokre.",
+          f: "„…płacą sobie nawzajem karę i zadośćuczynienie za niesprawiedliwość według porządku czasu” – Anaksymander, fragment B1",
+          b: "Milet, ok. 610–546 p.n.e. Jego jedyne zachowane zdanie – najstarsze w greckiej filozofii – przetrwało, bo ponad tysiąc lat później zacytował je komentator Simplicjusz. Tak znamy niemal wszystkich pierwszych filozofów: z cudzych cytatów.",
+          ex: "Ziemia według niego wisi w środku świata i na niczym się nie opiera. Nie spada, bo jest jednakowo oddalona od wszystkiego – nie ma powodu lecieć w żadną stronę. Śmiała myśl w czasach, gdy wszyscy pytali, na czym Ziemia stoi.",
+          fun: "Anaksymander uważał, że pierwsi ludzie rozwijali się wewnątrz stworzeń podobnych do ryb i wyszli na ląd, dopiero gdy umieli sobie radzić sami. To jeszcze nie teoria ewolucji, ale myśl, że człowiek pochodzi od innych istot, padła ponad dwa tysiące lat przed Darwinem. (Przekaz: Censorinus, O dniu urodzin 4,7)",
+          q: ["Dlaczego Anaksymander nie zgodził się, że początkiem wszystkiego jest woda?",
+            "Bo konkretny żywioł zdominowałby swoje przeciwieństwa",
+            "Bo uważał, że woda jest tylko jednym z czterech żywiołów",
+            "Bo uważał, że świat stworzyli bogowie z gliny",
+            "Bo zmierzył, że na Ziemi jest więcej lądu niż wody",
+            "Woda jest mokra i zimna – gdyby była wszystkim, zabrakłoby miejsca na suche i ciepłe. Dlatego wybrał coś nieokreślonego."] }
+      ]
+    },
+    {
+      id: "s1l2", title: "Liczba i dusza",
+      hook: "Na południu Italii żyła wspólnota, w której nowicjusze latami milczeli, nie jadano fasoli i wierzono, że cały świat da się zapisać liczbami. Jej założyciela zna dziś każdy uczeń – ale z zupełnie innego powodu.",
+      task: "Ksenofanes żartował, że gdyby konie umiały malować, ich bogowie wyglądaliby jak konie. Opisz w kilku zdaniach boga, jakiego wymyśliłby Twój kot, pies albo ktoś zupełnie do Ciebie niepodobny. Co ten żart mówi o nas samych?",
+      cards: [
+        { id: "pitagoras", t: "Pitagoras",
+          sub: "mistrz liczb i założyciel tajemniczej wspólnoty w Krotonie",
+          d: "Uczył, że ład świata da się wyrazić liczbami. Jego szkoła odkryła, że miłe dla ucha współbrzmienia to proste proporcje: struna skrócona o połowę brzmi o oktawę wyżej, skrócona do dwóch trzecich – o kwintę. Skoro muzyka to liczby, może całe niebo także?",
+          f: "„Całe niebo jest harmonią i liczbą” – tak naukę pitagorejczyków streszcza Arystoteles, Metafizyka 986a",
+          b: "Samos, potem Kroton w Italii, ok. 570–495 p.n.e. Nie zostawił żadnych pism. Przez jego uczniów myśl, że przyroda mówi językiem matematyki, trafi do Platona, a dwa tysiące lat później do Keplera i Galileusza.",
+          tr: "Twierdzenie Pitagorasa znano przed nim. Babilońska tabliczka Plimpton 322, starsza o ponad tysiąc lat, zawiera trójki liczb spełniające a² + b² = c². Nie wiemy nawet, czy Pitagoras cokolwiek dowiódł – najstarszy zachowany dowód podaje Euklides.",
+          fun: "Ksenofanes, współczesny Pitagorasowi, opowiadał: Pitagoras przechodził obok bitego szczeniaka i zawołał: „Przestań go bić! To dusza mojego przyjaciela – poznałem ją po głosie”. Ksenofanes kpił, ale dzięki tej kpinie wiemy, w co Pitagoras wierzył. (Źródło: Ksenofanes, fragment B7)",
+          q: ["Co pitagorejczycy odkryli, badając struny?",
+            "Że ładne współbrzmienia to proste proporcje",
+            "Że wysokość dźwięku zależy od siły uderzenia",
+            "Że każdy dźwięk ma swojego boga i opiekuna",
+            "Że cięższe i grubsze struny zawsze brzmią wyżej",
+            "Oktawa to stosunek 2:1, kwinta 3:2 – stąd wziął się pomysł, że liczby rządzą światem."] },
+        { id: "kosmos", t: "kosmos", a: 1, exp: "ład, porządek",
+          sub: "świat jako uporządkowana i piękna całość",
+          d: "Grecy nazwali tak świat, bo widzieli w nim porządek: gwiazdy krążą regularnie, pory roku wracają. Słowo znaczyło też ozdobę – świat jest nie tylko ułożony, ale i piękny. Jego przeciwieństwem jest chaos, od którego zaczynały się mity.",
+          f: "„Mędrcy mówią, że niebo i ziemię, bogów i ludzi spaja wspólnota, przyjaźń i ład – i dlatego tę całość nazywają kosmosem” – Platon, Gorgiasz 508a",
+          b: "Według tradycji pierwszy nazwał tak świat Pitagoras, choć już starożytni przypisywali to też Parmenidesowi (Diogenes Laertios VIII 48). Od tej pory filozofia pyta, skąd bierze się ład – a nauka o całym wszechświecie to do dziś kosmologia.",
+          ex: "Kosmos i kosmetyka mają wspólny korzeń: kosmein znaczy po grecku porządkować i zdobić. Układając włosy przed lustrem, robisz w małej skali to, co Grecy widzieli w niebie – zaprowadzasz ład, który jest piękny.",
+          fun: "Pitagorejczycy wierzyli, że krążące planety wydają dźwięki – muzykę sfer. Czemu jej nie słyszymy? Bo brzmi od naszych narodzin i nie mamy jej z czym porównać – jak kowal, który przestaje słyszeć młoty we własnej kuźni. (Przekaz: Arystoteles, O niebie 290b)",
+          q: ["Dlaczego Grecy nazwali świat kosmosem?",
+            "Bo widzieli w nim ład, który jest też piękny",
+            "Bo uważali, że jest nieskończony i pusty",
+            "Bo wierzyli, że stworzył go jeden bóg",
+            "Bo był dla nich zaprzeczeniem porządku",
+            "Kosmos to ład i ozdoba zarazem: świat jest uporządkowany, a ten porządek zachwyca."] },
+        { id: "metempsychoza", t: "metempsychoza", a: 1, exp: "wędrówka dusz",
+          sub: "wiara, że dusza po śmierci przechodzi do nowego ciała",
+          d: "Dusza jest nieśmiertelna i po śmierci wciela się na nowo – w człowieka, zwierzę, a nawet roślinę. Pitagorejczycy wyciągali z tego praktyczne wnioski: skoro w zwierzęciu może mieszkać dusza bliskiej osoby, lepiej go nie krzywdzić.",
+          f: "„Byłem już kiedyś chłopcem i dziewczyną, krzewem i ptakiem, i niemą rybą w morzu” – Empedokles, fragment B117",
+          b: "Herodot sądził, że Grecy przejęli tę naukę od Egipcjan, ale egipskie źródła tego nie potwierdzają. Podobną wiarę spotkasz w Indiach – to samsara z etapu 2. Platon uczyni z wędrówki dusz mit, którym zamyka „Państwo”.",
+          ex: "Część pitagorejczyków nie jadła mięsa – w kotlecie mógł się kryć czyjś przyjaciel. Ponad pięćset lat później rzymski poeta Owidiusz włoży w usta Pitagorasa całą mowę przeciwko jedzeniu zwierząt (Przemiany, księga XV).",
+          q: ["Jaki wniosek pitagorejczycy wyciągali z wiary w wędrówkę dusz?",
+            "Że zwierzęta trzeba traktować z szacunkiem",
+            "Że po śmierci każdy z nas staje się bogiem",
+            "Że ciało jest o wiele ważniejsze od duszy",
+            "Że życie zdarza się każdemu tylko raz",
+            "Skoro w zwierzęciu może żyć ludzka dusza, krzywdzenie go przestaje być obojętne."] },
+        { id: "ksenofanes", t: "Ksenofanes",
+          sub: "wędrowny poeta, który wyśmiał bogów na ludzki obraz",
+          d: "Zauważył, że każdy lud wyobraża sobie bogów podobnych do siebie. Uznał to za dowód, że takie wyobrażenia mówią więcej o ludziach niż o bóstwie. Sam wierzył w jednego boga, niepodobnego do człowieka ani wyglądem, ani myślą.",
+          f: "„Gdyby woły, konie i lwy miały ręce i umiały malować, konie malowałyby bogów podobnych do koni, a woły – do wołów” – Ksenofanes, fragment B15",
+          b: "Kolofon, ok. 570–475 p.n.e.; ponad sześćdziesiąt lat wędrował po greckim świecie. Zostawił zdanie, które mogłoby być mottem tego kursu: bogowie nie odsłonili ludziom wszystkiego od początku – to ludzie z czasem, szukając, odkrywają lepiej (fragment B18).",
+          ex: "Etiopowie – pisał – mówią, że ich bogowie mają płaskie nosy i ciemną skórę, a Trakowie, że niebieskie oczy i rude włosy. Każdy patrzy w niebo i widzi lustro. (fragment B16)",
+          fun: "Ksenofanes złościł się, że zwycięzca olimpijski dostaje honorowe miejsce i wikt na koszt miasta, a mędrzec nic – choć „lepsza od siły ludzi i koni jest nasza mądrość”. Chyba najstarsza znana skarga na niedofinansowanie nauki. (Źródło: Ksenofanes, fragment B2)",
+          q: ["Co według Ksenofanesa pokazuje fakt, że każdy lud ma bogów podobnych do siebie?",
+            "Że wyobrażenia o bogach mówią więcej o ludziach",
+            "Że bogowie naprawdę przybierają ludzką postać",
+            "Że wszystkie ludy pochodzą od wspólnych przodków",
+            "Że tylko greccy bogowie istnieją naprawdę",
+            "Skoro Etiop widzi boga-Etiopa, a koń widziałby konia, obraz boga jest lustrem tego, kto patrzy."] }
+      ]
+    },
+    {
+      id: "s1l3", title: "Rzeka i kula",
+      hook: "Jeden mówi: nie wejdziesz dwa razy do tej samej rzeki. Drugi odpowiada: żadna zmiana nie istnieje, wszystko jest jednym, nieruchomym bytem. Żyli mniej więcej w tym samym czasie i obaj mieli swoje racje.",
+      task: "Pomyśl o czymś w swoim życiu, co przez ostatnie dziesięć lat zmieniło się nie do poznania, i o czymś, co pozostało takie samo. Zapisz oba. W Twoim przypadku więcej racji ma Heraklit czy Parmenides?",
+      cards: [
+        { id: "heraklit", t: "Heraklit",
+          sub: "filozof zmiany i ognia, zwany Ciemnym",
+          d: "Uczył, że świat to nieustanna przemiana, a jej symbolem jest ogień, który żyje, póki coś spala. Przeciwieństwa – dzień i noc, zdrowie i choroba – nie walczą bez sensu, lecz razem tworzą harmonię. Pod zmiennością kryje się wspólny rozum świata: logos.",
+          f: "„Na wchodzących do tych samych rzek napływają coraz to inne wody” – Heraklit, fragment B12",
+          b: "Efez, ok. 535–475 p.n.e. Kpił z poprzedników: wielka erudycja nie uczy rozumu, inaczej nauczyłaby Pitagorasa i Ksenofanesa (fragment B40). Jego logos przejmą stoicy, a Hegel powie, że nie ma zdania Heraklita, którego nie przyjąłby do swojej logiki.",
+          ex: "Wisła w Krakowie ma tę samą nazwę co tysiąc lat temu, ale ani kropli tej samej wody. Z Tobą jest podobnie: ta sama twarz w lustrze, choć większość komórek ciała z czasem się wymienia. Coś trwa właśnie dzięki temu, że się zmienia.",
+          tr: "Słynne „panta rhei” – wszystko płynie – nie występuje w żadnym zachowanym fragmencie. To późniejsze streszczenie: Platon pisze, że według Heraklita „wszystko przemija i nic nie trwa”, a samo hasło pojawia się dopiero u Simplicjusza, tysiąc lat później.",
+          fun: "Sokrates przeczytał księgę Heraklita i ocenił: „To, co zrozumiałem, jest znakomite. Sądzę, że to, czego nie zrozumiałem, też – ale trzeba by delijskiego nurka, żeby dotrzeć do dna”. Nurkowie z wyspy Delos słynęli z tego, że schodzili najgłębiej. (Przekaz: Diogenes Laertios II 22)",
+          q: ["Co według Heraklita znaczy, że nie wejdziesz dwa razy do tej samej rzeki?",
+            "Że wszystko trwa dzięki ciągłej przemianie",
+            "Że każda rzeka z czasem wysycha i znika",
+            "Że zmysły w gruncie rzeczy zawsze nas oszukują",
+            "Że woda jest początkiem i tworzywem wszystkiego",
+            "Rzeka pozostaje sobą właśnie dlatego, że jej woda ciągle się wymienia – tak samo cały świat."] },
+        { id: "logos", t: "logos", a: 1, exp: "słowo, rozum",
+          sub: "rozumny porządek świata, wspólny dla wszystkich",
+          d: "Greckie słowo o wielu znaczeniach: mowa, rachunek, myśl, uzasadnienie. U Heraklita to ukryta miara, według której wszystko się zmienia – prawo wspólne całemu światu. Kto je pojmuje, jest jak przebudzony; reszta żyje jak we śnie.",
+          f: "„Słuchając nie mnie, lecz logosu, mądrze jest przyznać, że wszystko jest jednym” – Heraklit, fragment B50",
+          b: "Logos przejmą stoicy jako boski rozum świata, a Ewangelia Jana nazwie tak Chrystusa: „Na początku było Słowo”. Nosimy go też w każdej „-logii”: biologia to logos o życiu, geologia – o Ziemi, a logika – o samym myśleniu.",
+          ex: "Heraklit pisał, że obudzeni mają jeden wspólny świat, a śpiący odwracają się każdy do własnego (fragment B89). Logos to ten wspólny świat: prawda, którą można razem sprawdzić – a nie prywatny sen, w którym każdy ma rację.",
+          q: ["Co Heraklit nazywał logosem?",
+            "Ukryty porządek, według którego wszystko się zmienia",
+            "Pierwotną wodę, z której wszystko na świecie powstało",
+            "Księgę, w której spisał wszystkie swoje poglądy",
+            "Boga, który z nieba karze ludzi za ich winy",
+            "Logos to rozum świata: miara działająca w każdej zmianie i wspólna dla wszystkich."] },
+        { id: "parmenides", t: "Parmenides",
+          sub: "myśliciel bytu, który kazał wierzyć rozumowi bardziej niż oczom",
+          d: "Rozumował tak: niebytu nie ma, więc nic nie może z niego powstać ani w niego zniknąć. Byt jest zatem wieczny, jeden i nieruchomy, a zmiana, którą widzimy, to złudzenie zmysłów. Jako pierwszy tak konsekwentnie postawił rozumowanie ponad tym, co widać.",
+          f: "„To samo jest myśleć i być” – Parmenides, fragment B3",
+          b: "Elea w południowej Italii, ok. 515–450 p.n.e. Swój wywód ujął w poemat o podróży do bogini. Jego spór z Heraklitem napędzi dalszą filozofię: Platon pogodzi obu, oddzielając zmienny świat zmysłów od niezmiennych idei.",
+          ex: "Spróbuj pomyśleć „nic”. Gdy tylko myślisz, myślisz już o czymś. Parmenides wywnioskował z tego, że prawdziwego „nic” po prostu nie ma – a skoro tak, nic nie może powstać z niczego ani obrócić się w nic.",
+          fun: "Platon opisuje spotkanie sędziwego Parmenidesa z bardzo młodym Sokratesem w Atenach. Czy do niego doszło, historycy się spierają, ale Platon pisał o Eleacie z rzadką czcią – jako o postaci „czcigodnej i budzącej grozę”. (Źródło: Platon, Parmenides 127b i Teajtet 183e)",
+          q: ["Dlaczego według Parmenidesa nic nie może powstać?",
+            "Bo musiałoby powstać z niebytu, a niebytu nie ma",
+            "Bo bogowie zakazali zmian w swoim świecie",
+            "Bo wszystko powstało już na początku z wody",
+            "Bo atomy są zbyt małe i twarde, by się łączyć",
+            "Powstać znaczy przejść od „nie ma” do „jest”. Jeśli „nie ma” w ogóle nie istnieje, ta droga jest zamknięta."] },
+        { id: "paradoks", t: "paradoks", a: 1, exp: "wbrew mniemaniu",
+          sub: "rozumowanie, które z rozsądnych założeń prowadzi do absurdu",
+          d: "Z greckiego para – wbrew i doxa – mniemanie. Mistrzem był Zenon z Elei, uczeń Parmenidesa: pokazywał, że jeśli przyjmiemy istnienie ruchu i wielości, dojdziemy do sprzeczności. A skoro tak, może Parmenides miał rację, że zmiana to złudzenie?",
+          f: "„Najszybszy biegacz nigdy nie dogoni najwolniejszego, bo goniący musi najpierw dobiec tam, skąd uciekający właśnie ruszył” – tak Arystoteles streszcza Zenona, Fizyka 239b",
+          b: "Elea, V w. p.n.e. Arystoteles uznał Zenona za wynalazcę dialektyki – sztuki obalania tez przez wyprowadzanie z nich sprzeczności. Tą bronią będzie walczył Sokrates, a matematycy jeszcze w XIX wieku spierali się o nieskończoność, którą Zenon wywołał.",
+          ex: "Achilles daje żółwiowi sto metrów przewagi. Gdy je przebiegnie, żółw jest już kawałek dalej. Gdy pokona ten kawałek – żółw znów trochę dalej. I tak bez końca. Odpowiedź przyniosła dopiero matematyka: nieskończenie wiele coraz krótszych odcinków może mieć skończoną sumę.",
+          fun: "Gdy przy Diogenesie z Synopy ktoś dowodził, że ruch nie istnieje, filozof bez słowa wstał i zaczął chodzić. Później ukuto na to łacińską formułę: solvitur ambulando – „rozwiązuje się przez chodzenie”. (Przekaz: Diogenes Laertios VI 39)",
+          q: ["Po co Zenon wymyślał paradoksy?",
+            "By bronić Parmenidesa, wykazując sprzeczności ruchu",
+            "By rozbawić publiczność na igrzyskach w Olimpii",
+            "By udowodnić, że Achilles był najszybszy z Greków",
+            "By pokazać, że matematyka jest bezużyteczna",
+            "Paradoks to broń: jeśli założenie ruchu prowadzi do absurdu, tym gorzej dla ruchu – i tym lepiej dla Parmenidesa."] }
+      ]
+    },
+    {
+      id: "s1l4", title: "Żywioły, umysł i atomy",
+      hook: "Po Parmenidesie nikt już nie mógł mówić, że coś powstaje z niczego. Trzej myśliciele znaleźli wyjście: świat to mieszanie się rzeczy, które same nigdy nie giną. Jeden z tych pomysłów przetrwał w każdym podręczniku chemii.",
+      task: "Wybierz presokratyka, który najbardziej Cię zaciekawił, i opowiedz o nim komuś w trzech zdaniach – przy kolacji, w samochodzie, przez telefon. Zapisz, o co zapytał rozmówca.",
+      cards: [
+        { id: "empedokles", t: "Empedokles",
+          sub: "poeta, lekarz i cudotwórca z Sycylii, ojciec czterech żywiołów",
+          d: "Uczył, że nic nie powstaje z niczego, a wszystko tylko się łączy i rozdziela. Wszystko składa się z czterech korzeni: ziemi, wody, powietrza i ognia. Poruszają nimi dwie siły – Miłość, która łączy, i Niezgoda, która dzieli – a świat jest ich odwiecznym przeciąganiem liny.",
+          f: "„Raz wszystko schodzi się w jedno dzięki Miłości, raz rozpada się w nienawiści Niezgody” – Empedokles, fragment B17",
+          b: "Akragas na Sycylii, ok. 494–434 p.n.e. Jego cztery żywioły przejmie Arystoteles i przetrwają w nauce ponad dwa tysiące lat – aż po chemię XVII i XVIII wieku. Do dziś mówimy o „żywiole” wody czy ognia.",
+          ex: "Malarz z kilku farb uzyska tysiące odcieni – tak Empedokles tłumaczył różnorodność świata z czterech żywiołów. Sam zresztą użył tego porównania (fragment B23).",
+          fun: "Legenda głosi, że Empedokles skoczył do krateru Etny, by ludzie uwierzyli, że stał się bogiem – ale wulkan wyrzucił jego brązowy sandał i zdradził podstęp. Już starożytni znali też inne, zwyczajne wersje jego śmierci. (Legenda: Diogenes Laertios VIII 69)",
+          q: ["Jak Empedokles pogodził Parmenidesa ze zmiennym światem?",
+            "Cztery wieczne żywioły tylko się łączą i rozdzielają",
+            "Uznał, że zmiana jest jedynym, co naprawdę istnieje",
+            "Stwierdził, że wszystko powstaje wprost z niczego",
+            "Uznał, że świat jest liczbą, a liczby się nie zmieniają",
+            "Żywioły nie powstają ani nie giną, jak byt Parmenidesa – zmienia się tylko ich mieszanina."] },
+        { id: "anaksagoras", t: "Anaksagoras",
+          sub: "filozof Umysłu, który przeniósł filozofię do Aten",
+          d: "Twierdził, że wszystko jest wymieszane ze wszystkim, a porządek wprowadza w tę mieszaninę nous – Umysł, nieskończony i niczym nieskażony. Niebo badał jak przyrodnik: Słońce to rozżarzona bryła większa od Peloponezu, a Księżyc świeci jego odbitym światłem.",
+          f: "„Nic nie powstaje ani nie ginie, lecz miesza się i rozdziela z rzeczy, które są” – Anaksagoras, fragment B17",
+          b: "Kladzomeny, ok. 500–428 p.n.e.; przez trzydzieści lat żył w Atenach, przyjaźnił się z Peryklesem. Młody Sokrates z zapałem czytał o Umyśle, a potem rozczarował się, że Anaksagoras wszystko i tak tłumaczy mechanicznie (Platon, Fedon 97b–99c).",
+          ex: "Mąka, jajka i cukier same nie ułożą się w ciasto – potrzebny jest ktoś, kto miesza z zamysłem. Dla Anaksagorasa takim kucharzem świata jest Umysł. Ponad dwa tysiące lat później Lavoisier ujmie podobną myśl w prawo chemii: w reakcjach nic nie ginie, zmieniają się tylko połączenia.",
+          fun: "Za tezę, że Słońce to rozżarzony kamień, a nie bóg, Anaksagoras został w Atenach oskarżony o bezbożność i musiał opuścić miasto. Gdy dowiedział się o śmierci synów, powiedział podobno tylko: „Wiedziałem, że zrodziłem śmiertelnych”. (Przekaz: Diogenes Laertios II 12–13)",
+          q: ["Co nowego wniósł Anaksagoras do pytania o początek świata?",
+            "Umysł, który porządkuje mieszaninę rzeczy",
+            "Liczbę, która wyraża harmonię wszechświata",
+            "Ogień, który wiecznie żyje i się przemienia",
+            "Bezkres, z którego wyłaniają się przeciwieństwa",
+            "Do tworzywa świata dodał siłę rozumną – Umysł (nous), który nadaje mieszaninie porządek."] },
+        { id: "atom", t: "atom", a: 1, exp: "niepodzielny",
+          sub: "najmniejsza, niepodzielna cząstka materii w nauce Demokryta",
+          d: "Leukippos i jego uczeń Demokryt uznali, że istnieją tylko dwie rzeczy: niezliczone, maleńkie, wieczne cząstki i pusta przestrzeń, w której się poruszają. Cząstki różnią się kształtem i ułożeniem, a z ich zderzeń i połączeń powstaje wszystko – kamienie, ciała, a nawet dusza.",
+          f: "„Umownie słodkie, umownie gorzkie, umownie ciepłe, umownie zimne, umownie barwa; naprawdę zaś – atomy i próżnia” – Demokryt, fragment B9",
+          b: "Abdera; Demokryt żył ok. 460–370 p.n.e. Atomy przejmie Epikur, opisze je w poemacie Lukrecjusz, a w XIX wieku John Dalton zbuduje na nich nowoczesną chemię. Platon za to nigdy nie wymienił Demokryta z imienia.",
+          ex: "Litery są jak atomy: z kilkudziesięciu znaków powstaje każda książka świata. Arystoteles użył tego porównania: tragedia i komedia składają się z tych samych liter, inaczej ułożonych.",
+          tr: "Dzisiejszy atom wcale nie jest niepodzielny – ma jądro i elektrony, a jądro protony i neutrony. Nazwa została po Demokrycie, ale rolę jego „niepodzielnych” przejęły dziś cząstki elementarne.",
+          fun: "Według Arystoksenosa Platon chciał spalić wszystkie pisma Demokryta, jakie zdołałby zebrać. Odwiedli go dwaj pitagorejczycy: księgi i tak krążyły już wszędzie. Z około siedemdziesięciu dzieł Demokryta nie przetrwało żadne – zostały tylko cytaty. (Przekaz: Diogenes Laertios IX 40)",
+          q: ["Co według Demokryta istnieje naprawdę?",
+            "Tylko atomy i pusta przestrzeń",
+            "Cztery żywioły i dwie siły",
+            "Jeden nieruchomy, wieczny byt",
+            "Liczby i ich proporcje",
+            "Smak czy barwa to nasze wrażenia – naprawdę istnieją tylko atomy poruszające się w próżni."] },
+        { id: "presokratycy", t: "presokratycy",
+          sub: "pierwsi filozofowie Grecji, znani tylko z cudzych cytatów",
+          d: "Wspólna nazwa myślicieli od Talesa do Demokryta, nadana im dopiero w czasach nowożytnych. Ich księgi zaginęły; znamy ich z fragmentów – cytatów i streszczeń u późniejszych autorów, pisanych często setki lat po nich.",
+          f: "„Wolałbym znaleźć jedno wyjaśnienie przyczyny, niż zdobyć królestwo Persów” – Demokryt, fragment B118",
+          b: "W 1903 roku Hermann Diels zebrał wszystkie fragmenty w jednym tomie i ponumerował je. Stąd oznaczenia w tym kursie: litera B to zachowane słowa samego filozofa – na przykład fragment B12 Heraklita o rzece.",
+          ex: "Wyobraź sobie, że z całej Twojej biblioteki zostały tylko zdania, które inni zacytowali w swoich książkach. Z tak poszarpanych kawałków składamy dziś myśl Heraklita czy Parmenidesa – i dlatego wciąż się o nią spieramy.",
+          tr: "Presokratyk nie zawsze żył przed Sokratesem: Demokryt był od niego młodszy i przeżył go o kilkadziesiąt lat. Nazwa mówi raczej, że zajmowała ich głównie przyroda, a Sokrates – jak pisał Cyceron – sprowadził filozofię z nieba na ziemię.",
+          fun: "Demokryt odwiedził podobno Ateny i znał Sokratesa, choć ten nie znał jego. Wspominał to bez żalu: „Przybyłem do Aten i nikt mnie nie poznał”. (Przekaz: Diogenes Laertios IX 36)",
+          q: ["Skąd znamy myśl presokratyków?",
+            "Z cytatów i streszczeń u późniejszych autorów",
+            "Z ich ksiąg zachowanych w bibliotece w Atenach",
+            "Z napisów wyrytych na świątyni w Delfach",
+            "Z notatek, które spisał za nich Sokrates",
+            "Ich dzieła zaginęły; zostały fragmenty przytoczone przez innych – czasem setki lat później."] }
+      ]
+    }
+  ]
+});
+
+/* ===================== ETAP 2: TYMCZASEM NA WSCHODZIE ===================== */
+window.COURSE.stages.push({
+  id: "s2", title: "Tymczasem na Wschodzie", color: "pink",
+  sub: "Indie i Chiny, VIII–III w. p.n.e.: te same wielkie pytania w innych językach.",
+  badge: { icon: "⛰️", name: "Przez przełęcz", desc: "Zalicz rozmowę na przełęczy Hangu na końcu etapu 2." },
+  boss: {
+    name: "Na przełęczy Hangu", who: "Yinxi, strażnik przełęczy", short: "strażnika",
+    scene: "Według legendy strażnik Yinxi przepuścił starego Laoziego przez granicę dopiero wtedy, gdy ten spisał swoją mądrość. Ciebie przepuści po trzech dobrych odpowiedziach.",
+    q: [
+      ["Yinxi: „Upaniszady uczą, że w głębi każdego z nas mieszka wieczna jaźń. Co odpowiedziałby im Budda?”",
+        "Że nie ma stałej jaźni, jest tylko zmienny strumień",
+        "Że jaźń jest wieczna, ale uwięziona w ciele",
+        "Że jaźnią jest po prostu ciało i nic więcej",
+        "Że jaźń poznaje się dzięki ofiarom i rytuałom",
+        "Nauka o anatta to świadomy spór z Upaniszadami: zamiast trwałego atmana Budda widzi proces, który nieustannie się zmienia."],
+      ["Yinxi: „Mistrz Kong uczy rytuału i obowiązków. Stary mistrz, którego przepuściłem, uczy niedziałania. Czym różnią się ich drogi?”",
+        "Konfucjusz: ćwiczenie i obyczaj; Laozi: iść za naturą",
+        "Konfucjusz: ucieczka od ludzi; Laozi: władza w państwie",
+        "Obaj uczą dokładnie tego samego, innymi słowami",
+        "Konfucjusz: wędrówka dusz; Laozi: wiara w nirwanę",
+        "Dla Konfucjusza dobry człowiek rodzi się z nauki i obyczaju, dla Laoziego – z porzucenia przymusu i powrotu do prostoty."],
+      ["Yinxi: „Na zachodzie Tales mówił, że wszystko jest z wody. Stary mistrz pisze, że najwyższe dobro jest jak woda. Czy mówią o tym samym?”",
+        "Nie: Tales szuka tworzywa świata, Laozi – wzoru, jak żyć",
+        "Tak: obaj uważają, że wszystko powstało z wody",
+        "Nie: Tales mówi o morzu, a Laozi o lodzie i śniegu",
+        "Tak: obaj uczą, że wody nie wolno pić bez modlitwy",
+        "Ta sama woda, dwa różne pytania: z czego jest świat (Tales) i jak dobrze żyć – miękko, nisko, bez walki (Laozi)."]
+    ]
+  },
+  lessons: [
+    {
+      id: "s2l1", title: "Czas osiowy",
+      hook: "Gdy w Milecie Tales pytał o wodę, w Indiach nauczyciele szeptali uczniom, że ich najgłębsze „ja” i cały wszechświat to jedno. Najpewniej nic o sobie nie wiedzieli.",
+      task: "Zrób doświadczenie z Upaniszad: wsyp szczyptę soli do szklanki wody i poczekaj, aż się rozpuści. Spróbuj z wierzchu, ze środka i z dna. Zapisz własnymi słowami, co ojciec chciał tym pokazać synowi.",
+      cards: [
+        { id: "czasosiowy", t: "czas osiowy",
+          sub: "epoka ok. 800–200 p.n.e., gdy kilka kultur naraz zrodziło wielką myśl",
+          d: "Nazwa pochodzi od Karla Jaspersa, który zauważył, że w tych samych stuleciach, niezależnie od siebie, działali prorocy Izraela, autorzy Upaniszad i Budda w Indiach, Konfucjusz i Laozi w Chinach oraz pierwsi filozofowie Grecji. Wszędzie ludzie zaczęli pytać o sens, dobro i samych siebie.",
+          f: "„Oś historii świata leży, jak się zdaje, około 500 roku przed Chrystusem – w duchowym procesie, który toczył się między 800 a 200 rokiem” – Karl Jaspers, Vom Ursprung und Ziel der Geschichte (1949)",
+          b: "Grecy z etapu 1 są częścią tej samej fali. Historycy spierają się, czy ta jednoczesność to coś więcej niż zbieg okoliczności – ale to, że na różnych krańcach świata padły podobne pytania, wciąż zdumiewa.",
+          ex: "Wyobraź sobie mapę, na której niemal jednocześnie rozpalają się trzy ogniska: nad Morzem Egejskim, w dolinie Gangesu i nad Żółtą Rzeką. Nikt nie przenosił ognia z miejsca na miejsce – każde zapłonęło samo.",
+          tr: "Czas osiowy nie znaczy, że te kultury się kontaktowały ani że jedna uczyła drugą. Podobieństwa są tym ciekawsze, że najpewniej powstały niezależnie.",
+          fun: "Według tradycyjnych dat Konfucjusz zmarł w 479 roku p.n.e., a Heraklit około 475 – w tym samym stuleciu, w którym w Indiach nauczał Budda. Trzech wielkich nauczycieli, trzy krańce świata i najpewniej żadnej wieści o sobie nawzajem.",
+          q: ["Co Jaspers nazwał czasem osiowym?",
+            "Stulecia, gdy kilka kultur naraz zrodziło wielką myśl",
+            "Epokę, w której Grecy nauczyli filozofii Indie i Chiny",
+            "Czas, w którym po raz pierwszy zmierzono oś Ziemi",
+            "Okres, w którym powstał Jedwabny Szlak do Chin",
+            "Około 800–200 p.n.e. Grecja, Indie, Chiny i Izrael – bez kontaktu ze sobą – postawiły pytania, wokół których myślimy do dziś."] },
+        { id: "upaniszady", t: "Upaniszady", a: 1, exp: "siedzenie u stóp mistrza",
+          sub: "indyjskie teksty mądrości, rozmowy mistrzów z uczniami",
+          d: "Teksty zamykające Wedy; najstarsze powstały mniej więcej w VII–VI w. p.n.e. To często dialogi: uczeń siada u stóp nauczyciela, a ten prowadzi go od pytań o rytuał do pytania najgłębszego – kim naprawdę jestem i czym jest wszystko.",
+          f: "„Od nieprawdy prowadź mnie do prawdy, od ciemności prowadź mnie do światła, od śmierci prowadź mnie do nieśmiertelności” – Brihadaranjaka Upaniszada 1.3.28",
+          b: "Upaniszady stały się fundamentem wedanty, jednej z najważniejszych szkół myśli indyjskiej. Ponad dwa tysiące lat później zachwyci się nimi Schopenhauer: ich lekturę nazwie pociechą swojego życia i pociechą swojej śmierci.",
+          fun: "W Upaniszadach mędrcy toczą publiczne debaty. Filozofka Gargi tak długo dopytywała mistrza Jadźńawalkję, na czym wspiera się świat, że ten ją ostrzegł: „Nie pytaj za wiele, bo głowa ci odpadnie”. Wróciła później z dwoma pytaniami „jak z dwiema strzałami” – i ogłosiła, że nikt go nie pokona. (Źródło: Brihadaranjaka Upaniszada 3.6 i 3.8)",
+          q: ["Jak wyglądały Upaniszady w swojej typowej formie?",
+            "Jak rozmowy mistrza z uczniem o najgłębszych pytaniach",
+            "Jak zbiory praw spisane przez królów dla swoich poddanych",
+            "Jak długie poematy o wojnach bogów z demonami",
+            "Jak dokładne instrukcje budowy świątyń i ołtarzy",
+            "Uczeń siada u stóp mistrza i krok po kroku dochodzi do pytania: kim jestem i czym jest wszystko?"] },
+        { id: "atman", t: "atman i brahman", a: 1, exp: "jaźń i absolut",
+          sub: "najgłębsze „ja” człowieka i najgłębsza rzeczywistość świata – w istocie jedno",
+          d: "Jedno to rzeczywistość u podstaw całego świata, niewidzialna jak sól rozpuszczona w wodzie. Drugie to prawdziwe „ja” człowieka, ukryte głębiej niż myśli i uczucia. Wielkie odkrycie Upaniszad brzmi: te dwa są tym samym.",
+          f: "„Tym jesteś ty, Śwetaketu” (tat twam asi) – Czhandogja Upaniszada 6.8.7",
+          b: "Myśl o jednej rzeczywistości pod wieloma zjawiskami przypomina greckie poszukiwanie arche, a jeszcze bardziej Parmenidesa i jego jeden byt. To podobieństwo pytań, nie dowód kontaktu – drogi myśli zbiegły się niezależnie.",
+          ex: "Ojciec każe synowi wrzucić wieczorem sól do wody, a rano ją wyjąć. Syn nie znajduje grudki. „Spróbuj z wierzchu” – słone. „Ze środka” – słone. „Z dna” – słone. Tak jest z najsubtelniejszą istotą wszystkiego: nie widzisz jej, a jest wszędzie. I ty nią jesteś. (Czhandogja Upaniszada 6.13)",
+          tr: "Brahman to nie Brahma. Brahma to jeden z bogów hinduizmu, stwórca świata w mitach, a brahman – bezosobowa podstawa wszystkiego, także samych bogów. Bramin, czyli kapłan, to jeszcze inne słowo z tego samego rdzenia.",
+          q: ["Co chciał pokazać ojciec, rozpuszczając sól w wodzie?",
+            "Że ukryta istota przenika wszystko, choć jej nie widać",
+            "Że sól jest najcenniejszym skarbem w gospodarstwie",
+            "Że woda oczyszcza duszę z dawnych przewinień",
+            "Że prawdę poznaje się tylko po smaku i zapachu",
+            "Sól zniknęła z oczu, ale jest w każdej kropli – tak brahman jest we wszystkim, także w Tobie."] },
+        { id: "samsara", t: "samsara", a: 1, exp: "nieustanne krążenie",
+          sub: "koło narodzin i śmierci, napędzane przez karmę",
+          d: "Każda istota rodzi się wiele razy, a to, kim będzie, zależy od jej czynów – karmy. Dobre czyny prowadzą wyżej, złe niżej. Ostatecznym celem nie jest jednak lepsze odrodzenie, lecz wyzwolenie z tego koła – moksza.",
+          f: "„Jak kto działa, jak postępuje, taki się staje” – Brihadaranjaka Upaniszada 4.4.5",
+          b: "Pamiętasz metempsychozę Pitagorasa? Grecy i Hindusi doszli do podobnej wiary w wędrówkę dusz, choć nie wiemy, czy coś ich łączyło. Samsarę przejmie buddyzm – ale, jak zobaczysz w następnej lekcji, bez wiecznej duszy, która by wędrowała.",
+          ex: "Ogrodnik nie czeka na wyrok w sprawie swojego ogrodu: co posieje, to wyrośnie. Tak działa karma – nie jak sędzia, ale jak ziarno, które prędzej czy później kiełkuje.",
+          tr: "Karma to nie kara ani fatum. Słowo znaczy po prostu „czyn”. Chodzi o to, że czyny mają skutki, które do nas wracają – a nie o to, że ktoś z góry wymierza nam los.",
+          q: ["Co według Upaniszad decyduje o tym, kim się odrodzimy?",
+            "Nasze czyny, czyli karma",
+            "Wola najwyższego boga Brahmy",
+            "Ślepy przypadek i los",
+            "Pozycja społeczna rodziców",
+            "Karma znaczy „czyn”: to, jak działamy, kształtuje to, kim się stajemy – w tym życiu i w następnych."] }
+      ]
+    },
+    {
+      id: "s2l2", title: "Przebudzony",
+      hook: "Książę, który miał wszystko, porzucił pałac, bo nie umiał odpowiedzieć na jedno pytanie: skąd się bierze cierpienie? Po latach poszukiwań usiadł pod drzewem i postanowił nie wstawać, dopóki nie zrozumie.",
+      task: "Pomyśl o jednej sprawie, w której jesteś „przestrojony” – jak struna lutni naciągnięta za mocno albo za słabo. Zapisz, jak w tej sprawie wyglądałaby środkowa droga.",
+      cards: [
+        { id: "budda", t: "Budda", a: 1, exp: "przebudzony",
+          sub: "indyjski nauczyciel, założyciel buddyzmu",
+          d: "Siddhartha Gautama z rodu Śakjów. Po latach skrajnej ascezy usiadł pod drzewem w Bodh Gai i doznał oświecenia – zrozumiał, skąd bierze się cierpienie i jak się od niego uwolnić. Przez ponad czterdzieści lat nauczał w północnych Indiach, nie zostawiając żadnego pisma.",
+          f: "„Wszystko, co złożone, przemija. Dążcie do celu z czujnością” – ostatnie słowa Buddy, Digha Nikaja 16",
+          b: "Tradycja podaje lata 563–483 p.n.e., wielu badaczy przesuwa je o kilkadziesiąt lat później. Kilka wieków po jego śmierci nauka dotrze do Chin, potem do Korei, Japonii i Tybetu, a w XX wieku – do Europy i Ameryki.",
+          tr: "Słynne cztery spotkania – ze starcem, chorym, zmarłym i ascetą – to legenda. W najstarszych tekstach tę opowieść odnosi się do innego, mitycznego buddy z zamierzchłej przeszłości; dopiero późniejsze żywoty przypisały ją Siddharcie.",
+          fun: "Mnich nalegał, by Budda powiedział mu, czy świat jest wieczny i co dzieje się po śmierci. Budda odpowiedział przypowieścią: ranny zatrutą strzałą, który przed wyjęciem grotu chce wiedzieć, kto strzelał i z jakiego łuku, umrze, zanim się dowie. Najpierw trzeba wyjąć strzałę. (Źródło: Kanon palijski, Majjhima Nikaja 63)",
+          q: ["Co znaczy przypowieść o zatrutej strzale?",
+            "Że najpierw leczy się cierpienie, a nie spekuluje",
+            "Że łucznik zawsze odpowiada za swoje czyny",
+            "Że świat jest wieczny i nie ma początku",
+            "Że cierpienie jest karą za grzechy przodków",
+            "Budda odsuwał pytania, których rozstrzygnięcie niczego nie zmienia; ważne jest to, co uwalnia od cierpienia."] },
+        { id: "czteryprawdy", t: "cztery szlachetne prawdy",
+          sub: "sedno nauki Buddy: o cierpieniu, jego źródle, końcu i drodze",
+          d: "Pierwsza: życie jest naznaczone cierpieniem i niespełnieniem. Druga: jego źródłem jest pożądanie, w języku pali tanha – dosłownie pragnienie, jak u spragnionego. Trzecia: gdy pragnienie gaśnie, gaśnie i cierpienie – to nirwana. Czwarta: prowadzi do tego ośmioraka ścieżka.",
+          f: "„To jest cierpienie, to jest jego źródło, to jest jego ustanie, to jest droga do jego ustania” – pierwsze kazanie Buddy, Samjutta Nikaja 56.11",
+          b: "Kazanie wygłosił w Parku Jelenim w Sarnath pięciu dawnym towarzyszom ascezy. Nazywa się je „wprawieniem w ruch koła Dharmy” – stąd koło jako symbol buddyzmu.",
+          ex: "Te prawdy często porównuje się do wizyty u lekarza: diagnoza (cierpienie), przyczyna (pragnienie), rokowanie (da się wyleczyć) i kuracja (ośmioraka ścieżka).",
+          tr: "Buddyzm nie każe cierpieć ani nie twierdzi, że życie to sam ból. Słowo dukkha znaczy też niedosyt – uwieranie, gdy rzeczy nie są takie, jak chcemy, i to, że nawet radość przemija.",
+          fun: "Kisa Gotami błagała Buddę o lekarstwo dla zmarłego synka. Obiecał pomóc, jeśli przyniesie ziarnko gorczycy z domu, w którym nikt nigdy nie umarł. Obeszła całe miasto – i zrozumiała, że śmierć dotyka każdego. Została mniszką. (Przekaz: komentarz do Dhammapady, ok. V w. n.e.)",
+          q: ["Co według drugiej szlachetnej prawdy jest źródłem cierpienia?",
+            "Pragnienie, czyli kurczowe chcenie",
+            "Gniew bogów i złe duchy",
+            "Ciało, które jest z natury złe",
+            "Brak wiedzy o liczbach i gwiazdach",
+            "Cierpienie rodzi się z pragnienia – z chcenia, by było inaczej, niż jest, i z trzymania się tego, co przemija."] },
+        { id: "srodkowadroga", t: "środkowa droga",
+          sub: "ścieżka między rozpustą a umartwianiem się",
+          d: "Zanim Budda doznał oświecenia, przez lata głodził się i umartwiał – i przekonał się, że prowadzi to donikąd, tak samo jak wcześniejsze życie w pałacowym zbytku. Właściwa ścieżka omija oba bieguny: nie folguje sobie i nie zadaje sobie bólu.",
+          f: "„Są dwie skrajności, których powinien unikać ten, kto opuścił dom: oddawanie się przyjemnościom zmysłów i dręczenie samego siebie” – pierwsze kazanie Buddy, Samjutta Nikaja 56.11",
+          b: "Podobną myśl rozwinie w Grecji Arystoteles: cnota to złoty środek między dwiema skrajnościami, jak odwaga między tchórzostwem a brawurą. Spotkasz go kilka etapów dalej.",
+          ex: "Mnich Sona ćwiczył medytację w chodzeniu tak zawzięcie, że krwawiły mu stopy – i chciał już wszystko rzucić. Budda zapytał dawnego lutnistę: czy lutnia gra, gdy struny są zbyt napięte? Nie. Gdy zbyt luźne? Też nie. A gdy nastrojone w sam raz? Tak samo jest z wysiłkiem. (Anguttara Nikaja 6.55)",
+          q: ["Czego uczy przypowieść o strunach lutni?",
+            "Że wysiłek trzeba nastroić: ani za mocno, ani za słabo",
+            "Że muzyka jest najkrótszą i najlepszą drogą do oświecenia",
+            "Że trzeba ćwiczyć coraz mocniej, aż do bólu i krwi",
+            "Że najlepiej zrezygnować z wszelkiego wysiłku na zawsze",
+            "Za mocno – pęka cierpliwość, za słabo – nic się nie dzieje. Dobra praktyka jest jak dobrze nastrojona struna."] },
+        { id: "anatta", t: "anatta", a: 1, exp: "brak stałego ja",
+          sub: "nauka Buddy, że w człowieku nie ma niezmiennej jaźni",
+          d: "Wszystko jest nietrwałe – ciało, uczucia, myśli. Skoro tak, nie ma w nas niczego stałego, co można by nazwać wieczną duszą. „Ja” to raczej strumień zmieniających się zjawisk, a kurczowe trzymanie się wyobrażenia o stałym „ja” rodzi cierpienie.",
+          f: "„Jak ze złożenia części powstaje słowo «wóz», tak gdy są składniki istnienia, mówimy «istota»” – mniszka Wadżira, Samjutta Nikaja 5.10",
+          b: "To świadomy spór z Upaniszadami i ich wiecznym atmanem. A dla nas – echo Heraklita: wszystko płynie, także ten, kto patrzy na rzekę. Najsłynniejsze wyjaśnienie tej nauki mnich Nagasena dał greckiemu królowi Menandrowi.",
+          ex: "Król Menander pyta mnicha Nagasenę, kim on jest. Ten pyta w odpowiedzi: czym jest twój wóz? Dyszlem? Kołem? Osią? Żadną z tych części – a jednak mówimy „wóz”. Tak samo „Nagasena” to nazwa dla zmieniającego się zbioru, nie dla ukrytej, stałej istoty. (Pytania Milindy)",
+          fun: "Menander, rozmówca Nagaseny, był greckim królem jednego z państw powstałych w Azji po wyprawie Aleksandra Wielkiego. Plutarch pisze, że po jego śmierci miasta podzieliły się prochami władcy i wzniosły nad nimi pomniki – zupełnie jak przy relikwiach Buddy. (Przekaz: Plutarch, Moralia 821d)",
+          q: ["Co Nagasena chciał pokazać, rozbierając na części królewski wóz?",
+            "Że „ja” to nazwa dla zmiennego zbioru, nie stała istota",
+            "Że wozy budowane przez Greków są gorsze od indyjskich",
+            "Że dusza mieszka w ciele jak woźnica na wozie",
+            "Że każdą rzecz można naprawić, wymieniając części",
+            "Tak jak nie ma „wozu” poza kołem, osią i dyszlem, tak nie ma „ja” poza zmieniającymi się składnikami."] }
+      ]
+    },
+    {
+      id: "s2l3", title: "Mistrz Kong",
+      hook: "Chciał doradzać władcom, ale większość z nich go nie słuchała. Zamiast urzędu został nauczycielem – a przez następne dwa tysiące lat jego uczniami byli niemal wszyscy wykształceni Chińczycy.",
+      task: "Konfucjusz mówił, że gdy idzie trzech ludzi, wśród nich na pewno jest jego nauczyciel. Pomyśl o trzech osobach, z którymi rozmawiasz w tym tygodniu, i zapisz, czego możesz się nauczyć od każdej – także od tej, która Cię irytuje.",
+      cards: [
+        { id: "konfucjusz", t: "Konfucjusz",
+          sub: "chiński nauczyciel moralności i ładu społecznego",
+          d: "Mistrz Kong, po chińsku Kongzi (czyt. kung-dzy), z państwa Lu. Wierzył, że dobre społeczeństwo zaczyna się od dobrego człowieka, a dobrym człowiekiem można się stać – przez naukę, ćwiczenie i szacunek dla innych. Jego słowa spisali uczniowie w zbiorze rozmów, po chińsku Lunyu.",
+          f: "„Uczyć się i w stosownej chwili powtarzać to, czego się nauczyło – czyż to nie radość?” – Dialogi konfucjańskie 1.1",
+          b: "Lu, 551–479 p.n.e. Stojąc nad rzeką, powiedział: „Wszystko przemija jak ta woda, nie ustając ani dniem, ani nocą” (ks. 9). Na drugim krańcu świata mniej więcej w tym samym czasie podobne zdanie zapisał Heraklit.",
+          ex: "Pierwsze zdanie „Dialogów” brzmi jak instrukcja tego kursu: karty wracają do Ciebie właśnie w stosownej chwili – po dniu, po trzech dniach, po tygodniu. Badacze pamięci potwierdzili tę starą radę dopiero w XIX wieku.",
+          fun: "Kiedy spłonęły stajnie, Konfucjusz, wróciwszy z dworu, zapytał tylko: „Czy ktoś ucierpiał?”. O konie nie pytał. Jedno zdanie, a mówi o jego hierarchii wartości więcej niż niejeden traktat. (Źródło: Dialogi konfucjańskie, ks. 10)",
+          q: ["Od czego według Konfucjusza zaczyna się dobre państwo?",
+            "Od dobrego człowieka, który się uczy i doskonali",
+            "Od silnej armii, która budzi strach sąsiadów",
+            "Od surowych praw, które karzą każde przewinienie",
+            "Od bogactwa, które pozwala wszystkich nakarmić",
+            "Ład w państwie rośnie z ładu w ludziach – dlatego zaczynał od wychowania, a nie od kar."] },
+        { id: "ren", t: "ren", a: 1, exp: "człowieczność",
+          sub: "najwyższa cnota w nauce Konfucjusza: życzliwość wobec ludzi (czyt. żen)",
+          d: "Zapytany, czym jest ta cnota, Konfucjusz odpowiedział krótko: „Kochać ludzi”. To życzliwość, która umie postawić się na miejscu drugiego. Chiński znak łączy elementy „człowiek” i „dwa” – cnota rodzi się między ludźmi, a nie w samotności.",
+          f: "„Czego sam nie pragniesz, tego nie czyń innym” – Dialogi konfucjańskie, ks. 12 i 15",
+          b: "To złota reguła w wersji przeczącej. Podobne zasady znają Biblia, filozofowie greccy i niemal wszystkie wielkie tradycje. Kant uzna ją za niewystarczającą i zaproponuje coś mocniejszego – imperatyw kategoryczny; wróci to w etapie o Kancie.",
+          ex: "Zanim powiesz komuś przykrą prawdę przy całym zespole, zapytaj siebie: czy chcę usłyszeć ją w ten sposób? Tak działa ren – nie jako regulamin, ale jako odruch postawienia się po drugiej stronie.",
+          q: ["Jak Konfucjusz streścił ren w dwóch słowach?",
+            "Kochać ludzi",
+            "Słuchać władcy",
+            "Czcić przodków",
+            "Unikać cierpienia",
+            "Ren to człowieczność: życzliwość wobec innych, która zaczyna się od postawienia się na ich miejscu."] },
+        { id: "li", t: "li", a: 1, exp: "obyczaj, rytuał",
+          sub: "rytuał i dobre obyczaje, które kształtują charakter",
+          d: "Formy zachowania: ukłony, sposób witania gości, ceremonie żałobne, uprzejmość przy stole. Dla Konfucjusza to nie pusta etykieta, lecz ćwiczenie, dzięki któremu szacunek i życzliwość wchodzą w krew. Zewnętrzna forma kształtuje wewnętrzną postawę.",
+          f: "„Kto nie zna obyczaju, nie ma na czym stanąć” – Dialogi konfucjańskie 20.3",
+          ex: "Mówienie „dzień dobry” sąsiadowi, za którym się nie przepada, to nie hipokryzja, tylko ćwiczenie. Powtarzany gest szacunku z czasem przestaje być wysiłkiem – i staje się szacunkiem prawdziwym.",
+          tr: "Obyczaj bez serca to teatr. Konfucjusz pytał: „Człowiek bez człowieczności – na cóż mu obyczaj?” (ks. 3). Li ma wyrażać ren, a nie go udawać.",
+          fun: "Uczeń Chen Kang zapytał syna Konfucjusza, czy ojciec przekazał mu jakąś tajną naukę. Syn odparł, że ojciec zapytał go tylko, czy uczy się „Pieśni” i obyczajów. Chen Kang się ucieszył: dowiedział się trzech rzeczy – o „Pieśniach”, o obyczaju i o tym, że mistrz nie wyróżnia własnego syna. (Źródło: Dialogi konfucjańskie 16.13)",
+          q: ["Po co według Konfucjusza są rytuały i dobre obyczaje?",
+            "By ćwiczyć szacunek, aż stanie się drugą naturą",
+            "By zadowolić bogów i zapewnić dobre zbiory",
+            "By odróżnić bogatych od biednych na pierwszy rzut oka",
+            "By zastąpić prawdziwe uczucia pustą formą",
+            "Forma to trening: powtarzane gesty szacunku kształtują w końcu szacunek prawdziwy."] },
+        { id: "junzi", t: "junzi", a: 1, exp: "szlachetny człowiek",
+          sub: "ideał Konfucjusza: szlachetny charakterem, nie urodzeniem (czyt. dziun-dzy)",
+          d: "Dawniej słowo oznaczało syna władcy, arystokratę. Konfucjusz zmienił jego sens: szlachetnym czyni nie ród, lecz charakter. Taki człowiek kieruje się tym, co słuszne, a nie tym, co się opłaca, i najpierw wymaga od siebie, potem od innych.",
+          f: "„Szlachetny rozumie to, co słuszne; mały człowiek – to, co opłacalne” – Dialogi konfucjańskie 4.16",
+          b: "To był przewrót: szlachectwo można zdobyć nauką i pracą nad sobą. Konfucjusz przyjmował każdego, kto przyniósł choćby wiązkę suszonego mięsa jako czesne (ks. 7) – jako jeden z pierwszych otworzył naukę dla ludzi z różnych warstw.",
+          ex: "Dwóch handlowców dostaje tę samą propozycję. Jeden pyta: co na tym zarobię? Drugi: czy to uczciwe? Obaj mogą zarobić – ale tylko drugi myśli jak junzi.",
+          fun: "Konfucjusz tak streścił swoje życie: w wieku piętnastu lat postanowił się uczyć, w trzydziestym stanął pewnie, w czterdziestym pozbył się wątpliwości, w pięćdziesiątym poznał wolę Nieba, w sześćdziesiątym nauczył się słuchać, a w siedemdziesiątym szedł za głosem serca, nie przekraczając miary. (Źródło: Dialogi konfucjańskie 2.4)",
+          q: ["Co było przełomowe w konfucjańskim pojęciu szlachetnego człowieka?",
+            "Że o szlachetności decyduje charakter, nie ród",
+            "Że szlachetnym może być tylko syn cesarza",
+            "Że szlachetny człowiek nie musi się uczyć",
+            "Że szlachetność kupuje się za zasługi wojenne",
+            "Junzi to ideał dostępny dla każdego, kto pracuje nad sobą – stąd ogromna siła tej myśli."] }
+      ]
+    },
+    {
+      id: "s2l4", title: "Droga wody",
+      hook: "Nie ma nic bardziej miękkiego niż woda, a jednak kruszy najtwardsze skały. Według legendy napisał to stary archiwista, który na zawsze opuszczał Chiny – i zostawił po sobie jedną cienką księgę.",
+      task: "„Podróż na tysiąc li zaczyna się pod stopami.” Zapisz jedną sprawę, którą od dawna odkładasz, i najmniejszy krok, jaki możesz w niej zrobić jutro – taki na pięć minut.",
+      cards: [
+        { id: "laozi", t: "Laozi",
+          sub: "legendarny mędrzec, któremu przypisuje się „Księgę Drogi i Cnoty” (czyt. lao-dzy)",
+          d: "Imię znaczy po prostu „Stary Mistrz”. Według tradycji był archiwistą na dworze dynastii Zhou i starszym rówieśnikiem Konfucjusza. Przypisywana mu księga – zaledwie około pięciu tysięcy znaków – uczy prostoty, łagodności i życia w zgodzie z naturą.",
+          f: "„Kto zna innych, jest mądry. Kto zna siebie, jest oświecony” – Księga Drogi i Cnoty, rozdz. 33",
+          b: "Historycy wątpią, czy był jedną realną osobą; księga powstawała zapewne stopniowo w IV–III w. p.n.e. Jego słowa o poznaniu siebie brzmią jak echo delfickiego „Poznaj samego siebie” i Talesa, dla którego było to najtrudniejsze ze wszystkiego.",
+          tr: "Bawół, na którym Laozi odjeżdża na zachód na tysiącach obrazów, pojawia się dopiero w późniejszych legendach. Sima Qian pisze tylko, że mistrz dotarł do przełęczy, spisał księgę na prośbę strażnika i odszedł – „nikt nie wie, gdzie zakończył życie”.",
+          fun: "Według kronikarza Sima Qiana Konfucjusz odwiedził Laoziego i wyszedł oszołomiony: „Wiem, jak ptak lata, ryba pływa, a zwierzę biega. Ale smoka, który na wietrze i chmurach wznosi się do nieba, pojąć nie umiem. Dziś widziałem Laoziego – jest jak smok”. (Legenda: Sima Qian, Zapiski historyka, ok. 100 p.n.e.)",
+          q: ["Co wiemy na pewno o życiu Laoziego?",
+            "Niewiele – już starożytni kronikarze mieli wątpliwości",
+            "Że był cesarzem, który abdykował, by w spokoju medytować",
+            "Że był uczniem Konfucjusza i spisał wszystkie jego słowa",
+            "Że spędził całe życie w klasztorze wysoko w górach",
+            "Już Sima Qian ok. 100 p.n.e. podawał kilka wersji – Laozi to bardziej legenda niż biografia."] },
+        { id: "dao", t: "dao", a: 1, exp: "droga",
+          sub: "źródło i bieg wszystkiego, którego nie da się zamknąć w słowach",
+          d: "Słowo znaczy drogę, ale też mówić. W „Księdze Drogi i Cnoty” to niewyrażalne źródło świata i zarazem sposób, w jaki wszystko się toczy – jak bieg wody czy zmiana pór roku. Nie da się go zdefiniować; można się w nie wsłuchać i iść z nim w zgodzie.",
+          f: "„Droga, którą da się wypowiedzieć, nie jest wieczną Drogą” – Księga Drogi i Cnoty, rozdz. 1",
+          b: "Pamiętasz logos Heraklita? Oba słowa znaczą jednocześnie mowę i ukryty porządek świata, a obaj mistrzowie mówili o nim zagadkami. Ta sama intuicja na dwóch krańcach świata.",
+          ex: "Trzydzieści szprych schodzi się w jednej piaście, ale to pusta przestrzeń w środku sprawia, że koło się toczy. Garnek lepi się z gliny, a przydaje się jego pustka. Dao działa jak ta pustka: niewidoczne, a bez niego nic nie działa. (rozdz. 11)",
+          q: ["Dlaczego według pierwszego zdania „Księgi Drogi i Cnoty” dao nie da się wypowiedzieć?",
+            "Bo każda definicja byłaby mniejsza niż ono samo",
+            "Bo jego nazwa była tajemnicą dworu cesarskiego",
+            "Bo mnichom surowo zakazano o nim mówić pod karą",
+            "Bo słowo dao jeszcze wtedy w ogóle nie istniało",
+            "Słowa dzielą i ograniczają, a dao jest całością – dlatego mówi się o nim obrazami i paradoksami."] },
+        { id: "wuwei", t: "wu wei", a: 1, exp: "niedziałanie",
+          sub: "działanie bez wymuszania, w zgodzie z naturą rzeczy (czyt. u łej)",
+          d: "Dosłownie „niedziałanie”, ale nie chodzi o lenistwo. To działanie bez szarpaniny i przymusu – jak woda, która nie walczy z kamieniem, tylko go opływa, a z czasem drąży. Mędrzec nie wtrąca się bez potrzeby i właśnie dlatego wszystko idzie dobrze.",
+          f: "„Najwyższe dobro jest jak woda. Woda służy wszystkim istotom i z nikim nie walczy” – Księga Drogi i Cnoty, rozdz. 8",
+          b: "Pamiętasz wodę Talesa? Tam była tworzywem świata, tu jest wzorem życia: nisko, miękko, bez walki – a jednak skutecznie. Podobnie myśleć będą stoicy: nie szarp się z tym, czego nie zmienisz.",
+          ex: "Kucharz Ding przez dziewiętnaście lat dzielił woły tym samym nożem, a ostrze wciąż było jak świeżo naostrzone. Sekret? Nie rąbał kości, tylko prowadził nóż szczelinami, które już tam były. Tak wygląda wu wei w praktyce. (Zhuangzi, rozdz. 3)",
+          q: ["Co oznacza wu wei w praktyce?",
+            "Działanie zgodne z naturą rzeczy, bez wymuszania",
+            "Całkowite powstrzymanie się od wszelkiej pracy",
+            "Ścisłe przestrzeganie rytuałów i ceremonii",
+            "Walkę z przeciwnościami aż do zwycięstwa",
+            "Jak u kucharza Dinga: dużo pracy, ale idącej po liniach, które już są – zamiast rąbać na siłę."] },
+        { id: "zhuangzi", t: "Zhuangzi",
+          sub: "taoistyczny mędrzec, mistrz przypowieści i paradoksu (czyt. dżuang-dzy)",
+          d: "Żył w IV w. p.n.e. i odmówił wysokiego urzędu, by zachować wolność. Pisał przypowieści pełne humoru, które podważają naszą pewność siebie: skąd wiesz, że to, co bierzesz za ważne, naprawdę jest ważne? Życie i śmierć traktował jak następujące po sobie pory roku.",
+          f: "„Wszyscy znają pożytek z tego, co użyteczne, nikt nie zna pożytku z tego, co bezużyteczne” – Zhuangzi, rozdz. 4",
+          b: "Pytanie o sen i jawę wróci w Europie dwa tysiące lat później u Kartezjusza: skąd wiem, że właśnie teraz nie śnię? Spotkasz go w dalszej części kursu.",
+          ex: "Zhuangzi śnił, że jest motylem, który beztrosko frunie i nic nie wie o Zhuangzim. Gdy się obudził, zapytał: czy to Zhuangzi śnił, że jest motylem, czy motyl śni teraz, że jest Zhuangzim? (rozdz. 2)",
+          fun: "Król Chu wysłał do Zhuangziego posłów z propozycją urzędu. Mędrzec łowił akurat ryby i zapytał: czy święty żółw, którego kości od trzech tysięcy lat czci się w świątyni, wolałby być martwy i czczony, czy żywy i ciągnąć ogon po błocie? Posłowie przyznali, że żywy. „Idźcie więc – odparł – ja też wolę ciągnąć ogon po błocie”. (Przekaz: Zhuangzi, rozdz. 17 – ta część księgi powstała zapewne już po nim)",
+          q: ["Co chciał podważyć Zhuangzi opowieścią o motylu?",
+            "Naszą pewność co do tego, co jest snem, a co jawą",
+            "Wiarę w to, że zwierzęta mają nieśmiertelne dusze",
+            "Przekonanie, że owady są mniej ważne od ludzi",
+            "Pogląd, że sny przepowiadają przyszłe wydarzenia",
+            "Skoro we śnie motyl nie wie, że śni, skąd pewność, że my teraz nie śnimy?"] }
+      ]
+    }
+  ]
+});
+
+</script>
+<script>
+
+(() => {
+'use strict';
+const COURSE = window.COURSE;
+const $ = (s, r = document) => r.querySelector(s);
+const $view = $('#view'), $top = $('#top'), $tabs = $('#tabs'), $toast = $('#toast');
+
+/* ================= indexes ================= */
+const STAGES = COURSE.stages, LESSONS = [], CARDS = Object.create(null), CARD_LIST = [];
+STAGES.forEach((st, si) => {
+  st.n = si + 1;
+  st.lessons.forEach(ls => {
+    ls.stage = st; ls.gi = LESSONS.length; ls.n = LESSONS.length + 1; LESSONS.push(ls);
+    ls.cards.forEach(c => { c.stage = st; c.lesson = ls; CARDS[c.id] = c; CARD_LIST.push(c); });
+  });
+});
+const TOTAL = CARD_LIST.length;
+
+/* ================= config ================= */
+const INTERVALS = [0, 1, 3, 7, 16, 35];
+const DOW = ['Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'Sb', 'Nd'];
+const C0 = COURSE.config || {};
+const L = Object.assign({
+  unit1: 'pojęcie', unit2: 'pojęcia', unit5: 'pojęć',
+  unitNew1: 'nowe pojęcie', unitNew2: 'nowe pojęcia', unitNew5: 'nowych pojęć',
+  secD: 'Co to znaczy', secF: 'Wzór', secB: 'Warto wiedzieć', secEx: 'Przykład',
+  secSay: 'W praktyce', secTr: 'Pułapka', secFun: 'Ciekawostka',
+  sayWho: '', sayAsk: 'co to znaczy?', sayMean: 'Znaczy:',
+  quizPhase: 'Sprawdzian', taskTitle: 'Zadanie',
+  taskHelp: 'Odpowiedź zapisze się w zakładce {notes}. Można wrócić do niej później.',
+  taskPlaceholder: 'Wystarczy kilka zdań.',
+  starOn: 'Ważne dla mnie',
+  expLabel: 'Rozwiń skrót', revLabel: 'Który skrót to…', defLabel: 'Które pojęcie pasuje do opisu?',
+  flipHintExp: 'Rozwiń skrót i powiedz na głos, co oznacza.',
+  flipHintDef: 'Powiedz na głos, co to znaczy.',
+  dictTitle: 'Słownik', dictIntro: 'Wszystko, czego się uczysz, w jednym miejscu.',
+  dictSearch: 'Szukaj…', dictPeek: 'Pokaż też nieodblokowane',
+  notesTitle: 'Notatnik', notesIntro: 'Tu zbiera się to, co z kursu zostaje na dłużej: zaznaczone karty i odpowiedzi na zadania.',
+  notesStars: 'Ważne dla mnie', notesFile: 'Notatki',
+  flashIntro: '60 sekund, ile zdążysz. To buduje automatyzm: widzisz hasło i od razu wiesz.',
+  flashA: 'Rozwijaj skróty', flashB: 'Dopasuj znaczenia',
+  newLine: 'Zaczynasz nowy kurs. Pierwsza lekcja trwa ok. 15 minut.',
+  masterTitle: 'Utrzymaj wiedzę w formie',
+  levelsNote: 'Poziomy rosną razem z liczbą zdobytych XP.',
+  about: ''
+}, C0.labels || {});
+const BOSS = Object.assign({
+  name: 'Sprawdzian etapu', icon: '🤝', pass: 0.65, go: 'Zaczynam',
+  winTitle: 'Zaliczone!', loseTitle: 'Jeszcze nie tym razem', nextWord: 'Sprawdzian'
+}, C0.boss || {});
+const EXAM = Object.assign({
+  name: 'Egzamin końcowy', icon: '🏆', pass: 0.8, go: 'Zaczynam',
+  kicker: 'Wielki finał', scene: 'Pytania z całego kursu, na każde 25 sekund.',
+  winTitle: 'Zaliczone!', loseTitle: 'Niewiele zabrakło', winLine: 'Cały materiał masz w głowie.'
+}, C0.exam || {});
+const CFG = {
+  id: C0.id || 'kurs', title: C0.title || 'Kurs', mark: (C0.mark || '★').slice(0, 3),
+  goal: C0.goal || 3, exam: EXAM.n || 20
+};
+const BOSS_PASS = BOSS.pass, DEMO_PASS = EXAM.pass;
+const LEVELS = (C0.levels && C0.levels.length === 6) ? C0.levels : [
+  { min: 0, code: 'A1', name: 'Początek', note: 'Pierwsze kroki. Każdy tak zaczynał.' },
+  { min: 400, code: 'A2', name: 'Rozgrzany', note: 'Podstawy zaczynają siedzieć.' },
+  { min: 1300, code: 'B1', name: 'Praktyk', note: 'Łapiesz już większość tematu.' },
+  { min: 3000, code: 'B2', name: 'Zaawansowany', note: 'Rzadko trzeba Ci podpowiadać.' },
+  { min: 5500, code: 'C1', name: 'Ekspert', note: 'Tłumaczysz to innym.' },
+  { min: 8500, code: 'C2', name: 'Mistrz', note: 'Ten temat już Cię nie zaskoczy.' }
+];
+const BADGES = [
+  { id: 'first', icon: '🌱', name: 'Pierwszy krok', desc: 'Ukończ pierwszą lekcję.' },
+  { id: 'week', icon: '📅', name: 'Tydzień zaliczony', desc: 'Zrealizuj tygodniowy cel sesji.' },
+  { id: 'streak3', icon: '🔥', name: 'Trzy tygodnie z rzędu', desc: 'Utrzymaj serię 3 tygodni.' },
+  { id: 'streak6', icon: '🚀', name: 'Sześć tygodni z rzędu', desc: 'Utrzymaj serię 6 tygodni.' },
+  { id: 'half', icon: '⛰️', name: 'Półmetek', desc: 'Ukończ połowę lekcji.' },
+  { id: 'elephant', icon: '🐘', name: 'Pamięć słonia', desc: 'Utrwal 25 kart (pudełko 4 lub wyżej).' },
+  { id: 'flash15', icon: '⚡', name: 'Błyskawica', desc: 'Zdobądź 15 punktów w szybkiej rundzie.' },
+  { id: 'perfect', icon: '🎯', name: 'Bez pudła', desc: '10 poprawnych odpowiedzi z rzędu.' },
+  { id: 'early', icon: '🌅', name: 'Ranny ptaszek', desc: 'Ukończ sesję przed 8:00.' },
+  { id: 'night', icon: '🌙', name: 'Nocny marek', desc: 'Ukończ sesję po 22:00.' },
+  { id: 'notes', icon: '📓', name: 'Notatnik', desc: 'Zaznacz 5 kart i zapisz 5 odpowiedzi na zadania.' },
+  { id: 'marathon', icon: '🏃', name: 'Maratończyk', desc: 'Ucz się w 30 różnych dniach.' },
+  { id: 'demo', icon: EXAM.icon, name: EXAM.name, desc: 'Zalicz egzamin końcowy.' }
+].concat(COURSE.stages.filter(st => st.badge).map(st => ({
+  id: 'st_' + st.id, icon: st.badge.icon, name: st.badge.name,
+  desc: st.badge.desc || `Zalicz: ${st.boss.name}.`
+})));
+const OK_WORDS = C0.okWords || ['Dobrze!', 'Trafione.', 'Dokładnie tak.', 'Brawo!', 'Tak jest.'];
+const BAD_WORDS = C0.badWords || ['Nie tym razem.', 'Prawie.', 'To nie to.', 'Pudło – ale właśnie tak się utrwala.'];
+const unit = n => plural(n, L.unit1, L.unit2, L.unit5);
+const unitNew = n => plural(n, L.unitNew1, L.unitNew2, L.unitNew5);
+const sayQ = q => (L.sayWho ? L.sayWho + ': ' : '') + '„' + q + '”';
+
+/* ================= utils ================= */
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const rnd = a => a[Math.floor(Math.random() * a.length)];
+const norm = s => String(s == null ? '' : s).toLowerCase().trim();
+const dayNum = (d = new Date()) => Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000);
+const weekStart = dn => dn - ((new Date(dn * 86400000).getUTCDay() + 6) % 7);
+const fmt = n => Number(n).toLocaleString('pl-PL');
+const pct = x => Math.round(x * 100) + '%';
+const plural = (n, one, few, many) => { n = Math.abs(n); if (n === 1) return one; const d = n % 10, h = n % 100; return (d >= 2 && d <= 4 && !(h >= 12 && h <= 14)) ? few : many; };
+const reduced = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+const lc = s => s ? s.charAt(0).toLowerCase() + s.slice(1) : s;
+function md(text) {
+  const lines = esc(text).split(/\r?\n/); let h = '', inList = false;
+  const inline = s => s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  lines.forEach(raw => {
+    const l = raw.trim();
+    const li = l.match(/^(?:[-*•]|\d+[.)])\s+(.*)$/);
+    if (li) { if (!inList) { h += '<ul>'; inList = true; } h += `<li>${inline(li[1])}</li>`; return; }
+    if (inList) { h += '</ul>'; inList = false; }
+    if (!l) return;
+    const hd = l.match(/^#{1,4}\s+(.*)$/);
+    if (hd) { h += `<h3>${inline(hd[1])}</h3>`; return; }
+    h += `<p>${inline(l)}</p>`;
+  });
+  if (inList) h += '</ul>';
+  return `<div class="md">${h}</div>`;
+}
+let toastT = null;
+function toast(msg) { $toast.textContent = msg; $toast.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => $toast.classList.remove('show'), 2800); }
+
+/* ================= state ================= */
+const LS_KEY = 'kurs.' + (COURSE.config && COURSE.config.id || 'kurs') + '.v1';
+const fresh = () => ({ v: 1, created: Date.now(), updatedAt: 0, xp: 0, cards: {}, lessonsDone: {}, boss: {}, days: {}, sessions: 0, notes: {}, noteXP: {}, stars: {}, badges: {}, speed: { acr: 0, def: 0 }, run: 0, bestRun: 0, weekBonus: {}, demo: 0, settings: { goal: CFG.goal, theme: 'auto', name: '' } });
+function normalize(s) {
+  const f = fresh();
+  if (!s || typeof s !== 'object' || s.v !== 1) return f;
+  const o = Object.assign(f, s);
+  o.settings = Object.assign(fresh().settings, s.settings || {});
+  o.speed = Object.assign({ acr: 0, def: 0 }, s.speed || {});
+  ['cards', 'lessonsDone', 'boss', 'days', 'notes', 'noteXP', 'stars', 'badges', 'weekBonus'].forEach(k => { if (!o[k] || typeof o[k] !== 'object') o[k] = {}; });
+  return o;
+}
+function loadLocal() { try { const raw = localStorage.getItem(LS_KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; } }
+let S = normalize(loadLocal());
+function writeLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) { /* storage may be unavailable */ } }
+function save() { S.updatedAt = Date.now(); writeLocal(); }
+
+/* ================= theme ================= */
+const HOST_THEME = document.documentElement.getAttribute('data-theme');
+function applyTheme() { const t = S.settings.theme, el = document.documentElement; if (t === 'light' || t === 'dark') el.setAttribute('data-theme', t); else if (HOST_THEME) el.setAttribute('data-theme', HOST_THEME); else el.removeAttribute('data-theme'); }
+
+/* ================= spaced repetition ================= */
+function learnCard(id) { if (S.cards[id]) return false; S.cards[id] = { b: 1, due: dayNum() + 1, n: 0, ok: 0 }; return true; }
+function grade(id, g) {
+  const today = dayNum();
+  const c = S.cards[id] || (S.cards[id] = { b: 1, due: today, n: 0, ok: 0 });
+  c.n++; c.last = today;
+  if (g === 0) { c.b = 1; c.due = today + 1; }
+  else if (g === 1) { c.b = Math.max(1, c.b); c.due = today + Math.max(1, Math.round(INTERVALS[c.b] / 2)); c.ok++; }
+  else { const was = c.b; c.b = Math.min(5, c.b + 1); c.due = today + (was === 5 ? 60 : INTERVALS[c.b]); c.ok++; }
+}
+function duePool(limit) {
+  const t = dayNum();
+  return Object.keys(S.cards).filter(id => CARDS[id] && S.cards[id].due <= t)
+    .sort((a, b) => (S.cards[a].due - S.cards[b].due) || (S.cards[a].b - S.cards[b].b)).slice(0, limit);
+}
+const dueCount = () => { const t = dayNum(); return Object.keys(S.cards).filter(id => CARDS[id] && S.cards[id].due <= t).length; };
+const learnedIds = () => Object.keys(S.cards).filter(id => CARDS[id]);
+
+/* ================= progress ================= */
+const stageComplete = st => st.lessons.every(l => S.lessonsDone[l.id]);
+const bossPassed = st => (S.boss[st.id] || 0) >= BOSS_PASS;
+function nextLessonIndex() { for (let i = 0; i < LESSONS.length; i++) if (!S.lessonsDone[LESSONS[i].id]) return i; return -1; }
+function pendingBoss() { for (const st of STAGES) { if (!stageComplete(st)) return null; if (!bossPassed(st)) return st; } return null; }
+function lessonUnlocked(ls) { if (ls.gi === 0) return true; const prev = LESSONS[ls.gi - 1]; if (!S.lessonsDone[prev.id]) return false; if (prev.stage !== ls.stage && !bossPassed(prev.stage)) return false; return true; }
+const courseDone = () => STAGES.every(st => stageComplete(st) && bossPassed(st));
+function plan() { const boss = pendingBoss(); const ni = nextLessonIndex(); const lesson = (!boss && ni >= 0 && lessonUnlocked(LESSONS[ni])) ? LESSONS[ni] : null; return { due: dueCount(), boss, lesson, done: courseDone() }; }
+function levelOf(xp) { let i = 0; LEVELS.forEach((l, k) => { if (xp >= l.min) i = k; }); return { L: LEVELS[i], i, next: LEVELS[i + 1] || null }; }
+function weekCount(ws) { let n = 0; for (let d = ws; d < ws + 7; d++) if (S.days[d]) n++; return n; }
+function streakWeeks() { const goal = S.settings.goal; const ws = weekStart(dayNum()); let n = weekCount(ws) >= goal ? 1 : 0; let w = ws - 7; while (weekCount(w) >= goal) { n++; w -= 7; } return n; }
+function addXP(n) { S.xp += n; if (session) session.xp += n; }
+
+/* ================= badges ================= */
+let newBadges = [];
+function award(id) {
+  if (S.badges[id]) return;
+  S.badges[id] = Date.now(); newBadges.push(id);
+  if (!session) { const b = BADGES.find(x => x.id === id); if (b) toast(`Nowa odznaka: ${b.icon} ${b.name}`); }
+}
+function checkBadges() {
+  const done = Object.keys(S.lessonsDone).length;
+  if (done >= 1) award('first');
+  if (done >= Math.ceil(LESSONS.length / 2)) award('half');
+  if (Object.keys(S.weekBonus).length >= 1) award('week');
+  const sw = streakWeeks(); if (sw >= 3) award('streak3'); if (sw >= 6) award('streak6');
+  if (Object.values(S.cards).filter(c => c.b >= 4).length >= 25) award('elephant');
+  if (Math.max(S.speed.acr || 0, S.speed.def || 0) >= 15) award('flash15');
+  if ((S.bestRun || 0) >= 10) award('perfect');
+  if (Object.keys(S.days).length >= 30) award('marathon');
+  const notesN = Object.values(S.notes).filter(v => String(v).trim().length >= 20).length;
+  if (Object.keys(S.stars).length >= 5 && notesN >= 5) award('notes');
+  STAGES.forEach(st => { if (st.badge && (S.boss[st.id] || 0) >= BOSS_PASS) award('st_' + st.id); });
+  if ((S.demo || 0) >= DEMO_PASS) award('demo');
+}
+
+/* ================= question factory ================= */
+function maskText(text, c) {
+  let out = String(text);
+  const toks = new Set();
+  String(c.t).split(/[\s\/():,.?!\-]+/).forEach(t => { if (t.length >= 3) toks.add(t); });
+  toks.forEach(t => {
+    const e = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    let re; try { re = new RegExp('(?<![\\p{L}\\p{N}])' + e + '(?![\\p{L}\\p{N}])', 'giu'); } catch (err) { re = new RegExp('\\b' + e + '\\b', 'gi'); }
+    out = out.replace(re, '▢▢▢');
+  });
+  return out;
+}
+function distract(c, getter, filter, n = 3) {
+  const seen = new Set([norm(getter(c))]);
+  const pool = shuffle(CARD_LIST.filter(x => x !== c && filter(x)));
+  pool.sort((a, b) => (a.stage === c.stage ? 0 : 1) - (b.stage === c.stage ? 0 : 1));
+  const out = [];
+  for (const x of pool) { const v = getter(x); const k = norm(v); if (!v || seen.has(k)) continue; seen.add(k); out.push(v); if (out.length >= n) break; }
+  return out;
+}
+function mc(o) { const opts = shuffle([o.correct].concat(o.wrong)); return { label: o.label, prompt: o.prompt || '', big: !!o.big, quote: o.quote || '', options: opts, correct: opts.indexOf(o.correct), why: o.why || '', cardId: o.cardId || null }; }
+const qExp = c => mc({ label: L.expLabel, prompt: c.t, big: true, correct: c.exp, wrong: distract(c, x => x.exp, x => x.a), why: `${c.t} – ${c.exp}: ${lc(c.sub)}.`, cardId: c.id });
+const qRev = c => mc({ label: L.revLabel, prompt: c.exp, correct: c.t, wrong: distract(c, x => x.t, x => x.a), why: `${c.exp} to ${c.t} – ${lc(c.sub)}.`, cardId: c.id });
+const qDef = c => mc({ label: L.defLabel, quote: maskText(c.d, c), correct: c.t, wrong: distract(c, x => x.t, () => true), why: `To ${c.t} – ${lc(c.sub)}.`, cardId: c.id });
+const qPhrase = c => mc({ label: `${L.secSay}: ${L.sayAsk}`, prompt: sayQ(c.say[0]), correct: c.say[1], wrong: distract(c, x => x.say[1], x => !!x.say), why: `Chodzi o ${c.t} – ${lc(c.sub)}.`, cardId: c.id });
+const qHand = c => mc({ label: 'Pytanie', prompt: c.q[0], correct: c.q[1], wrong: c.q.slice(2, 5), why: c.q[5], cardId: c.id });
+const qBoss = (q, who) => mc({ label: `Pytanie od ${who}`, prompt: q[0], correct: q[1], wrong: q.slice(2, 5), why: q[5] });
+function qAuto(c, types) { const ok = types.filter(t => (t === 'exp' || t === 'rev') ? !!c.a : (t === 'hand' ? !!c.q : (t === 'phrase' ? !!c.say : true))); const t = rnd(ok.length ? ok : ['def']); return ({ exp: qExp, rev: qRev, def: qDef, phrase: qPhrase, hand: qHand })[t](c); }
+
+/* ================= sessions ================= */
+let session = null, tab = 'home', trainMode = null;
+const NAME = () => (S.settings.name || '').trim();
+const cur = () => session ? session.steps[session.i] : null;
+function lessonSteps(ls, replay) {
+  const steps = [{ type: 'intro', lesson: ls, replay }];
+  ls.cards.forEach(c => steps.push({ type: 'learn', id: c.id }));
+  const qs = [];
+  ls.cards.forEach(c => {
+    qs.push({ type: 'quiz', q: c.q ? qHand(c) : qDef(c), fresh: true, ph: L.quizPhase });
+    qs.push({ type: 'quiz', q: c.a ? qExp(c) : (c.say ? qPhrase(c) : qDef(c)), fresh: true, ph: L.quizPhase });
+  });
+  const older = shuffle(learnedIds().filter(id => CARDS[id].lesson !== ls)).sort((a, b) => S.cards[a].b - S.cards[b].b).slice(0, 2);
+  older.forEach(id => qs.push({ type: 'quiz', q: qAuto(CARDS[id], ['exp', 'rev', 'def', 'phrase']), ph: L.quizPhase }));
+  shuffle(qs).forEach(s => steps.push(s));
+  steps.push({ type: 'mark', lesson: ls });
+  steps.push({ type: 'task', lesson: ls });
+  return steps;
+}
+function bossSteps(st) {
+  const steps = [{ type: 'boss-intro', stage: st }];
+  shuffle(st.lessons.flatMap(l => l.cards)).slice(0, 6).forEach(c => steps.push({ type: 'quiz', q: qAuto(c, ['exp', 'rev', 'def', 'phrase']), timed: 20, boss: true, ph: BOSS.name }));
+  st.boss.q.forEach(q => steps.push({ type: 'quiz', q: qBoss(q, st.boss.short), boss: true, ph: BOSS.name }));
+  steps.push({ type: 'boss-result', stage: st });
+  return steps;
+}
+function demoSteps() {
+  const steps = [{ type: 'demo-intro' }];
+  const n = Math.max(6, Math.min(CARD_LIST.length, EXAM.n || 20)), half = Math.floor(n / 2);
+  const cards = shuffle(CARD_LIST);
+  const qs = cards.slice(0, half).map(c => c.q ? qHand(c) : qDef(c)).concat(cards.slice(half, n).map(c => qAuto(c, ['exp', 'rev', 'def', 'phrase'])));
+  shuffle(qs).forEach(q => steps.push({ type: 'quiz', q, timed: 25, demo: true, ph: EXAM.name }));
+  steps.push({ type: 'demo-result' });
+  return steps;
+}
+function startSession(kind, opts = {}) {
+  newBadges = [];
+  const steps = [];
+  const p = plan();
+  if (kind === 'full' || kind === 'mini') {
+    let ids = duePool(kind === 'mini' ? 10 : 12);
+    if (kind === 'full' && ids.length < 3) {
+      const extra = shuffle(learnedIds().filter(id => !ids.includes(id))).sort((a, b) => S.cards[a].b - S.cards[b].b).slice(0, 3 - ids.length);
+      ids = ids.concat(extra);
+    }
+    ids.forEach((id, k) => steps.push({ type: 'review', id, mode: (k % 3 === 2) ? 'mc' : 'flip' }));
+    if (kind === 'full') {
+      if (p.done) shuffle(learnedIds()).slice(0, 6).forEach(id => steps.push({ type: 'quiz', q: qAuto(CARDS[id], ['exp', 'rev', 'def', 'phrase', 'hand']), ph: 'Tryb mistrza' }));
+      else if (p.boss) bossSteps(p.boss).forEach(s => steps.push(s));
+      else if (p.lesson) lessonSteps(p.lesson, false).forEach(s => steps.push(s));
+    }
+  } else if (kind === 'boss') bossSteps(opts.stage).forEach(s => steps.push(s));
+  else if (kind === 'replay') lessonSteps(opts.lesson, true).forEach(s => steps.push(s));
+  else if (kind === 'demo') demoSteps().forEach(s => steps.push(s));
+  if (!steps.length) { toast(kind === 'mini' ? 'Na dziś nie ma nic do powtórki. Wróć jutro albo zrób lekcję.' : 'Ta sesja nie ma dziś żadnych kroków.'); return; }
+  steps.push({ type: 'summary' });
+  session = { kind, steps, i: 0, xp: 0, correct: 0, wrong: 0, reviewed: 0, learned: 0, boss: { ok: 0, n: 0 }, demo: { ok: 0, n: 0 }, levelStart: levelOf(S.xp).i, requeued: {}, exitAsk: false, lessonDone: null };
+  window.scrollTo(0, 0); render();
+}
+function advance() {
+  clearTimer();
+  if (!session) return;
+  session.exitAsk = false;
+  session.i++;
+  while (session.i < session.steps.length && session.steps[session.i].type === 'mark') {
+    const m = session.steps[session.i];
+    if (!S.lessonsDone[m.lesson.id]) { S.lessonsDone[m.lesson.id] = Date.now(); addXP(40); session.lessonDone = m.lesson; checkBadges(); }
+    session.i++;
+  }
+  if (session.i >= session.steps.length) { endSession(); return; }
+  save(); window.scrollTo(0, 0); render();
+}
+function endSession() { clearTimer(); session = null; tab = 'home'; save(); window.scrollTo(0, 0); render(); }
+function requeue(id) {
+  if (session.requeued[id]) return; session.requeued[id] = 1;
+  let j = session.i + 1;
+  while (j < session.steps.length && session.steps[j].type === 'review') j++;
+  session.steps.splice(j, 0, { type: 'review', id, mode: 'flip', again: true });
+}
+function bumpRun(ok) { if (ok) { S.run = (S.run || 0) + 1; S.bestRun = Math.max(S.bestRun || 0, S.run); } else S.run = 0; }
+function gradeReview(g) {
+  const st = cur(); if (!st || st.type !== 'review' || st.graded || !st.flipped) return;
+  st.graded = true; grade(st.id, g); session.reviewed++; addXP([2, 4, 6][g]);
+  bumpRun(g > 0); if (g === 0) requeue(st.id);
+  checkBadges(); advance();
+}
+function answer(idx) {
+  const st = cur(); if (!st || !st.q || st.answered != null) return;
+  const q = st.q; st.answered = idx; clearTimer();
+  const ok = idx === q.correct;
+  if (ok) { session.correct++; addXP(8); } else { session.wrong++; addXP(2); }
+  bumpRun(ok);
+  if (st.boss) { session.boss.n++; if (ok) session.boss.ok++; }
+  if (st.demo) { session.demo.n++; if (ok) session.demo.ok++; }
+  if (st.type === 'review') { grade(st.id, ok ? 2 : 0); session.reviewed++; if (!ok) requeue(st.id); }
+  else if (q.cardId && S.cards[q.cardId] && !st.fresh && !ok) { const cs = S.cards[q.cardId]; cs.b = Math.max(1, cs.b - 1); cs.due = Math.min(cs.due, dayNum() + 1); }
+  checkBadges(); save(); render();
+  const nb = document.querySelector('[data-act="next"]'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {}
+}
+function learnNext() { const st = cur(); if (!st || st.type !== 'learn') return; if (learnCard(st.id)) { addXP(10); session.learned++; } advance(); }
+function taskDone(skip) {
+  const st = cur(); if (!st || st.type !== 'task') return;
+  if (!skip) {
+    const ta = document.getElementById('taskText'); const val = ta ? ta.value.trim() : '';
+    if (val) { S.notes[st.lesson.id] = val; if (val.length >= 20 && !S.noteXP[st.lesson.id]) { S.noteXP[st.lesson.id] = 1; addXP(15); } }
+  }
+  checkBadges(); advance();
+}
+function bossFinalize(st) {
+  if (st.done) return; st.done = true;
+  const sc = session.boss.n ? session.boss.ok / session.boss.n : 0;
+  const prev = S.boss[st.stage.id] || 0;
+  st.score = sc; st.pass = sc >= BOSS_PASS;
+  if (st.pass && prev < BOSS_PASS) addXP(120); else if (st.pass) addXP(30);
+  S.boss[st.stage.id] = Math.max(prev, sc);
+  checkBadges(); save();
+}
+function demoFinalize(st) {
+  if (st.done) return; st.done = true;
+  const sc = session.demo.n ? session.demo.ok / session.demo.n : 0;
+  const prev = S.demo || 0;
+  st.score = sc; st.pass = sc >= DEMO_PASS;
+  if (st.pass && prev < DEMO_PASS) addXP(300);
+  S.demo = Math.max(prev, sc);
+  checkBadges(); save();
+}
+function finalizeSession() {
+  if (session.finalized) return; session.finalized = true;
+  const dn = dayNum(); S.days[dn] = (S.days[dn] || 0) + 1; S.sessions = (S.sessions || 0) + 1;
+  const ws = weekStart(dn);
+  if (weekCount(ws) >= S.settings.goal && !S.weekBonus[ws]) { S.weekBonus[ws] = 1; addXP(50); session.weekBonus = true; }
+  const h = new Date().getHours(); if (h < 8) award('early'); if (h >= 22) award('night');
+  checkBadges(); save();
+  setTimeout(confetti, 80);
+}
+
+/* ================= timers ================= */
+let timerInt = null;
+function clearTimer() { if (timerInt) { clearInterval(timerInt); timerInt = null; } }
+function startTimer(st) {
+  clearTimer(); if (!st.timed || st.answered != null) return;
+  if (!st.deadline) st.deadline = Date.now() + st.timed * 1000;
+  const total = st.timed * 1000;
+  const tick = () => {
+    const left = st.deadline - Date.now();
+    const bar = document.getElementById('tbar'); if (bar) bar.style.width = Math.max(0, left / total * 100) + '%';
+    const lab = document.getElementById('tlab'); if (lab) lab.textContent = Math.max(0, Math.ceil(left / 1000)) + ' s';
+    if (left <= 0) { clearTimer(); if (cur() === st) answer(-1); }
+  };
+  tick(); timerInt = setInterval(tick, 100);
+}
+
+/* ================= render: frame ================= */
+function safeRender() { const a = document.activeElement; if (a && (a.tagName === 'TEXTAREA' || (a.tagName === 'INPUT' && a.type !== 'checkbox'))) return; render(); }
+function render() {
+  renderTop();
+  $view.classList.toggle('insession', !!session);
+  if (session) { $tabs.hidden = true; renderSession(); return; }
+  $tabs.hidden = false;
+  ({ home: renderHome, map: renderMap, train: renderTrain, dict: renderDict, notes: renderNotes, settings: renderSettings, badges: renderBadges }[tab] || renderHome)();
+  document.querySelectorAll('.tab').forEach(b => { if (b.dataset.tab === tab) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
+}
+function renderTop() {
+  const { L } = levelOf(S.xp); const sw = streakWeeks();
+  $top.innerHTML = `<button class="brand" data-act="tab" data-tab="home" aria-label="${esc(CFG.title)} – start"><span class="mark" aria-hidden="true">${esc(CFG.mark)}</span><span class="bname">${esc(CFG.title)}</span></button><div class="chips"><button class="chip" data-act="tab" data-tab="settings" title="Poziom: ${esc(L.name)}"><span class="lv">${L.code}</span><span class="tnum">${fmt(S.xp)} XP</span></button><button class="chip" data-act="tab" data-tab="badges" title="Seria tygodni z celem">🔥 <span class="tnum">${sw}</span></button></div>`;
+}
+
+/* ================= render: home ================= */
+function heroHTML(p) {
+  const due = Math.min(p.due, 12);
+  let title = '', lines = [], btn = 'Zacznij sesję', act = 'start', alt = '', kicker = 'Sesja na dziś', est = 0;
+  const rev = due ? `Rozgrzewka: ${due} ${plural(due, 'powtórka', 'powtórki', 'powtórek')}` : '';
+  if (p.done && (S.demo || 0) < DEMO_PASS) {
+    kicker = EXAM.kicker; title = EXAM.name;
+    lines = [`${EXAM.n || 20} pytań na czas z całego kursu`, `Zaliczasz od ${pct(EXAM.pass)}`]; btn = EXAM.go; act = 'demo'; est = 10;
+  } else if (p.done) {
+    kicker = 'Tryb mistrza'; title = L.masterTitle;
+    lines = [p.due ? rev : 'Rozgrzewka: kilka wyrywkowych kart', '6 pytań z całego kursu']; est = Math.max(6, Math.round(due * 0.4 + 4));
+  } else if (p.boss) {
+    title = `${BOSS.name}: ${p.boss.boss.name}`;
+    if (rev) lines.push(rev); lines.push('6 szybkich pytań na czas i 3 pytania na koniec'); btn = BOSS.go; est = Math.round(due * 0.4 + 6);
+  } else if (p.lesson) {
+    const Ls = p.lesson; title = `Lekcja ${Ls.n}: ${Ls.title}`;
+    if (rev) lines.push(rev);
+    lines.push(`${Ls.cards.length} ${unitNew(Ls.cards.length)}: ${Ls.cards.map(c => c.t).join(', ')}`);
+    lines.push(`${L.quizPhase} i ${lc(L.taskTitle)}`); est = Math.round(due * 0.4 + Ls.cards.length * 2.4 + 4);
+  } else {
+    title = 'Powtórki'; lines = [rev || 'Nic nie czeka na powtórkę']; est = Math.max(3, Math.round(due * 0.4));
+  }
+  if (p.due && act !== 'demo' && !(p.done)) alt = `<button class="alt" data-act="mini">Mam tylko 5 minut – same powtórki</button>`;
+  if (act === 'demo' && p.due) alt = `<button class="alt" data-act="mini">Najpierw tylko powtórki (${Math.min(p.due, 10)})</button>`;
+  return `<section class="hero"><p class="kicker">${esc(kicker)}${est ? `, ok. ${Math.max(5, est)} min` : ''}</p><h2>${esc(title)}</h2><ul>${lines.map(l => `<li>${esc(l)}</li>`).join('')}</ul><button class="btn yolk block" data-act="${act}">${esc(btn)}</button>${alt}</section>`;
+}
+function renderHome() {
+  const p = plan(); const { L, next } = levelOf(S.xp);
+  const today = dayNum(), ws = weekStart(today), wc = weekCount(ws), goal = S.settings.goal, sw = streakWeeks();
+  const learned = learnedIds().length, strong = Object.values(S.cards).filter(c => c.b >= 4).length, lessonsDone = Object.keys(S.lessonsDone).length;
+  const isNew = lessonsDone === 0 && !S.sessions;
+  const dateStr = new Date().toLocaleDateString('pl-PL', { weekday: 'long', day: 'numeric', month: 'long' });
+  let line;
+  if (isNew) line = L.newLine;
+  else if (wc >= goal) line = 'Cel tygodnia zrobiony. Każda kolejna sesja to premia dla pamięci.';
+  else if (wc === 0) line = `Nowy tydzień, czysta karta. Cel: ${goal} ${plural(goal, 'sesja', 'sesje', 'sesji')}.`;
+  else line = `Jeszcze ${goal - wc} ${plural(goal - wc, 'sesja', 'sesje', 'sesji')} do celu tygodnia.`;
+  let h = `<section class="greet"><p class="micro">${esc(dateStr.charAt(0).toUpperCase() + dateStr.slice(1))}</p><h1>Cześć${NAME() ? ', ' + esc(NAME()) : ''}!</h1><p class="muted">${esc(line)}</p></section>`;
+  if (isNew) {
+    const weeks = Math.max(2, Math.round(LESSONS.length / goal));
+    h += `<section class="welcome"><h3>Jak działa ten kurs</h3><ol class="small"><li><strong>${LESSONS.length} ${plural(LESSONS.length, 'lekcja', 'lekcje', 'lekcji')} w ${STAGES.length} ${plural(STAGES.length, 'etapie', 'etapach', 'etapach')}, ${TOTAL} ${L.unit5}.</strong> Przy ${goal} ${plural(goal, 'sesji', 'sesjach', 'sesjach')} w tygodniu to ok. ${weeks}–${weeks + 3} ${plural(weeks + 3, 'tydzień', 'tygodnie', 'tygodni')}.</li><li><strong>Każda sesja ma stały rytm:</strong> rozgrzewka z powtórek, ${L.unitNew2}, ${lc(L.quizPhase)} i jedno ${lc(L.taskTitle)}.</li>${L.about ? `<li>${L.about}</li>` : ''}<li><strong>Karty wracają w rosnących odstępach</strong> (1, 3, 7, 16, 35 dni), aż zostaną w głowie na stałe. Dlatego mów odpowiedzi na głos, zanim odkryjesz kartę.</li><li><strong>Na końcu etapu czeka ${lc(BOSS.name)}</strong> – szybkie pytania na czas. Zaliczasz od ${pct(BOSS.pass)} i otwierasz kolejny etap.</li></ol></section>`;
+  }
+  h += heroHTML(p);
+  let strip = '';
+  for (let k = 0; k < 7; k++) { const d = ws + k; const on = !!S.days[d]; strip += `<div class="day ${on ? 'on' : ''} ${d === today ? 'today' : ''}"><span class="dot">${on ? '✓' : ''}</span><span class="dl">${DOW[k]}</span></div>`; }
+  h += `<section><h2>Ten tydzień</h2><div class="week">${strip}</div><p class="small muted">${wc} z ${goal} ${plural(goal, 'sesji', 'sesji', 'sesji')} w tym tygodniu. Seria: ${sw} ${plural(sw, 'tydzień', 'tygodnie', 'tygodni')} z rzędu z zaliczonym celem.</p></section>`;
+  const prog = next ? Math.min(100, Math.round((S.xp - L.min) / (next.min - L.min) * 100)) : 100;
+  h += `<section><h2>Twój poziom</h2><div class="lvl"><div class="lvl-badge">${L.code}</div><div><div class="lvl-name">${esc(L.name)}</div><div class="small muted">${esc(L.note)}</div></div></div><div class="bar" role="progressbar" aria-valuenow="${prog}" aria-valuemin="0" aria-valuemax="100"><i style="width:${prog}%"></i></div><p class="micro" style="margin-top:8px">${fmt(S.xp)} XP. ${next ? `Do poziomu ${next.code} (${esc(next.name)}) brakuje ${fmt(next.min - S.xp)} XP.` : 'Najwyższy poziom – gratulacje.'}</p></section>`;
+  h += `<div class="stats"><div class="stat"><b>${learned}</b><span>z ${TOTAL} ${L.unit5} poznanych</span></div><div class="stat"><b>${strong}</b><span>utrwalonych na dłużej</span></div><div class="stat"><b>${lessonsDone}</b><span>z ${LESSONS.length} lekcji ukończonych</span></div></div>`;
+  const facts = CARD_LIST.filter(c => c.fun && S.cards[c.id]);
+  const pool = facts.length ? facts : CARD_LIST.filter(c => c.fun).slice(0, 2);
+  if (pool.length) { const f = pool[today % pool.length]; h += `<section class="fact"><p class="micro">Ciekawostka dnia${S.cards[f.id] ? '' : ' (z nadchodzącej lekcji)'}</p><p>${esc(f.fun)}</p></section>`; }
+  const earned = BADGES.filter(b => S.badges[b.id]);
+  h += `<section><div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><h2>Odznaki</h2><button class="linkbtn" data-act="tab" data-tab="badges">Zobacz wszystkie</button></div><p class="small muted">${earned.length} z ${BADGES.length}.</p>${earned.length ? `<div class="badgeline">${earned.slice(-8).map(b => `<span title="${esc(b.name)}">${b.icon}</span>`).join('')}</div>` : '<p class="small muted">Pierwszą dostaniesz po ukończeniu lekcji 1.</p>'}</section>`;
+  h += `<p style="margin-top:28px"><button class="linkbtn" data-act="tab" data-tab="settings">Ustawienia i zasady kursu</button></p>`;
+  $view.innerHTML = h;
+}
+function renderBadges() {
+  let h = `<h1>Odznaki</h1><p class="muted">${Object.keys(S.badges).length} z ${BADGES.length} zdobytych. Seria tygodni: ${streakWeeks()}.</p><div class="badges">`;
+  BADGES.forEach(b => { const got = S.badges[b.id]; h += `<div class="badge ${got ? '' : 'locked'}"><div class="bi">${b.icon}</div><b>${esc(b.name)}</b><span>${esc(b.desc)}${got ? `<br>Zdobyta ${new Date(got).toLocaleDateString('pl-PL')}` : ''}</span></div>`; });
+  h += `</div><button class="btn ghost" data-act="tab" data-tab="home">Wróć</button>`;
+  $view.innerHTML = h;
+}
+
+/* ================= render: session ================= */
+const groupKey = s => s.type === 'quiz' ? 'quiz:' + (s.ph || '') : s.type;
+function phaseLabel(st, pi, n) {
+  switch (st.type) {
+    case 'review': return `Rozgrzewka: powtórka ${pi} z ${n}`;
+    case 'learn': return `${L.unitNew1.charAt(0).toUpperCase() + L.unitNew1.slice(1)} ${pi} z ${n}`;
+    case 'intro': return 'Nowa lekcja';
+    case 'task': return L.taskTitle;
+    case 'boss-intro': case 'boss-result': return BOSS.name;
+    case 'demo-intro': case 'demo-result': return EXAM.name;
+    case 'quiz': return `${st.ph || 'Pytanie'}: pytanie ${pi} z ${n}`;
+    default: return '';
+  }
+}
+function renderSession() {
+  const st = cur(); if (!st) { endSession(); return; }
+  const total = Math.max(1, session.steps.length - 1);
+  const group = session.steps.filter(s => groupKey(s) === groupKey(st));
+  let head = '';
+  if (st.type !== 'summary') {
+    head = `<div class="shead"><button class="xbtn" data-act="exit" aria-label="Zakończ sesję">✕</button><div class="sprog" aria-hidden="true"><i style="width:${Math.round(session.i / total * 100)}%"></i></div><span class="sxp">+${session.xp} XP</span></div>`;
+    if (session.exitAsk) head += `<div class="exitbar"><p><strong>Zakończyć sesję?</strong> Wszystko, co już zrobione, zostaje zapisane. Do celu tygodnia sesja liczy się dopiero po dojściu do końca.</p><div class="btnrow"><button class="btn small" data-act="exit-yes">Zakończ</button><button class="btn small ghost" data-act="exit-no">Wracam do nauki</button></div></div>`;
+    head += `<p class="sphase">${esc(phaseLabel(st, group.indexOf(st) + 1, group.length))}</p>`;
+  }
+  let body = '';
+  switch (st.type) {
+    case 'review': body = st.mode === 'mc' ? renderReviewMC(st) : renderFlip(st); break;
+    case 'intro': body = renderIntro(st); break;
+    case 'learn': body = cardHTML(CARDS[st.id]) + `<button class="btn block" data-act="learn-next">Rozumiem, dalej</button>`; break;
+    case 'quiz': body = renderQuiz(st); break;
+    case 'task': body = renderTask(st); break;
+    case 'boss-intro': body = renderBossIntro(st); break;
+    case 'boss-result': bossFinalize(st); body = renderBossResult(st); break;
+    case 'demo-intro': body = `<h1>${esc(EXAM.name)}</h1><p class="lead">${esc(EXAM.scene)}</p><p class="rules">Zaliczasz od ${pct(EXAM.pass)}. Egzamin możesz powtarzać – liczy się najlepszy wynik.</p><button class="btn block" data-act="next">${esc(EXAM.go)}</button>`; break;
+    case 'demo-result': demoFinalize(st); body = renderDemoResult(st); break;
+    case 'summary': finalizeSession(); body = renderSummary(); break;
+  }
+  $view.innerHTML = head + body;
+  if (st.type === 'quiz' || (st.type === 'review' && st.mode === 'mc')) { if (st.timed && st.answered == null) startTimer(st); }
+}
+function renderFlip(st) {
+  const c = CARDS[st.id];
+  const sz = c.t.length <= 7 ? '' : c.t.length <= 14 ? 'l' : 'm';
+  if (!st.flipped) {
+    return `<div class="flash"><div class="ff-term ${sz}">${esc(c.t)}</div><p class="ff-hint">${esc(c.a ? L.flipHintExp : L.flipHintDef)}</p></div><button class="btn yolk block" data-act="flip">Pokaż odpowiedź</button><p class="micro center" style="margin-top:10px">${st.again ? 'Ta karta wraca, bo przed chwilą sprawiła kłopot.' : 'Najpierw spróbuj sobie przypomnieć – dopiero potem odkryj kartę.'}</p>`;
+  }
+  const cs = S.cards[c.id]; const nb = Math.min(5, (cs ? cs.b : 1) + 1); const d = (cs && cs.b === 5) ? 60 : INTERVALS[nb];
+  return `<div class="flash back ${reduced() ? '' : 'flip-in'}"><div class="fb-term">${esc(c.t)}</div>${c.exp ? `<div class="fb-en">${esc(c.exp)}</div>` : ''}<div class="fb-pl">${esc(c.sub)}</div><p class="fb-d">${esc(c.d)}</p>${c.f ? `<p class="fb-f">${esc(c.f)}</p>` : ''}${c.b ? `<p class="fb-b">${esc(c.b)}</p>` : ''}</div><p class="small muted center">Jak poszło?</p><div class="grades"><button class="grade g0" data-act="grade" data-g="0">Nie pamiętam<small>wróci jutro</small></button><button class="grade g1" data-act="grade" data-g="1">Z trudem<small>wróci szybciej</small></button><button class="grade g2" data-act="grade" data-g="2">Wiem!<small>wróci za ${d} ${plural(d, 'dzień', 'dni', 'dni')}</small></button></div>`;
+}
+function renderReviewMC(st) { if (!st.q) st.q = qAuto(CARDS[st.id], ['exp', 'rev', 'def', 'phrase']); return renderQuiz(st); }
+function questionBody(q, ans, act = 'opt') {
+  const answered = ans != null;
+  let h = `<p class="qlabel">${esc(q.label)}</p>`;
+  if (q.big) h += `<p class="qprompt big">${esc(q.prompt)}</p>`; else if (q.prompt) h += `<p class="qprompt">${esc(q.prompt)}</p>`;
+  if (q.quote) h += `<blockquote class="qquote">${esc(q.quote)}</blockquote>`;
+  h += `<div class="opts" role="group">${q.options.map((o, i) => { let cls = ''; if (answered) { if (i === q.correct) cls = 'correct'; else if (i === ans) cls = 'wrong'; } return `<button class="opt ${cls}" data-act="${act}" data-i="${i}" ${answered ? 'disabled' : ''}><span class="k">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`; }).join('')}</div>`;
+  return h;
+}
+function renderQuiz(st) {
+  const q = st.q, answered = st.answered != null; let h = '';
+  if (st.timed && !answered) { const left = st.deadline ? Math.max(0, st.deadline - Date.now()) : st.timed * 1000; h += `<div class="timer"><i id="tbar" style="width:${left / (st.timed * 10)}%"></i></div><p class="micro right tnum" id="tlab">${Math.ceil(left / 1000)} s</p>`; }
+  h += questionBody(q, answered ? st.answered : null);
+  if (answered) {
+    const ok = st.answered === q.correct;
+    const w = ok ? OK_WORDS[session.i % OK_WORDS.length] : (st.answered === -1 ? 'Czas minął.' : BAD_WORDS[session.i % BAD_WORDS.length]);
+    const c = q.cardId ? CARDS[q.cardId] : null;
+    h += `<div class="fbk ${ok ? 'ok' : 'bad'}" role="status"><strong>${esc(w)}</strong>${esc(q.why)}${!ok ? `<span class="fb-correct">Poprawna odpowiedź: ${esc(q.options[q.correct])}</span>` : ''}${c && c.exp && !ok && q.label !== L.expLabel ? `<span class="fb-card">${esc(c.t)}: ${esc(c.exp)}</span>` : ''}</div><button class="btn block" data-act="next">Dalej</button>`;
+  }
+  return h;
+}
+function renderIntro(st) {
+  const Ls = st.lesson;
+  return `<p class="intro-stage">Etap ${Ls.stage.n}: ${esc(Ls.stage.title)}</p><h1>Lekcja ${Ls.n}: ${esc(Ls.title)}</h1><p class="lead">${esc(Ls.hook)}</p><p class="small muted" style="margin-bottom:0">W tej lekcji:</p><div class="chips-row">${Ls.cards.map(c => `<span class="tchip">${esc(c.t)}</span>`).join('')}</div>${st.replay ? '<p class="small muted">To powtórka ukończonej lekcji: karty i sprawdzian jeszcze raz.</p>' : ''}<button class="btn block" data-act="next">Zaczynamy</button>`;
+}
+function renderTask(st) {
+  const Ls = st.lesson; const val = S.notes[Ls.id] || '';
+  return `<h1>${esc(L.taskTitle)}</h1><p class="lead">${esc(Ls.task)}</p><p class="small muted">${esc(L.taskHelp.replace('{notes}', L.notesTitle))}${S.noteXP[Ls.id] ? '' : ' (+15 XP za pierwszą odpowiedź)'}</p><textarea id="taskText" placeholder="${esc(L.taskPlaceholder)}">${esc(val)}</textarea><div class="btnrow"><button class="btn" data-act="task-save">Zapisz i dalej</button><button class="btn ghost" data-act="task-skip">Pomiń na razie</button></div>`;
+}
+function renderBossIntro(st) {
+  const s = st.stage, b = s.boss;
+  return `<p class="intro-stage">Etap ${s.n}: ${esc(s.title)}</p><div class="bizcard sc-${s.color}"><p class="micro">${esc(BOSS.name)}</p><div class="fund">${esc(b.name)}</div><p class="who">${esc(b.who)}</p><p style="margin:0">${esc(b.scene)}</p></div><p class="rules">6 szybkich pytań na czas (20 sekund każde) i 3 pytania od ${esc(b.short)}. Zaliczasz od ${pct(BOSS.pass)} – wtedy otwiera się kolejny etap. Można powtarzać.</p><button class="btn block" data-act="next">${esc(BOSS.go)}</button>`;
+}
+function renderBossResult(st) {
+  const s = st.stage, b = s.boss, sc = st.score || 0;
+  const nextSt = STAGES[s.n] || null;
+  return `<div class="sum-top"><p class="micro">${esc(b.name)}</p><h1>${esc(st.pass ? BOSS.winTitle : BOSS.loseTitle)}</h1><div class="xpbig">${pct(sc)}</div><p class="lead">${session.boss.ok} z ${session.boss.n} odpowiedzi trafionych.</p><p class="muted">${st.pass ? (nextSt ? `${esc(b.who.split(',')[0])} kiwa głową. Etap ${nextSt.n} – „${esc(nextSt.title)}” – jest otwarty.` : `Ostatni etap za Tobą. Czas na ${esc(EXAM.name)}.`) : `Do zaliczenia potrzeba ${pct(BOSS.pass)}. Pytania, które sprawiły kłopot, wrócą w powtórkach – spróbuj ponownie w kolejnej sesji albo od razu z zakładki Trening.`}</p></div><button class="btn block" data-act="next">Dalej</button>`;
+}
+function renderDemoResult(st) {
+  return `<div class="sum-top"><p class="micro">${esc(EXAM.name)}</p><h1>${esc(st.pass ? EXAM.winTitle : EXAM.loseTitle)}</h1><div class="xpbig">${pct(st.score || 0)}</div><p class="lead">${session.demo.ok} z ${session.demo.n} odpowiedzi trafionych.</p><p class="muted">${st.pass ? `${esc(EXAM.winLine)} Od teraz sesje utrzymują ją w formie – krótkie powtórki i szybkie rundy.` : `Do zaliczenia potrzeba ${pct(EXAM.pass)}. Najlepszy wynik się liczy – spróbuj ponownie po kilku sesjach powtórek.`}</p></div><button class="btn block" data-act="next">Dalej</button>`;
+}
+function renderSummary() {
+  const s = session; const lvNow = levelOf(S.xp); const tot = s.correct + s.wrong;
+  const titles = { full: 'Sesja zaliczona!', mini: 'Powtórki zrobione!', boss: `${BOSS.name} za Tobą!`, replay: 'Powtórka lekcji zaliczona!', demo: `${EXAM.name} za Tobą!` };
+  let h = `<div class="sum-top"><p class="micro">Podsumowanie</p><h1>${titles[s.kind] || 'Sesja zaliczona!'}</h1><div class="xpbig">+${s.xp} XP</div></div>`;
+  h += `<div class="stats"><div class="stat"><b>${s.reviewed}</b><span>${plural(s.reviewed, 'powtórka', 'powtórki', 'powtórek')}</span></div><div class="stat"><b>${s.learned}</b><span>${unitNew(s.learned)}</span></div><div class="stat"><b>${tot ? pct(s.correct / tot) : '–'}</b><span>trafnych odpowiedzi</span></div></div>`;
+  if (lvNow.i > s.levelStart) h += `<div class="levelup">Nowy poziom: ${lvNow.L.code} – ${esc(lvNow.L.name)}. ${esc(lvNow.L.note)}</div>`;
+  if (s.lessonDone) h += `<p class="muted">Lekcja ${s.lessonDone.n} ukończona. Jej karty wrócą w powtórkach jutro.</p>`;
+  if (s.weekBonus) h += `<p><strong>Cel tygodnia zrobiony: +50 XP.</strong></p>`;
+  if (newBadges.length) h += `<div class="sum-badges">${newBadges.map(id => { const b = BADGES.find(x => x.id === id); return b ? `<div class="sum-badge"><span class="bi">${b.icon}</span><div><b>${esc(b.name)}</b><div class="small muted">${esc(b.desc)}</div></div></div>` : ''; }).join('')}</div>`;
+  const ws = weekStart(dayNum());
+  h += `<p class="small muted">W tym tygodniu: ${weekCount(ws)} z ${S.settings.goal} ${plural(S.settings.goal, 'sesji', 'sesji', 'sesji')}.</p>`;
+  const p = plan();
+  const nxt = p.done ? ((S.demo || 0) < DEMO_PASS ? `${EXAM.name}.` : 'tryb mistrza: powtórki i szybkie rundy.') : p.boss ? `${lc(BOSS.name)}: ${p.boss.boss.name}.` : p.lesson ? `Lekcja ${p.lesson.n}: ${p.lesson.title}.` : 'powtórki.';
+  h += `<p class="small">Następnym razem: ${esc(nxt)}</p><button class="btn block" data-act="finish">Wróć na start</button>`;
+  return h;
+}
+
+/* ================= card view ================= */
+const sec = (t, body, cls = '') => `<div class="lsec ${cls}"><h4>${t}</h4><p>${esc(body)}</p></div>`;
+function cardHTML(c) {
+  const star = !!S.stars[c.id];
+  let h = `<article class="lcard sc-${c.stage.color}"><div class="lc-term ${c.t.length <= 8 ? '' : 'm'}">${esc(c.t)}</div>${c.exp ? `<div class="lc-en">${esc(c.exp)}</div>` : ''}<div class="lc-pl">${esc(c.sub)}</div>`;
+  h += sec(L.secD, c.d);
+  if (c.f) h += sec(L.secF, c.f, 'formula');
+  if (c.b) h += sec(L.secB, c.b);
+  if (c.ex) h += sec(L.secEx, c.ex, 'herb');
+  if (c.say) h += `<div class="lsec phrase"><h4>${esc(L.secSay)}</h4><p class="say">${esc(sayQ(c.say[0]))}</p><p class="mean">${esc(L.sayMean)} ${esc(c.say[1])}</p></div>`;
+  if (c.tr) h += sec(L.secTr, c.tr, 'trap');
+  if (c.fun) h += sec(L.secFun, c.fun, 'fun');
+  h += `<div class="lc-actions"><button class="pill ${star ? 'on' : ''}" data-act="star" data-id="${c.id}" aria-pressed="${star}">${star ? '★ ' : '☆ '}${esc(L.starOn)}</button></div></article>`;
+  return h;
+}
+function toggleStar(id) {
+  if (S.stars[id]) delete S.stars[id]; else S.stars[id] = Date.now();
+  checkBadges(); save();
+  document.querySelectorAll(`[data-act="star"][data-id="${id}"]`).forEach(b => { const on = !!S.stars[id]; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); b.textContent = (on ? '★ ' : '☆ ') + L.starOn; });
+  if (!session && tab === 'notes') renderNotes();
+}
+
+/* ================= render: map ================= */
+function renderMap() {
+  const ni = nextLessonIndex(), pb = pendingBoss();
+  let h = `<h1>Mapa kursu</h1><p class="muted">${STAGES.length} ${plural(STAGES.length, 'etap', 'etapy', 'etapów')}, ${LESSONS.length} ${plural(LESSONS.length, 'lekcja', 'lekcje', 'lekcji')}, ${TOTAL} ${L.unit5}. Etap kończy ${lc(BOSS.name)} – zaliczasz od ${pct(BOSS.pass)} i otwierasz następny etap. Ukończone lekcje można powtarzać.</p>`;
+  STAGES.forEach(st => {
+    const doneN = st.lessons.filter(l => S.lessonsDone[l.id]).length;
+    h += `<section class="stage sc-${st.color}"><div class="stage-h"><div class="stage-n">${st.n}</div><div><h2 class="stage-t">${esc(st.title)}<span class="sprg">${doneN}/${st.lessons.length}</span></h2><p class="small muted" style="margin:0">${esc(st.sub)}</p></div></div>`;
+    st.lessons.forEach(l => {
+      const done = !!S.lessonsDone[l.id], unl = lessonUnlocked(l), isNext = !done && unl && l.gi === ni && !pb;
+      const cls = done ? 'done' : isNext ? 'next' : 'locked';
+      h += `<button class="lrow ${cls}" data-act="lesson" data-id="${l.id}"><span class="st">${done ? '✓' : l.n}</span><span class="lt">${esc(l.title)}<span class="lsub">${l.cards.map(c => esc(c.t)).join(', ')}</span></span><span class="meta">${done ? 'Powtórz' : isNext ? 'Następna' : '🔒'}</span></button>`;
+    });
+    const complete = stageComplete(st), best = S.boss[st.id] || 0, passed = best >= BOSS_PASS;
+    h += `<button class="lrow ${passed ? 'done' : complete ? 'next' : 'locked'}" data-act="bossrow" data-id="${st.id}"><span class="st">${passed ? '✓' : BOSS.icon}</span><span class="lt">${esc(BOSS.name)}: ${esc(st.boss.name)}<span class="lsub">${esc(st.boss.who)}</span></span><span class="meta">${best ? pct(best) : complete ? 'Czeka' : '🔒'}</span></button></section>`;
+  });
+  const dOk = (S.demo || 0) >= DEMO_PASS, cd = courseDone();
+  h += `<section class="stage sc-plum"><div class="stage-h"><div class="stage-n">★</div><div><h2 class="stage-t">${esc(EXAM.name)}</h2><p class="small muted" style="margin:0">${EXAM.n || 20} pytań na czas z całego kursu. Zaliczasz od ${pct(EXAM.pass)}.</p></div></div><button class="lrow ${dOk ? 'done' : cd ? 'next' : 'locked'}" data-act="demo-row"><span class="st">${dOk ? '✓' : EXAM.icon}</span><span class="lt">${esc(EXAM.name)}</span><span class="meta">${S.demo ? pct(S.demo) : cd ? 'Czeka' : '🔒'}</span></button></section>`;
+  $view.innerHTML = h;
+}
+function openLesson(id) {
+  const l = LESSONS.find(x => x.id === id); if (!l) return;
+  if (S.lessonsDone[id]) return startSession('replay', { lesson: l });
+  const pb = pendingBoss(); if (pb) return toast(`Najpierw ${lc(BOSS.name)} kończący etap ${pb.n}.`);
+  if (!lessonUnlocked(l)) return toast('Ta lekcja otworzy się po poprzednich.');
+  startSession('full');
+}
+function openBoss(id) { const st = STAGES.find(s => s.id === id); if (!st) return; if (!stageComplete(st)) return toast(`${BOSS.name} odblokujesz po ukończeniu lekcji etapu ${st.n}.`); startSession('boss', { stage: st }); }
+
+/* ================= render: training ================= */
+let speed = null, speedInt = null;
+function renderTrain() {
+  if (trainMode === 'speed') return renderSpeed();
+  const learned = learnedIds().length, acr = learnedIds().filter(id => CARDS[id].a).length;
+  let h = `<h1>Trening</h1><p class="muted">Ćwiczenia poza główną ścieżką – na szybkość i na powtórkę sprawdzianów.</p>`;
+  h += `<section class="panel"><h2>Błyskawica</h2><p>${esc(L.flashIntro)} Pytania pochodzą tylko z poznanych kart.</p><p class="small muted">Rekordy: ${acr ? `${lc(L.flashA)} ${S.speed.acr || 0}, ` : ''}${lc(L.flashB)} ${S.speed.def || 0}.</p>`;
+  h += learned < 6 ? `<p class="small">Odblokujesz po poznaniu 6 kart (masz ${learned}).</p>` : `<div class="btnrow">${acr >= 4 ? `<button class="btn" data-act="speed" data-mode="acr">${esc(L.flashA)}</button>` : ''}<button class="btn ${acr >= 4 ? 'ghost' : ''}" data-act="speed" data-mode="def">${esc(L.flashB)}</button></div>`;
+  h += `</section><section><h2>${esc(BOSS.name)}</h2>`;
+  const avail = STAGES.filter(stageComplete);
+  if (!avail.length) h += `<p class="muted">Pierwszy odblokujesz po ukończeniu lekcji pierwszego etapu.</p>`;
+  else avail.forEach(st => { const b = S.boss[st.id] || 0; h += `<button class="lrow ${b >= BOSS_PASS ? 'done' : 'next'}" data-act="bossrow" data-id="${st.id}"><span class="st">${b >= BOSS_PASS ? '✓' : BOSS.icon}</span><span class="lt">${esc(st.boss.name)}<span class="lsub">Etap ${st.n}: ${esc(st.title)}</span></span><span class="meta">${b ? 'Najlepiej ' + pct(b) : 'Czeka'}</span></button>`; });
+  if (courseDone()) h += `<button class="lrow ${(S.demo || 0) >= DEMO_PASS ? 'done' : 'next'}" data-act="demo-row"><span class="st">${EXAM.icon}</span><span class="lt">${esc(EXAM.name)}<span class="lsub">Egzamin końcowy</span></span><span class="meta">${S.demo ? 'Najlepiej ' + pct(S.demo) : 'Czeka'}</span></button>`;
+  h += `</section>`;
+  $view.innerHTML = h;
+}
+function startSpeed(mode) {
+  const pool = learnedIds().map(id => CARDS[id]).filter(c => mode === 'acr' ? c.a : true);
+  if (pool.length < 4) { toast('Poznaj jeszcze kilka pojęć, żeby zagrać w tę wersję.'); return; }
+  speed = { mode, pool, score: 0, total: 0, end: Date.now() + 60000, q: null, fb: null, lock: false, over: false, last: null };
+  nextSpeed(); trainMode = 'speed'; window.scrollTo(0, 0); render();
+  clearInterval(speedInt); speedInt = setInterval(tickSpeed, 100);
+}
+function nextSpeed() { let c, g = 0; do { c = rnd(speed.pool); g++; } while (speed.pool.length > 1 && c === speed.last && g < 10); speed.last = c; speed.q = speed.mode === 'acr' ? qExp(c) : qDef(c); speed.fb = null; speed.lock = false; }
+function tickSpeed() {
+  if (!speed || speed.over) { clearInterval(speedInt); return; }
+  const left = speed.end - Date.now();
+  const bar = document.getElementById('spbar'); if (bar) bar.style.width = Math.max(0, left / 600) + '%';
+  const t = document.getElementById('sptime'); if (t) t.textContent = Math.max(0, Math.ceil(left / 1000)) + ' s';
+  if (left <= 0) finishSpeed();
+}
+function answerSpeed(i) {
+  if (!speed || speed.lock || speed.over) return;
+  speed.lock = true; speed.total++; const ok = i === speed.q.correct; speed.fb = { i, ok }; if (ok) speed.score++;
+  render();
+  setTimeout(() => { if (!speed || speed.over) return; nextSpeed(); if (trainMode === 'speed' && !session && tab === 'train') render(); }, ok ? 260 : 950);
+}
+function finishSpeed() {
+  if (!speed || speed.over) return; speed.over = true; clearInterval(speedInt);
+  const prev = S.speed[speed.mode] || 0; speed.record = speed.score > prev && speed.score > 0; if (speed.record) S.speed[speed.mode] = speed.score;
+  speed.gain = Math.min(speed.score, 40); S.xp += speed.gain;
+  checkBadges(); save(); if (tab === 'train' && trainMode === 'speed' && !session) render();
+}
+function renderSpeed() {
+  const sp = speed; if (!sp) { trainMode = null; return renderTrain(); }
+  if (sp.over) { $view.innerHTML = `<div class="center-block"><p class="micro">Błyskawica: ${lc(sp.mode === 'acr' ? L.flashA : L.flashB)}</p><div class="xpbig">${sp.score}</div><p class="lead">${sp.record ? 'Nowy rekord!' : `Rekord: ${S.speed[sp.mode] || 0}`}</p><p class="muted">Trafione ${sp.score} z ${sp.total}. +${sp.gain} XP.</p><div class="btnrow"><button class="btn" data-act="speed" data-mode="${sp.mode}">Jeszcze raz</button><button class="btn ghost" data-act="speed-exit">Wróć</button></div></div>`; return; }
+  const left = Math.max(0, sp.end - Date.now());
+  $view.innerHTML = `<div class="speed-top"><button class="xbtn" data-act="speed-exit" aria-label="Przerwij">✕</button><div class="speed-score">${sp.score}</div><div id="sptime" class="speed-time">${Math.ceil(left / 1000)} s</div></div><div class="timer" style="margin-bottom:18px"><i id="spbar" style="width:${left / 600}%"></i></div>${questionBody(sp.q, sp.fb ? sp.fb.i : null, 'speed-opt')}`;
+}
+
+/* ================= render: dictionary ================= */
+let dictStage = 0, dictAll = false, dictOpen = null, dictQ = '';
+function renderDict() {
+  const learned = learnedIds().length;
+  $view.innerHTML = `<h1>${esc(L.dictTitle)}</h1><p class="muted">${esc(L.dictIntro)} Odblokowane: ${learned} z ${TOTAL}.</p><input class="search" id="dictQ" type="search" placeholder="${esc(L.dictSearch)}" value="${esc(dictQ)}" aria-label="Szukaj"><div class="filters">${['Wszystkie'].concat(STAGES.map(s => 'Etap ' + s.n)).map((l, i) => `<button class="fchip ${dictStage === i ? 'on' : ''}" data-act="dict-stage" data-i="${i}">${l}</button>`).join('')}</div><label class="toggle"><input type="checkbox" id="dictAll" ${dictAll ? 'checked' : ''}> ${esc(L.dictPeek)}</label><div id="dictList"></div>`;
+  renderDictList();
+}
+function renderDictList() {
+  const el = document.getElementById('dictList'); if (!el) return;
+  const q = norm(dictQ);
+  const list = CARD_LIST.filter(c => (dictStage === 0 || c.stage.n === dictStage) && (dictAll || S.cards[c.id]) && (!q || [c.t, c.exp, c.sub, c.d].some(x => norm(x).includes(q))));
+  if (!list.length) { el.innerHTML = `<p class="empty">${learnedIds().length ? 'Nic nie pasuje do wyszukiwania.' : `Tu pojawią się karty po pierwszej lekcji. Zaznacz „${L.dictPeek}”, żeby zajrzeć do całości.`}</p>`; return; }
+  el.innerHTML = list.map(c => {
+    const cs = S.cards[c.id]; const open = dictOpen === c.id;
+    const status = cs ? `<span class="boxes" title="Pudełko ${cs.b} z 5">${[1, 2, 3, 4, 5].map(k => `<i class="${k <= cs.b ? 'f' : ''}"></i>`).join('')}</span>` : `<span class="lock">Etap ${c.stage.n}</span>`;
+    return `<button class="drow ${cs ? '' : 'locked'}" data-act="dict-open" data-id="${c.id}" aria-expanded="${open}"><span class="dt">${esc(c.t)}<span class="de">${esc(c.exp || c.sub)}</span></span>${status}</button>${open ? `<div class="dexp">${cardHTML(c)}</div>` : ''}`;
+  }).join('');
+}
+
+/* ================= render: notes (Plan KPI) ================= */
+let noteTimers = {};
+function renderNotes() {
+  const starred = CARD_LIST.filter(c => S.stars[c.id]);
+  const withTask = LESSONS.filter(l => S.lessonsDone[l.id] || S.notes[l.id]);
+  let h = `<h1>${esc(L.notesTitle)}</h1><p class="muted">${esc(L.notesIntro)}</p>`;
+  h += `<h2>${esc(L.notesStars)} (${starred.length})</h2>`;
+  h += starred.length ? starred.map(c => `<div class="starred"><div><b>${esc(c.t)}</b><br><span>${esc(c.sub)}</span></div><button class="pill on" data-act="star" data-id="${c.id}" aria-pressed="true">★ Usuń</button></div>`).join('') : `<p class="small muted">Oznacz gwiazdką karty – podczas lekcji albo w zakładce ${esc(L.dictTitle)}.</p>`;
+  h += `<h2>Zadania z lekcji</h2>`;
+  h += withTask.length ? withTask.map(l => `<div class="note"><div class="nt">Lekcja ${l.n}: ${esc(l.title)}</div><p class="np">${esc(l.task)}</p><textarea data-note="${l.id}" placeholder="Twoja odpowiedź">${esc(S.notes[l.id] || '')}</textarea><div class="saved" id="saved-${l.id}"></div></div>`).join('') : `<p class="small muted">Pierwsze zadanie pojawi się po lekcji 1.</p>`;
+  h += `<h2>Eksport</h2><p class="small muted">Wszystkie notatki w jednym pliku tekstowym.</p><div class="btnrow"><button class="btn" data-act="notes-dl">Pobierz jako plik</button><button class="btn ghost" data-act="notes-copy">Kopiuj całość</button></div>`;
+  $view.innerHTML = h;
+}
+function notesMarkdown() {
+  const d = new Date().toLocaleDateString('pl-PL');
+  let m = `# ${L.notesFile} – kurs „${CFG.title}”\n\nStan na ${d}.\n\n## ${L.notesStars}\n\n`;
+  const starred = CARD_LIST.filter(c => S.stars[c.id]);
+  m += starred.length ? starred.map(c => `- **${c.t}**${c.exp ? ` (${c.exp})` : ''} – ${c.sub}${c.f ? ` ${L.secF}: ${c.f}.` : ''}`).join('\n') : '- (brak)';
+  m += `\n\n## Zadania z lekcji\n`;
+  LESSONS.forEach(l => { if (S.notes[l.id]) m += `\n### Lekcja ${l.n}: ${l.title}\n\n**Zadanie:** ${l.task}\n\n${S.notes[l.id]}\n`; });
+  return m;
+}
+function blobDownload(name, text, type) {
+  try { const url = URL.createObjectURL(new Blob([text], { type })); const a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 4000); return true; } catch (e) { return false; }
+}
+function notesDownload() {
+  if (!blobDownload(`${L.notesFile}.md`, notesMarkdown(), 'text/markdown')) toast('Nie udało się pobrać pliku – użyj kopiowania.');
+}
+async function notesCopy() {
+  const txt = notesMarkdown();
+  try { await navigator.clipboard.writeText(txt); toast('Skopiowane do schowka.'); }
+  catch (e) {
+    const ta = document.createElement('textarea'); ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch (err) {} ta.remove();
+    toast(ok ? 'Skopiowane do schowka.' : 'Nie udało się skopiować – użyj pobierania.');
+  }
+}
+
+/* ================= render: settings ================= */
+let resetArm = 0;
+function renderSettings() {
+  const lv = levelOf(S.xp).L;
+  let h = `<h1>Ustawienia i zasady</h1>`;
+  h += `<div class="setrow"><h3>Cel tygodniowy</h3><div class="seg">${[2, 3, 4, 5].map(g => `<button class="${S.settings.goal === g ? 'on' : ''}" data-act="goal" data-g="${g}">${g} ${plural(g, 'sesja', 'sesje', 'sesji')}</button>`).join('')}</div><p class="small muted" style="margin-top:8px">Liczą się różne dni z ukończoną sesją. Zaliczony tydzień daje +50 XP i przedłuża serię.</p></div>`;
+  h += `<div class="setrow"><h3>Motyw</h3><div class="seg">${[['auto', 'Automatyczny'], ['light', 'Jasny'], ['dark', 'Ciemny']].map(([k, l]) => `<button class="${S.settings.theme === k ? 'on' : ''}" data-act="theme" data-t="${k}">${l}</button>`).join('')}</div></div>`;
+  h += `<div class="setrow"><h3>Twoje imię</h3><p class="small muted">Pojawi się w powitaniu. Zostaje na tym urządzeniu.</p><input class="search" id="nameInput" type="text" maxlength="24" placeholder="np. Ola" value="${esc(S.settings.name || '')}"></div>`;
+  h += `<div class="setrow"><h3>Zapis postępu</h3><p class="small muted" style="margin:0">Postęp zapisuje się tylko na tym urządzeniu, w tej przeglądarce. Każdy uczy się na własnym koncie postępu. Wyczyszczenie danych przeglądarki albo zmiana telefonu go usuwa – dlatego zrób kopię poniżej.</p></div>`;
+  h += `<div class="setrow"><h3>Kopia zapasowa postępu</h3><p class="small muted">Plik z całym postępem, notatkami i odznakami. Przyda się przy zmianie telefonu albo przeglądarki.</p><div class="btnrow"><button class="btn small" data-act="backup">Pobierz kopię</button><label class="btn small ghost" style="cursor:pointer">Wczytaj kopię<input type="file" id="restoreFile" accept=".json,application/json" hidden></label></div></div>`;
+  h += `<div class="setrow"><h3>Jak działa nauka</h3><p class="small">Kurs łączy trzy sprawdzone techniki: <strong>przypominanie</strong> (najpierw próbujesz sobie przypomnieć, dopiero potem widzisz odpowiedź), <strong>rozłożenie w czasie</strong> (karta wraca po 1, 3, 7, 16 i 35 dniach – im lepiej ją znasz, tym później) i <strong>przeplatanie</strong> (w sprawdzianach mieszają się stare i nowe karty).</p><p class="small">„Nie pamiętam” cofa kartę na początek, „Z trudem” skraca przerwę, „Wiem!” przesuwa kartę do kolejnego pudełka. Szybka runda buduje automatyzm, a ${lc(BOSS.name)} – odporność na presję czasu.</p></div>`;
+  h += `<div class="setrow"><h3>Poziomy</h3><p class="small muted">${esc(L.levelsNote)} Teraz: ${lv.code}, ${esc(lv.name)}.</p><ul class="lvl-list">${LEVELS.map(l => `<li><b>${l.code}</b>${esc(l.name)}<span>od ${fmt(l.min)} XP</span></li>`).join('')}</ul><p class="small muted">XP: nowa karta +10, poprawna odpowiedź +8, powtórka +2 do +6, ukończona lekcja +40, odpowiedź na zadanie +15, zaliczony ${lc(BOSS.name)} +120, zaliczony tydzień +50, ${EXAM.name} +300.</p></div>`;
+  h += `<div class="setrow"><h3>Zacznij od nowa</h3><p class="small muted">Usuwa cały postęp, notatki i odznaki.</p><button class="btn ghost small" data-act="reset">${resetArm && Date.now() - resetArm < 5000 ? 'Na pewno? Kliknij ponownie' : 'Wyzeruj postęp'}</button></div>`;
+  $view.innerHTML = h;
+}
+
+/* ================= confetti ================= */
+function confetti() {
+  if (reduced()) return;
+  const wrap = document.createElement('div'); wrap.className = 'confetti'; const colors = ['#550C93', '#F0386B', '#FFC914'];
+  for (let i = 0; i < 48; i++) { const s = document.createElement('i'); s.style.left = (Math.random() * 100) + '%'; s.style.background = colors[i % 3]; s.style.animationDelay = (Math.random() * 0.35) + 's'; s.style.animationDuration = (1.5 + Math.random() * 1.2) + 's'; s.style.setProperty('--dx', ((Math.random() - 0.5) * 160) + 'px'); if (i % 4 === 0) s.style.borderRadius = '50%'; wrap.appendChild(s); }
+  document.body.appendChild(wrap); setTimeout(() => wrap.remove(), 3200);
+}
+
+/* ================= events ================= */
+const ACT = {
+  tab: el => { if (trainMode === 'speed') { clearInterval(speedInt); speed = null; trainMode = null; } tab = el.dataset.tab; window.scrollTo(0, 0); render(); },
+  start: () => startSession('full'),
+  mini: () => startSession('mini'),
+  demo: () => startSession('demo'),
+  flip: () => { const st = cur(); if (st && st.type === 'review' && !st.flipped) { st.flipped = true; render(); } },
+  grade: el => gradeReview(+el.dataset.g),
+  opt: el => answer(+el.dataset.i),
+  next: () => { const st = cur(); if (st && st.type === 'quiz' && st.answered == null) return; if (st && st.type === 'review' && st.mode === 'mc' && st.answered == null) return; advance(); },
+  'learn-next': () => learnNext(),
+  'task-save': () => taskDone(false),
+  'task-skip': () => taskDone(true),
+  exit: () => { if (!session) return; if (cur().type === 'summary') return endSession(); session.exitAsk = true; render(); },
+  'exit-yes': () => endSession(),
+  'exit-no': () => { if (session) { session.exitAsk = false; render(); } },
+  finish: () => endSession(),
+  star: el => toggleStar(el.dataset.id),
+  lesson: el => openLesson(el.dataset.id),
+  bossrow: el => openBoss(el.dataset.id),
+  'demo-row': () => { if (!courseDone()) return toast(`${EXAM.name} otworzy się po ostatnim etapie.`); startSession('demo'); },
+  speed: el => startSpeed(el.dataset.mode),
+  'speed-opt': el => answerSpeed(+el.dataset.i),
+  'speed-exit': () => { clearInterval(speedInt); speed = null; trainMode = null; render(); },
+  'dict-stage': el => { dictStage = +el.dataset.i; document.querySelectorAll('[data-act="dict-stage"]').forEach(b => b.classList.toggle('on', +b.dataset.i === dictStage)); renderDictList(); },
+  'dict-open': el => { dictOpen = dictOpen === el.dataset.id ? null : el.dataset.id; renderDictList(); },
+  'notes-dl': () => notesDownload(),
+  'notes-copy': () => notesCopy(),
+  goal: el => { S.settings.goal = +el.dataset.g; save(); render(); },
+  theme: el => { S.settings.theme = el.dataset.t; applyTheme(); save(); render(); },
+  backup: () => { const d = new Date().toISOString().slice(0, 10); if (blobDownload(`${CFG.id}-kopia-${d}.json`, JSON.stringify(S), 'application/json')) toast('Kopia pobrana.'); else toast('Nie udało się pobrać kopii.'); },
+  reset: () => { if (resetArm && Date.now() - resetArm < 5000) { const keepTheme = S.settings.theme; S = fresh(); S.settings.theme = keepTheme; resetArm = 0; save(); pushRemote(); tab = 'home'; toast('Postęp wyzerowany. Zaczynamy od nowa!'); render(); } else { resetArm = Date.now(); render(); setTimeout(() => { if (tab === 'settings' && !session) render(); }, 5200); } }
+};
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-act]'); if (!el || el.disabled) return;
+  const fn = ACT[el.dataset.act]; if (!fn) return;
+  e.preventDefault(); fn(el, e);
+});
+document.addEventListener('input', e => {
+  const t = e.target;
+  if (t.id === 'dictQ') { dictQ = t.value; renderDictList(); return; }
+  if (t.id === 'nameInput') { S.settings.name = t.value.slice(0, 24); clearTimeout(noteTimers.__name); noteTimers.__name = setTimeout(save, 500); return; }
+  if (t.dataset && t.dataset.note) {
+    const id = t.dataset.note; clearTimeout(noteTimers[id]);
+    noteTimers[id] = setTimeout(() => {
+      const v = t.value.trim(); if (v) S.notes[id] = v; else delete S.notes[id];
+      if (v.length >= 20 && !S.noteXP[id]) { S.noteXP[id] = 1; S.xp += 15; renderTop(); }
+      checkBadges(); save();
+      const s = document.getElementById('saved-' + id); if (s) { s.textContent = 'Zapisano'; setTimeout(() => { if (s) s.textContent = ''; }, 1500); }
+    }, 700);
+  }
+});
+document.addEventListener('change', e => {
+  if (e.target.id === 'dictAll') { dictAll = e.target.checked; renderDictList(); return; }
+  if (e.target.id === 'restoreFile' && e.target.files && e.target.files[0]) {
+    const rd = new FileReader();
+    rd.onload = () => { try { const o = JSON.parse(rd.result); if (!o || o.v !== 1 || typeof o.cards !== 'object') throw new Error('bad'); S = normalize(o); save(); applyTheme(); tab = 'home'; render(); toast('Postęp wczytany z kopii.'); } catch (err) { toast('To nie jest poprawny plik kopii.'); } };
+    rd.readAsText(e.target.files[0]);
+  }
+});
+document.addEventListener('keydown', e => {
+  const tag = (e.target && e.target.tagName) || '';
+  if (tag === 'TEXTAREA' || tag === 'INPUT') { if (tag === 'TEXTAREA' && e.target.id === 'simInput' && e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); simSend(); } return; }
+  if (trainMode === 'speed' && speed && !speed.over && !session && tab === 'train') { const k = '1234'.indexOf(e.key); if (k >= 0) { e.preventDefault(); answerSpeed(k); } return; }
+  if (!session) return;
+  const st = cur(); if (!st) return;
+  const k = '1234'.indexOf(e.key);
+  const isQ = st.type === 'quiz' || (st.type === 'review' && st.mode === 'mc');
+  if (isQ && st.answered == null && k >= 0 && st.q && k < st.q.options.length) { e.preventDefault(); answer(k); return; }
+  if (st.type === 'review' && st.mode !== 'mc') {
+    if (!st.flipped && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); ACT.flip(); return; }
+    if (st.flipped && k >= 0 && k <= 2) { e.preventDefault(); gradeReview(k); return; }
+  }
+  if (e.key === 'Enter' && !(e.target && e.target.closest && e.target.closest('button'))) {
+    if (isQ && st.answered != null) { e.preventDefault(); advance(); }
+    else if (st.type === 'learn') { e.preventDefault(); learnNext(); }
+    else if (['intro', 'boss-intro', 'boss-result', 'demo-intro', 'demo-result'].includes(st.type)) { e.preventDefault(); advance(); }
+  }
+});
+
+/* ================= boot ================= */
+applyTheme();
+document.querySelectorAll('[data-tl]').forEach(el => { const k = el.dataset.tl; if (k === 'dict') el.textContent = L.dictTitle; if (k === 'notes') el.textContent = L.notesTitle; });
+render();
+if ('serviceWorker' in navigator && location.protocol === 'https:') window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
+})();
+
+
+</script>
+</body>
+</html>
