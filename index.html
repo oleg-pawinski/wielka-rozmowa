@@ -343,6 +343,7 @@ textarea{width:100%;min-height:112px;border-radius:var(--r-m);border:1.5px solid
 </div></nav>
 <div class="toast" id="toast" role="status"></div>
 <script>
+/*KURS-START*/
 /* Wielka Rozmowa – konfiguracja. Etapy: src/NN-*.js (window.COURSE.stages.push). Budowa: ./build.sh */
 window.COURSE = { config: {
   "id": "wielka-rozmowa",
@@ -351,7 +352,9 @@ window.COURSE = { config: {
   "mark": "Φ",
   "palette": "grafit",
   "goal": 4,
-  "version": 3,
+  "version": 4,
+  "shortName": "Rozmowa",
+  "news": "- Kurs działa na nowej wersji silnika: poprawione drobne błędy na ekranie startowym.\n- W opisach kart lepiej ukryte hasła – pytania „Które hasło pasuje do opisu?” są uczciwsze.\n- Ta ramka będzie od teraz mówić, co zmieniło się w kursie.",
   "okWords": [
     "Tak jest.",
     "Właśnie tak.",
@@ -1353,7 +1356,7 @@ window.COURSE.stages.push({
             "Inni mędrcy sądzili, że wiedzą – Sokrates wiedział, że nie wie. Ta przewaga okazała się jedyną prawdziwą."] },
         { id: "ironia", t: "ironia sokratejska", a: 1, exp: "udawanie niewiedzy",
           sub: "udawana skromność, która skłania rozmówcę do odsłonięcia własnej niewiedzy",
-          d: "Sokrates zaczynał od pochwały rozmówcy: „Ty wiesz, czym jest odwaga, naucz mnie”. Potem zadawał pytania, aż pewny siebie znawca plątał się we własnych słowach. Greckie eironeia znaczyło udawanie – i rozmówcy często mieli mu to za złe.",
+          d: "Ateński mędrzec zaczynał od pochwały rozmówcy: „Ty wiesz, czym jest odwaga, naucz mnie”. Potem zadawał pytania, aż pewny siebie znawca plątał się we własnych słowach. Greckie eironeia znaczyło udawanie – i rozmówcy często mieli mu to za złe.",
           f: "„Czego nie wiem, o tym nie sądzę, że wiem” – Sokrates w Obronie Sokratesa Platona, 21d",
           b: "Słynne „wiem, że nic nie wiem” to późniejsze uproszczenie tej myśli. Bardzo podobnie ujął to Konfucjusz: wiedzieć, że się wie, gdy się wie, i przyznać, że się nie wie, gdy się nie wie – to właśnie jest wiedza (Dialogi konfucjańskie 2.17).",
           ex: "Na zebraniu ktoś mówi: „Nie jestem ekspertem, pomóżcie mi zrozumieć – co dokładnie znaczy «zwinność» w naszym projekcie?”. Po trzech pytaniach okazuje się, że nikt na sali tego nie wie. To ironia sokratejska w wydaniu firmowym.",
@@ -1436,7 +1439,7 @@ window.COURSE.stages.push({
             "Daimonion niczego nie nakazywał – tylko powstrzymywał przed złym krokiem, a Sokrates nigdy go nie lekceważył."] },
         { id: "problemsokratejski", t: "problem sokratejski",
           sub: "pytanie, jaki był prawdziwy Sokrates, skoro znamy go tylko z cudzych relacji",
-          d: "Sokrates nic nie napisał. Mamy trzy różne portrety: u Platona to głęboki filozof, u Ksenofonta – praktyczny doradca, a w komedii Arystofanesa „Chmury” – śmieszny mędrek wiszący w koszu nad ziemią. Który obraz jest prawdziwy, historycy spierają się do dziś.",
+          d: "Nauczyciel Platona nic nie napisał. Mamy trzy różne portrety: u Platona to głęboki filozof, u Ksenofonta – praktyczny doradca, a w komedii Arystofanesa „Chmury” – śmieszny mędrek wiszący w koszu nad ziemią. Który obraz jest prawdziwy, historycy spierają się do dziś.",
           f: "„Kroczę po powietrzu i rozmyślam o słońcu” – Sokrates w komedii Arystofanesa Chmury, 225",
           b: "Podobnie jak z presokratykami: tam mamy fragmenty, tu – cudze portrety. Arystofanes wystawił „Chmury” w 423 r. p.n.e., za życia Sokratesa; Platon i Ksenofont pisali po jego śmierci, z miłością i czcią. Każdy pokazał „swojego” Sokratesa.",
           ex: "Wyobraź sobie, że ktoś zna Cię tylko z trzech źródeł: wspomnień najlepszej przyjaciółki, notatek współpracownika i satyrycznego skeczu z firmowej imprezy. Każdy obraz będzie trochę prawdziwy – i żaden nie będzie cały.",
@@ -1574,7 +1577,7 @@ window.COURSE.stages.push({
             "Platon pisał dialogi, bo wierzył, że myśl dojrzewa w zderzeniu racji, a nie w monologu."] },
         { id: "akademia", t: "Akademia",
           sub: "szkoła Platona w gaju Akademosa, wzór wszystkich późniejszych uczelni",
-          d: "Około 387 r. p.n.e. Platon zaczął nauczać w gaju poświęconym herosowi Akademosowi pod Atenami. Uczono tam matematyki, astronomii i filozofii, bez opłat, przez rozmowy i wspólne badania. Przez dwadzieścia lat uczył się tam Arystoteles.",
+          d: "Około 387 r. p.n.e. Platon zaczął nauczać w gaju poświęconym lokalnemu herosowi pod Atenami. Uczono tam matematyki, astronomii i filozofii, bez opłat, przez rozmowy i wspólne badania. Przez dwadzieścia lat uczył się tam Arystoteles.",
           f: "„Niech nie wchodzi tu nikt, kto nie zna geometrii” – napis, który według późnej tradycji widniał nad wejściem",
           b: "Szkoła działała z przerwami przez stulecia, a jej neoplatońską następczynię w Atenach zamknął cesarz Justynian w 529 r. n.e. Od jej nazwy pochodzą wszystkie akademie świata – i słowo „akademicki”.",
           ex: "Uczelnia bez czesnego, nauka w małych grupach przez dyskusję, a matematyka jako wstęp do wszystkiego – brzmi jak marzenie niejednego rektora. Tak wyglądała Akademia.",
@@ -4818,7 +4821,7 @@ window.COURSE.stages.push({
             "Singer pyta nie o to, czy zwierzę myśli, tylko czy cierpi. Jeśli tak – jego cierpienie trzeba wziąć pod uwagę, także przy zakupach."] },
         { id: "dzieckowstawie", t: "dziecko w stawie",
           sub: "argument Singera: odległość nie zmienia obowiązku pomocy",
-          d: "Idąc do pracy, widzisz, że w płytkiej sadzawce tonie maluch. Możesz go uratować, ale ubłocisz ubranie. Oczywiście ratujesz. Singer pyta: skoro tak, dlaczego nie oddajemy podobnej kwoty na ratowanie dzieci, które umierają z biedy daleko od nas? Czy odległość naprawdę zmienia nasz obowiązek?",
+          d: "Idąc do pracy, widzisz, że w płytkiej sadzawce tonie maluch. Możesz go uratować, ale ubłocisz ubranie. Oczywiście ratujesz. Singer pyta: skoro tak, dlaczego nie oddajemy podobnej kwoty na ratowanie maluchów, które umierają z biedy daleko od nas? Czy odległość naprawdę zmienia nasz obowiązek?",
           b: "Argument z artykułu „Głód, dobrobyt i moralność” (1972), napisanego w czasie katastrofy humanitarnej w Bengalu. To konsekwentny kosmopolityzm stoików i utylitaryzm Milla. Krytycy odpowiadają, że mamy szczególne obowiązki wobec bliskich – i że moralność nie może być aż tak wymagająca.",
           ex: "Gdy organizacja pomocowa pokazuje, że za cenę jednej kolacji w restauracji można dostarczyć moskitiery chroniące kilkoro dzieci przed malarią, przenosi argument Singera z sali wykładowej do codziennych wyborów.",
           q: ["Ktoś mówi: „Pomagam sąsiadom, ale ludzie na drugim końcu świata to nie moja sprawa”. Co odpowiedziałby Singer?",
@@ -4829,7 +4832,7 @@ window.COURSE.stages.push({
             "Singer nie neguje troski o bliskich, ale pyta: czy cierpienie dziecka staje się mniej ważne, bo jest daleko? Stoicy powiedzieliby, że to wciąż nasz krąg."] },
         { id: "gatunkizm", t: "szowinizm gatunkowy",
           sub: "uprzedzenie, które każe lekceważyć cierpienie istot innego gatunku",
-          d: "Uprzedzenie, które każe lekceważyć cierpienie istot tylko dlatego, że nie należą do naszego gatunku – tak jak rasizm lekceważy cierpienie ludzi innej rasy, a seksizm – innej płci. Jeśli zwierzę czuje ból, jego ból liczy się tak samo jak podobny ból człowieka.",
+          d: "Uprzedzenie, które każe lekceważyć cierpienie istot tylko dlatego, że nie są ludźmi – tak jak rasizm lekceważy cierpienie ludzi innej rasy, a seksizm – innej płci. Jeśli zwierzę czuje ból, jego ból liczy się tak samo jak podobny ból człowieka.",
           f: "„Pytanie nie brzmi: czy potrafią myśleć? czy potrafią mówić? lecz: czy potrafią cierpieć?” – Jeremy Bentham, Wprowadzenie do zasad moralności i prawodawstwa (1789)",
           b: "Termin ukuł w 1970 r. brytyjski psycholog Richard Ryder, a rozsławił Singer. Pomysł sięga Benthama i Schopenhauera; przeciwnie myślał Kartezjusz, dla którego zwierzęta to automaty. Krytycy wskazują, że między ludźmi a zwierzętami są moralnie istotne różnice – spór trwa.",
           ex: "Gdy przepisy wymagają ogłuszania zwierząt przed ubojem albo zakazują testowania kosmetyków na zwierzętach, uznają – choć częściowo – że ich cierpienie ma znaczenie moralne. W Unii Europejskiej od 2013 r. nie wolno sprzedawać kosmetyków testowanych na zwierzętach, choć inne przepisy wciąż dopuszczają niektóre testy składników.",
@@ -4962,7 +4965,7 @@ window.COURSE.stages.push({
     }
   ]
 });
-
+/*KURS-END*/
 </script>
 <script>
 
@@ -4993,9 +4996,10 @@ const L = Object.assign({
   secD: 'Co to znaczy', secF: 'Wzór', secB: 'Warto wiedzieć', secEx: 'Przykład',
   secSay: 'W praktyce', secTr: 'Pułapka', secFun: 'Ciekawostka',
   sayWho: '', sayAsk: 'co to znaczy?', sayMean: 'Znaczy:',
-  quizPhase: 'Sprawdzian', taskTitle: 'Zadanie',
+  quizPhase: 'Sprawdź się', taskTitle: 'Zadanie',
   taskHelp: 'Odpowiedź zapisze się w zakładce {notes}. Można wrócić do niej później.',
   taskPlaceholder: 'Wystarczy kilka zdań.',
+  hintTitle: 'Na co zwrócić uwagę',
   starOn: 'Ważne dla mnie',
   expLabel: 'Rozwiń skrót', revLabel: 'Który skrót to…', defLabel: 'Które pojęcie pasuje do opisu?',
   flipHintExp: 'Rozwiń skrót i powiedz na głos, co oznacza.',
@@ -5009,6 +5013,7 @@ const L = Object.assign({
   newLine: 'Zaczynasz nowy kurs. Pierwsza lekcja trwa ok. 15 minut.',
   masterTitle: 'Utrzymaj wiedzę w formie',
   levelsNote: 'Poziomy rosną razem z liczbą zdobytych XP.',
+  newsTitle: 'Co nowego w kursie', newsOk: 'Jasne, dzięki',
   about: ''
 }, C0.labels || {});
 const BOSS = Object.assign({
@@ -5025,13 +5030,14 @@ const CFG = {
   goal: C0.goal || 3, exam: EXAM.n || 20
 };
 const BOSS_PASS = BOSS.pass, DEMO_PASS = EXAM.pass;
+const EXAM_N = Math.max(6, Math.min(TOTAL, EXAM.n || 20));
 const LEVELS = (C0.levels && C0.levels.length === 6) ? C0.levels : [
-  { min: 0, code: 'A1', name: 'Początek', note: 'Pierwsze kroki. Każdy tak zaczynał.' },
-  { min: 400, code: 'A2', name: 'Rozgrzany', note: 'Podstawy zaczynają siedzieć.' },
-  { min: 1300, code: 'B1', name: 'Praktyk', note: 'Łapiesz już większość tematu.' },
-  { min: 3000, code: 'B2', name: 'Zaawansowany', note: 'Rzadko trzeba Ci podpowiadać.' },
-  { min: 5500, code: 'C1', name: 'Ekspert', note: 'Tłumaczysz to innym.' },
-  { min: 8500, code: 'C2', name: 'Mistrz', note: 'Ten temat już Cię nie zaskoczy.' }
+  { min: 0, code: 'A1', name: 'Początek', note: 'Pierwsze kroki. Od tego zaczyna każdy.' },
+  { min: 400, code: 'A2', name: 'Rozgrzewka', note: 'Podstawy zaczynają siedzieć.' },
+  { min: 1300, code: 'B1', name: 'Wprawa', note: 'Łapiesz już większość tematu.' },
+  { min: 3000, code: 'B2', name: 'Biegłość', note: 'Rzadko trzeba Ci podpowiadać.' },
+  { min: 5500, code: 'C1', name: 'Znawstwo', note: 'Tłumaczysz to innym.' },
+  { min: 8500, code: 'C2', name: 'Mistrzostwo', note: 'Ten temat już Cię nie zaskoczy.' }
 ];
 const BADGES = [
   { id: 'first', icon: '🌱', name: 'Pierwszy krok', desc: 'Ukończ pierwszą lekcję.' },
@@ -5051,6 +5057,7 @@ const BADGES = [
   id: 'st_' + st.id, icon: st.badge.icon, name: st.badge.name,
   desc: st.badge.desc || `Zalicz: ${st.boss.name}.`
 })));
+const VERSION = +C0.version || 1;
 const OK_WORDS = C0.okWords || ['Dobrze!', 'Trafione.', 'Dokładnie tak.', 'Brawo!', 'Tak jest.'];
 const BAD_WORDS = C0.badWords || ['Nie tym razem.', 'Prawie.', 'To nie to.', 'Pudło – ale właśnie tak się utrwala.'];
 const unit = n => plural(n, L.unit1, L.unit2, L.unit5);
@@ -5069,6 +5076,8 @@ const pct = x => Math.round(x * 100) + '%';
 const plural = (n, one, few, many) => { n = Math.abs(n); if (n === 1) return one; const d = n % 10, h = n % 100; return (d >= 2 && d <= 4 && !(h >= 12 && h <= 14)) ? few : many; };
 const reduced = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
 const lc = s => s ? s.charAt(0).toLowerCase() + s.slice(1) : s;
+// sub wstawiamy do zdań tak, jak go napisano (małą literą, chyba że zaczyna się nazwą własną)
+const subOf = c => String(c.sub || '').replace(/[\s.]+$/, '');
 function md(text) {
   const lines = esc(text).split(/\r?\n/); let h = '', inList = false;
   const inline = s => s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -5101,7 +5110,10 @@ function normalize(s) {
   return o;
 }
 function loadLocal() { try { const raw = localStorage.getItem(LS_KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; } }
+const HAD_STATE = !!loadLocal();
 let S = normalize(loadLocal());
+// nowa osoba nie potrzebuje „Co nowego” – zna od razu aktualną wersję
+if (!HAD_STATE || (!S.sessions && !Object.keys(S.lessonsDone).length)) S.seenVersion = VERSION;
 function writeLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) { /* storage may be unavailable */ } }
 function save() { S.updatedAt = Date.now(); writeLocal(); }
 
@@ -5164,14 +5176,31 @@ function checkBadges() {
 }
 
 /* ================= question factory ================= */
+// Zasłania hasło w opisie razem z odmienionymi formami (Arystoteles → Arystotelesa,
+// jaskinia → jaskini, pierścień → pierścienia). Słowa krótsze niż 4 litery tylko dokładnie.
+// Rdzenie: bez końcowej samogłoski (jaskinia → jaskini), bez miękkiej spółgłoski
+// (pierścień → pierścienia), z ruchomym „e” (Hegel → Hegla, Marek → Marka).
+function maskStems(t) {
+  if (t.length < 4) return { stems: [t], tail: '' };
+  let stem = t;
+  if (/[aeiouyąęó]$/i.test(t)) stem = t.slice(0, -1);
+  else if (/[ńśćźż]$/i.test(t)) stem = t.slice(0, -1);
+  if (stem.length < 3) stem = t;
+  const stems = [stem];
+  if (t.length >= 5 && /e[^aeiouyąęó]$/i.test(t)) stems.push(t.slice(0, -2) + t.slice(-1));
+  return { stems, tail: '\\p{L}{0,4}' };
+}
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 function maskText(text, c) {
   let out = String(text);
   const toks = new Set();
-  String(c.t).split(/[\s\/():,.?!\-]+/).forEach(t => { if (t.length >= 3) toks.add(t); });
+  String(c.t).split(/[\s\/():,.?!\-–„”"']+/).forEach(t => { if (t.length >= 3) toks.add(t); });
   toks.forEach(t => {
-    const e = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    let re; try { re = new RegExp('(?<![\\p{L}\\p{N}])' + e + '(?![\\p{L}\\p{N}])', 'giu'); } catch (err) { re = new RegExp('\\b' + e + '\\b', 'gi'); }
-    out = out.replace(re, '▢▢▢');
+    const { stems, tail } = maskStems(t);
+    const e = '(?:' + stems.map(reEsc).join('|') + ')';
+    // bez lookbehind – działa też na starszych iPhone'ach
+    try { out = out.replace(new RegExp('(^|[^\\p{L}\\p{N}])' + e + tail + '(?![\\p{L}\\p{N}])', 'giu'), '$1▢▢▢'); }
+    catch (err) { out = out.split(t).join('▢▢▢'); }
   });
   return out;
 }
@@ -5184,10 +5213,10 @@ function distract(c, getter, filter, n = 3) {
   return out;
 }
 function mc(o) { const opts = shuffle([o.correct].concat(o.wrong)); return { label: o.label, prompt: o.prompt || '', big: !!o.big, quote: o.quote || '', options: opts, correct: opts.indexOf(o.correct), why: o.why || '', cardId: o.cardId || null }; }
-const qExp = c => mc({ label: L.expLabel, prompt: c.t, big: true, correct: c.exp, wrong: distract(c, x => x.exp, x => x.a), why: `${c.t} – ${c.exp}: ${lc(c.sub)}.`, cardId: c.id });
-const qRev = c => mc({ label: L.revLabel, prompt: c.exp, correct: c.t, wrong: distract(c, x => x.t, x => x.a), why: `${c.exp} to ${c.t} – ${lc(c.sub)}.`, cardId: c.id });
-const qDef = c => mc({ label: L.defLabel, quote: maskText(c.d, c), correct: c.t, wrong: distract(c, x => x.t, () => true), why: `To ${c.t} – ${lc(c.sub)}.`, cardId: c.id });
-const qPhrase = c => mc({ label: `${L.secSay}: ${L.sayAsk}`, prompt: sayQ(c.say[0]), correct: c.say[1], wrong: distract(c, x => x.say[1], x => !!x.say), why: `Chodzi o ${c.t} – ${lc(c.sub)}.`, cardId: c.id });
+const qExp = c => mc({ label: L.expLabel, prompt: c.t, big: true, correct: c.exp, wrong: distract(c, x => x.exp, x => x.a), why: `${c.t} – ${c.exp}: ${subOf(c)}.`, cardId: c.id });
+const qRev = c => mc({ label: L.revLabel, prompt: c.exp, correct: c.t, wrong: distract(c, x => x.t, x => x.a), why: `${c.exp} to ${c.t} – ${subOf(c)}.`, cardId: c.id });
+const qDef = c => mc({ label: L.defLabel, quote: maskText(c.d, c), correct: c.t, wrong: distract(c, x => x.t, () => true), why: `To ${c.t} – ${subOf(c)}.`, cardId: c.id });
+const qPhrase = c => mc({ label: `${L.secSay}: ${L.sayAsk}`, prompt: sayQ(c.say[0]), correct: c.say[1], wrong: distract(c, x => x.say[1], x => !!x.say), why: `${c.t} – ${subOf(c)}.`, cardId: c.id });
 const qHand = c => mc({ label: 'Pytanie', prompt: c.q[0], correct: c.q[1], wrong: c.q.slice(2, 5), why: c.q[5], cardId: c.id });
 const qBoss = (q, who) => mc({ label: `Pytanie od ${who}`, prompt: q[0], correct: q[1], wrong: q.slice(2, 5), why: q[5] });
 function qAuto(c, types) { const ok = types.filter(t => (t === 'exp' || t === 'rev') ? !!c.a : (t === 'hand' ? !!c.q : (t === 'phrase' ? !!c.say : true))); const t = rnd(ok.length ? ok : ['def']); return ({ exp: qExp, rev: qRev, def: qDef, phrase: qPhrase, hand: qHand })[t](c); }
@@ -5220,7 +5249,7 @@ function bossSteps(st) {
 }
 function demoSteps() {
   const steps = [{ type: 'demo-intro' }];
-  const n = Math.max(6, Math.min(CARD_LIST.length, EXAM.n || 20)), half = Math.floor(n / 2);
+  const n = EXAM_N, half = Math.floor(n / 2);
   const cards = shuffle(CARD_LIST);
   const qs = cards.slice(0, half).map(c => c.q ? qHand(c) : qDef(c)).concat(cards.slice(half, n).map(c => qAuto(c, ['exp', 'rev', 'def', 'phrase'])));
   shuffle(qs).forEach(q => steps.push({ type: 'quiz', q, timed: 25, demo: true, ph: EXAM.name }));
@@ -5297,8 +5326,9 @@ function taskDone(skip) {
   if (!skip) {
     const ta = document.getElementById('taskText'); const val = ta ? ta.value.trim() : '';
     if (val) { S.notes[st.lesson.id] = val; if (val.length >= 20 && !S.noteXP[st.lesson.id]) { S.noteXP[st.lesson.id] = 1; addXP(15); } }
-    if (st.lesson.hint && !st.hinted) { st.hinted = true; save(); renderSession(); return; }
   }
+  // lekcja z polem hint: po zapisaniu (albo pominięciu) pokaż wskazówkę, dopiero potem idź dalej
+  if (st.lesson.hint && !st.hinted) { st.hinted = true; checkBadges(); save(); render(); return; }
   checkBadges(); advance();
 }
 function bossFinalize(st) {
@@ -5356,8 +5386,8 @@ function render() {
   document.querySelectorAll('.tab').forEach(b => { if (b.dataset.tab === tab) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
 }
 function renderTop() {
-  const { L } = levelOf(S.xp); const sw = streakWeeks();
-  $top.innerHTML = `<button class="brand" data-act="tab" data-tab="home" aria-label="${esc(CFG.title)} – start"><span class="mark" aria-hidden="true">${esc(CFG.mark)}</span><span class="bname">${esc(CFG.title)}</span></button><div class="chips"><button class="chip" data-act="tab" data-tab="settings" title="Poziom: ${esc(L.name)}"><span class="lv">${L.code}</span><span class="tnum">${fmt(S.xp)} XP</span></button><button class="chip" data-act="tab" data-tab="badges" title="Seria tygodni z celem">🔥 <span class="tnum">${sw}</span></button></div>`;
+  const { L: LV } = levelOf(S.xp); const sw = streakWeeks();
+  $top.innerHTML = `<button class="brand" data-act="tab" data-tab="home" aria-label="${esc(CFG.title)} – start"><span class="mark" aria-hidden="true">${esc(CFG.mark)}</span><span class="bname">${esc(CFG.title)}</span></button><div class="chips"><button class="chip" data-act="tab" data-tab="settings" title="Poziom: ${esc(LV.name)}"><span class="lv">${LV.code}</span><span class="tnum">${fmt(S.xp)} XP</span></button><button class="chip" data-act="tab" data-tab="badges" title="Seria tygodni z celem">🔥 <span class="tnum">${sw}</span></button></div>`;
 }
 
 /* ================= render: home ================= */
@@ -5367,7 +5397,7 @@ function heroHTML(p) {
   const rev = due ? `Rozgrzewka: ${due} ${plural(due, 'powtórka', 'powtórki', 'powtórek')}` : '';
   if (p.done && (S.demo || 0) < DEMO_PASS) {
     kicker = EXAM.kicker; title = EXAM.name;
-    lines = [`${EXAM.n || 20} pytań na czas z całego kursu`, `Zaliczasz od ${pct(EXAM.pass)}`]; btn = EXAM.go; act = 'demo'; est = 10;
+    lines = [`${EXAM_N} ${plural(EXAM_N, 'pytanie', 'pytania', 'pytań')} na czas z całego kursu`, `Zaliczasz od ${pct(EXAM.pass)}`]; btn = EXAM.go; act = 'demo'; est = 10;
   } else if (p.done) {
     kicker = 'Tryb mistrza'; title = L.masterTitle;
     lines = [p.due ? rev : 'Rozgrzewka: kilka wyrywkowych kart', '6 pytań z całego kursu']; est = Math.max(6, Math.round(due * 0.4 + 4));
@@ -5402,6 +5432,7 @@ function renderHome() {
     const weeks = Math.max(2, Math.round(LESSONS.length / goal));
     h += `<section class="welcome"><h3>Jak działa ten kurs</h3><ol class="small"><li><strong>${LESSONS.length} ${plural(LESSONS.length, 'lekcja', 'lekcje', 'lekcji')} w ${STAGES.length} ${plural(STAGES.length, 'etapie', 'etapach', 'etapach')}, ${TOTAL} ${L.unit5}.</strong> Przy ${goal} ${plural(goal, 'sesji', 'sesjach', 'sesjach')} w tygodniu to ok. ${weeks}–${weeks + 3} ${plural(weeks + 3, 'tydzień', 'tygodnie', 'tygodni')}.</li><li><strong>Każda sesja ma stały rytm:</strong> rozgrzewka z powtórek, ${L.unitNew2}, ${lc(L.quizPhase)} i jedno ${lc(L.taskTitle)}.</li>${L.about ? `<li>${L.about}</li>` : ''}<li><strong>Karty wracają w rosnących odstępach</strong> (1, 3, 7, 16, 35 dni), aż zostaną w głowie na stałe. Dlatego mów odpowiedzi na głos, zanim odkryjesz kartę.</li><li><strong>Na końcu etapu czeka ${lc(BOSS.name)}</strong> – szybkie pytania na czas. Zaliczasz od ${pct(BOSS.pass)} i otwierasz kolejny etap.</li></ol></section>`;
   }
+  if (C0.news && !isNew && (S.seenVersion || 0) < VERSION) h += `<section class="welcome"><h3>${esc(L.newsTitle)}</h3>${md(C0.news)}<button class="btn small ghost" data-act="news-ok">${esc(L.newsOk)}</button></section>`;
   h += heroHTML(p);
   let strip = '';
   for (let k = 0; k < 7; k++) { const d = ws + k; const on = !!S.days[d]; strip += `<div class="day ${on ? 'on' : ''} ${d === today ? 'today' : ''}"><span class="dot">${on ? '✓' : ''}</span><span class="dl">${DOW[k]}</span></div>`; }
@@ -5500,7 +5531,7 @@ function renderIntro(st) {
 }
 function renderTask(st) {
   const Ls = st.lesson; const val = S.notes[Ls.id] || '';
-  return `<h1>${esc(L.taskTitle)}</h1><p class="lead">${esc(Ls.task)}</p><p class="small muted">${esc(L.taskHelp.replace('{notes}', L.notesTitle))}${S.noteXP[Ls.id] ? '' : ' (+15 XP za pierwszą odpowiedź)'}</p><textarea id="taskText" placeholder="${esc(L.taskPlaceholder)}">${esc(val)}</textarea>${st.hinted ? `<div class="lsec herb" style="margin:14px 0"><h4>${esc(L.hintTitle || 'Na co zwrócić uwagę')}</h4><p>${esc(Ls.hint)}</p></div><div class="btnrow"><button class="btn" data-act="task-save">Dalej</button></div>` : `<div class="btnrow"><button class="btn" data-act="task-save">Zapisz i dalej</button><button class="btn ghost" data-act="task-skip">Pomiń na razie</button></div>`}`;
+  return `<h1>${esc(L.taskTitle)}</h1><p class="lead">${esc(Ls.task)}</p><p class="small muted">${esc(L.taskHelp.replace('{notes}', L.notesTitle))}${S.noteXP[Ls.id] ? '' : ' (+15 XP za pierwszą odpowiedź)'}</p><textarea id="taskText" placeholder="${esc(L.taskPlaceholder)}">${esc(val)}</textarea>${st.hinted ? `<div class="lsec herb" style="margin:14px 0"><h4>${esc(L.hintTitle)}</h4><p>${esc(Ls.hint)}</p></div><div class="btnrow"><button class="btn" data-act="task-save">Dalej</button></div>` : `<div class="btnrow"><button class="btn" data-act="task-save">${Ls.hint ? 'Zapisz' : 'Zapisz i dalej'}</button><button class="btn ghost" data-act="task-skip">${Ls.hint ? 'Pomiń' : 'Pomiń na razie'}</button></div>`}`;
 }
 function renderBossIntro(st) {
   const s = st.stage, b = s.boss;
@@ -5569,7 +5600,7 @@ function renderMap() {
     h += `<button class="lrow ${passed ? 'done' : complete ? 'next' : 'locked'}" data-act="bossrow" data-id="${st.id}"><span class="st">${passed ? '✓' : BOSS.icon}</span><span class="lt">${esc(BOSS.name)}: ${esc(st.boss.name)}<span class="lsub">${esc(st.boss.who)}</span></span><span class="meta">${best ? pct(best) : complete ? 'Czeka' : '🔒'}</span></button></section>`;
   });
   const dOk = (S.demo || 0) >= DEMO_PASS, cd = courseDone();
-  h += `<section class="stage sc-plum"><div class="stage-h"><div class="stage-n">★</div><div><h2 class="stage-t">${esc(EXAM.name)}</h2><p class="small muted" style="margin:0">${EXAM.n || 20} pytań na czas z całego kursu. Zaliczasz od ${pct(EXAM.pass)}.</p></div></div><button class="lrow ${dOk ? 'done' : cd ? 'next' : 'locked'}" data-act="demo-row"><span class="st">${dOk ? '✓' : EXAM.icon}</span><span class="lt">${esc(EXAM.name)}</span><span class="meta">${S.demo ? pct(S.demo) : cd ? 'Czeka' : '🔒'}</span></button></section>`;
+  h += `<section class="stage sc-plum"><div class="stage-h"><div class="stage-n">★</div><div><h2 class="stage-t">${esc(EXAM.name)}</h2><p class="small muted" style="margin:0">${EXAM_N} ${plural(EXAM_N, 'pytanie', 'pytania', 'pytań')} na czas z całego kursu. Zaliczasz od ${pct(EXAM.pass)}.</p></div></div><button class="lrow ${dOk ? 'done' : cd ? 'next' : 'locked'}" data-act="demo-row"><span class="st">${dOk ? '✓' : EXAM.icon}</span><span class="lt">${esc(EXAM.name)}</span><span class="meta">${S.demo ? pct(S.demo) : cd ? 'Czeka' : '🔒'}</span></button></section>`;
   $view.innerHTML = h;
 }
 function openLesson(id) {
@@ -5659,7 +5690,7 @@ function renderNotes() {
   h += `<h2>${esc(L.notesStars)} (${starred.length})</h2>`;
   h += starred.length ? starred.map(c => `<div class="starred"><div><b>${esc(c.t)}</b><br><span>${esc(c.sub)}</span></div><button class="pill on" data-act="star" data-id="${c.id}" aria-pressed="true">★ Usuń</button></div>`).join('') : `<p class="small muted">Oznacz gwiazdką karty – podczas lekcji albo w zakładce ${esc(L.dictTitle)}.</p>`;
   h += `<h2>Zadania z lekcji</h2>`;
-  h += withTask.length ? withTask.map(l => `<div class="note"><div class="nt">Lekcja ${l.n}: ${esc(l.title)}</div><p class="np">${esc(l.task)}</p><textarea data-note="${l.id}" placeholder="Twoja odpowiedź">${esc(S.notes[l.id] || '')}</textarea><div class="saved" id="saved-${l.id}"></div></div>`).join('') : `<p class="small muted">Pierwsze zadanie pojawi się po lekcji 1.</p>`;
+  h += withTask.length ? withTask.map(l => `<div class="note"><div class="nt">Lekcja ${l.n}: ${esc(l.title)}</div><p class="np">${esc(l.task)}</p>${l.hint && S.lessonsDone[l.id] ? `<p class="small muted"><strong>${esc(L.hintTitle)}:</strong> ${esc(l.hint)}</p>` : ''}<textarea data-note="${l.id}" placeholder="Twoja odpowiedź">${esc(S.notes[l.id] || '')}</textarea><div class="saved" id="saved-${l.id}"></div></div>`).join('') : `<p class="small muted">Pierwsze zadanie pojawi się po lekcji 1.</p>`;
   h += `<h2>Eksport</h2><p class="small muted">Wszystkie notatki w jednym pliku tekstowym.</p><div class="btnrow"><button class="btn" data-act="notes-dl">Pobierz jako plik</button><button class="btn ghost" data-act="notes-copy">Kopiuj całość</button></div>`;
   $view.innerHTML = h;
 }
@@ -5669,7 +5700,7 @@ function notesMarkdown() {
   const starred = CARD_LIST.filter(c => S.stars[c.id]);
   m += starred.length ? starred.map(c => `- **${c.t}**${c.exp ? ` (${c.exp})` : ''} – ${c.sub}${c.f ? ` ${L.secF}: ${c.f}.` : ''}`).join('\n') : '- (brak)';
   m += `\n\n## Zadania z lekcji\n`;
-  LESSONS.forEach(l => { if (S.notes[l.id]) m += `\n### Lekcja ${l.n}: ${l.title}\n\n**Zadanie:** ${l.task}\n\n${S.notes[l.id]}\n`; });
+  LESSONS.forEach(l => { if (S.notes[l.id]) m += `\n### Lekcja ${l.n}: ${l.title}\n\n**Zadanie:** ${l.task}\n\n${l.hint ? `**${L.hintTitle}:** ${l.hint}\n\n` : ''}${S.notes[l.id]}\n`; });
   return m;
 }
 function blobDownload(name, text, type) {
@@ -5696,7 +5727,7 @@ function renderSettings() {
   h += `<div class="setrow"><h3>Cel tygodniowy</h3><div class="seg">${[2, 3, 4, 5].map(g => `<button class="${S.settings.goal === g ? 'on' : ''}" data-act="goal" data-g="${g}">${g} ${plural(g, 'sesja', 'sesje', 'sesji')}</button>`).join('')}</div><p class="small muted" style="margin-top:8px">Liczą się różne dni z ukończoną sesją. Zaliczony tydzień daje +50 XP i przedłuża serię.</p></div>`;
   h += `<div class="setrow"><h3>Motyw</h3><div class="seg">${[['auto', 'Automatyczny'], ['light', 'Jasny'], ['dark', 'Ciemny']].map(([k, l]) => `<button class="${S.settings.theme === k ? 'on' : ''}" data-act="theme" data-t="${k}">${l}</button>`).join('')}</div></div>`;
   h += `<div class="setrow"><h3>Twoje imię</h3><p class="small muted">Pojawi się w powitaniu. Zostaje na tym urządzeniu.</p><input class="search" id="nameInput" type="text" maxlength="24" placeholder="np. Ola" value="${esc(S.settings.name || '')}"></div>`;
-  h += `<div class="setrow"><h3>Zapis postępu</h3><p class="small muted" style="margin:0">Postęp zapisuje się tylko na tym urządzeniu, w tej przeglądarce. Każdy uczy się na własnym koncie postępu. Wyczyszczenie danych przeglądarki albo zmiana telefonu go usuwa – dlatego zrób kopię poniżej.</p></div>`;
+  h += `<div class="setrow"><h3>Zapis postępu</h3><p class="small muted" style="margin:0">Postęp zapisuje się tylko na tym urządzeniu, w tej przeglądarce. Każdy uczy się na własnym koncie postępu. Wyczyszczenie danych przeglądarki albo zmiana telefonu go usuwa – dlatego zrób kopię poniżej.</p><p class="small muted" style="margin:8px 0 0">Wersja treści kursu: ${VERSION}. Aktualizacje kursu nie kasują postępu.</p></div>`;
   h += `<div class="setrow"><h3>Kopia zapasowa postępu</h3><p class="small muted">Plik z całym postępem, notatkami i odznakami. Przyda się przy zmianie telefonu albo przeglądarki.</p><div class="btnrow"><button class="btn small" data-act="backup">Pobierz kopię</button><label class="btn small ghost" style="cursor:pointer">Wczytaj kopię<input type="file" id="restoreFile" accept=".json,application/json" hidden></label></div></div>`;
   h += `<div class="setrow"><h3>Jak działa nauka</h3><p class="small">Kurs łączy trzy sprawdzone techniki: <strong>przypominanie</strong> (najpierw próbujesz sobie przypomnieć, dopiero potem widzisz odpowiedź), <strong>rozłożenie w czasie</strong> (karta wraca po 1, 3, 7, 16 i 35 dniach – im lepiej ją znasz, tym później) i <strong>przeplatanie</strong> (w sprawdzianach mieszają się stare i nowe karty).</p><p class="small">„Nie pamiętam” cofa kartę na początek, „Z trudem” skraca przerwę, „Wiem!” przesuwa kartę do kolejnego pudełka. Szybka runda buduje automatyzm, a ${lc(BOSS.name)} – odporność na presję czasu.</p></div>`;
   h += `<div class="setrow"><h3>Poziomy</h3><p class="small muted">${esc(L.levelsNote)} Teraz: ${lv.code}, ${esc(lv.name)}.</p><ul class="lvl-list">${LEVELS.map(l => `<li><b>${l.code}</b>${esc(l.name)}<span>od ${fmt(l.min)} XP</span></li>`).join('')}</ul><p class="small muted">XP: nowa karta +10, poprawna odpowiedź +8, powtórka +2 do +6, ukończona lekcja +40, odpowiedź na zadanie +15, zaliczony ${lc(BOSS.name)} +120, zaliczony tydzień +50, ${EXAM.name} +300.</p></div>`;
@@ -5738,12 +5769,13 @@ const ACT = {
   'speed-exit': () => { clearInterval(speedInt); speed = null; trainMode = null; render(); },
   'dict-stage': el => { dictStage = +el.dataset.i; document.querySelectorAll('[data-act="dict-stage"]').forEach(b => b.classList.toggle('on', +b.dataset.i === dictStage)); renderDictList(); },
   'dict-open': el => { dictOpen = dictOpen === el.dataset.id ? null : el.dataset.id; renderDictList(); },
+  'news-ok': () => { S.seenVersion = VERSION; save(); render(); },
   'notes-dl': () => notesDownload(),
   'notes-copy': () => notesCopy(),
   goal: el => { S.settings.goal = +el.dataset.g; save(); render(); },
   theme: el => { S.settings.theme = el.dataset.t; applyTheme(); save(); render(); },
   backup: () => { const d = new Date().toISOString().slice(0, 10); if (blobDownload(`${CFG.id}-kopia-${d}.json`, JSON.stringify(S), 'application/json')) toast('Kopia pobrana.'); else toast('Nie udało się pobrać kopii.'); },
-  reset: () => { if (resetArm && Date.now() - resetArm < 5000) { const keepTheme = S.settings.theme; S = fresh(); S.settings.theme = keepTheme; resetArm = 0; save(); pushRemote(); tab = 'home'; toast('Postęp wyzerowany. Zaczynamy od nowa!'); render(); } else { resetArm = Date.now(); render(); setTimeout(() => { if (tab === 'settings' && !session) render(); }, 5200); } }
+  reset: () => { if (resetArm && Date.now() - resetArm < 5000) { const keepTheme = S.settings.theme; S = fresh(); S.settings.theme = keepTheme; resetArm = 0; S.seenVersion = VERSION; save(); tab = 'home'; toast('Postęp wyzerowany. Zaczynamy od nowa!'); render(); } else { resetArm = Date.now(); render(); setTimeout(() => { if (tab === 'settings' && !session) render(); }, 5200); } }
 };
 document.addEventListener('click', e => {
   const el = e.target.closest('[data-act]'); if (!el || el.disabled) return;
@@ -5774,7 +5806,7 @@ document.addEventListener('change', e => {
 });
 document.addEventListener('keydown', e => {
   const tag = (e.target && e.target.tagName) || '';
-  if (tag === 'TEXTAREA' || tag === 'INPUT') { if (tag === 'TEXTAREA' && e.target.id === 'simInput' && e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); simSend(); } return; }
+  if (tag === 'TEXTAREA' || tag === 'INPUT') return;
   if (trainMode === 'speed' && speed && !speed.over && !session && tab === 'train') { const k = '1234'.indexOf(e.key); if (k >= 0) { e.preventDefault(); answerSpeed(k); } return; }
   if (!session) return;
   const st = cur(); if (!st) return;
